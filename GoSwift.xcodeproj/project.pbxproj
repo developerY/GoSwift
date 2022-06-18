@@ -45,6 +45,7 @@
 		DE5338C2285BE2E400BF1DD3 /* BikeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5338C1285BE2E400BF1DD3 /* BikeMapView.swift */; };
 		DE5338C4285BF7D600BF1DD3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5338C3285BF7D600BF1DD3 /* TestView.swift */; };
 		DE5338C8285C041C00BF1DD3 /* BikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5338C7285C041C00BF1DD3 /* BikeListView.swift */; };
+		DE65CDF6285E521B00E658AF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DE65CDF5285E521B00E658AF /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		DE5338C1285BE2E400BF1DD3 /* BikeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeMapView.swift; sourceTree = "<group>"; };
 		DE5338C3285BF7D600BF1DD3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		DE5338C7285C041C00BF1DD3 /* BikeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeListView.swift; sourceTree = "<group>"; };
+		DE65CDF5285E521B00E658AF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 		DE533868285AD6C900BF1DD3 = {
 			isa = PBXGroup;
 			children = (
+				DE65CDF5285E521B00E658AF /* .gitignore */,
 				DE533873285AD6C900BF1DD3 /* GoSwift */,
 				DE53388A285AD6C900BF1DD3 /* GoSwiftTests */,
 				DE533894285AD6C900BF1DD3 /* GoSwiftUITests */,
@@ -524,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE533882285AD6C900BF1DD3 /* Preview Assets.xcassets in Resources */,
+				DE65CDF6285E521B00E658AF /* .gitignore in Resources */,
 				DE53387E285AD6C900BF1DD3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
