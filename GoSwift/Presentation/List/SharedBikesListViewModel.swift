@@ -5,28 +5,48 @@
 //  Created by Siamak Ashrafi on 6/17/22.
 //
 import Foundation
+import Combine
 
 class SharedBikesListViewModel: ObservableObject{
-    private let getAllSharedBikes: GetAllSharedBikesUseCaseProtocol
-    
-    init(
-        getAllSharedBikes: GetAllSharedBikesUseCaseProtocol
-    ){
+    private let getAllSharedBikes : GetAllSharedBikesUseCaseProtocol
+    init(getAllSharedBikes: GetAllSharedBikesUseCaseProtocol){
         self.getAllSharedBikes = getAllSharedBikes
+        
     }
     
-    @Published var errorMessage = ""
-    @Published var sharedBikes : [SharedBikesResponseModel] = []
+    // From Combine  // Get publisher from UseCases.
+    //@Published var sharedBikes : AnyPublisher<StationInfo, any Error>
+    //@Published var sharedBikes : AnyPublisher<StationInfo, any Error>
     
-    func getSharedBikes() async{
-        let result = await self.getAllSharedBikes.execute()
-        switch result{
-        case .success(let sharedBikes):
-            self.sharedBikes = sharedBikes
-        case .failure(_):
-            self.errorMessage = "Error Fetching Contacts"
+    @Published private(set) var  isSearching = false
+    @Published private(set) var sharedBikes : [Station] = []
+    
+    private var bikeSearchTask: Task<Void, Never>? = nil
+
+    
+    @MainActor
+    func getSharedBikes() { // async - Swift runtime an decide to execute on non-main thread
+        bikeSearchTask?.cancel()
+        
+        // TODO:  bikeSearchTask = Task not working
+        Task {
+            isSearching = true
+            sharedBikes =  try await getAllSharedBikes.execute()//Execute the use case
             
+            sharedBikes.forEach{ station in
+                print(station.name)
+            }
+            if !Task.isCancelled {
+                isSearching = false
+            }
         }
     }
-    
 }
+
+/*
+ Given to the view
+ @ObservedObject var viewModel = SharedBikeViewModel()
+ let stations = viewModel.stations -> @Published var stations: [Station] = [] -> 
+ Used in LazyVGrid
+ ForEach(stations) { item in
+ */

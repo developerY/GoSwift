@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol BikeInfoService {
+protocol BikeInfoServicePublisher {
     func sysInfo() -> AnyPublisher<SystemInfo, Error>
     func stationInfo() -> AnyPublisher<StationInfo, Error>
 }
@@ -21,7 +21,7 @@ class BikeInfoAPI {
     }
 }
 
-extension BikeInfoAPI: BikeInfoService {
+extension BikeInfoAPI: BikeInfoServicePublisher {
     func sysInfo() -> AnyPublisher<SystemInfo, Error> {
         return getSysInfo(www_url : systemURLComponents().url!)
     }

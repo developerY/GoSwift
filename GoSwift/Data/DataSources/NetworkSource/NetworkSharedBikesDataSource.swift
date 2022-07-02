@@ -2,36 +2,62 @@
 //  NetworkSharedBikesDataSource.swift
 //  GoSwift
 //
-//  Created by Siamak Ashrafi on 6/17/22.
+//  Created by Siamak Ashrafi on 7/2/22.
 //
 
 import Foundation
-class NetworSharedBikesDataSource : SharedBikesDataSourceProtocol {
-    func getAll() async -> Result<[SharedBikesResponseModel], SharedBikesError> {
-        <#code#>return Result([SharedBikesResponseModel()]
-    }
-    
-    
-    
-    //private func mapToSharedBikesResponse(sharedBikesEntity: SharedBikesEntity) -> ShredBikesResponseModel{}
-    
-    private func getAll() -> [SharedBikesResponseModel] {
-        return [SharedBikesResponseModel()]
-    }
-    
-    
-    
-    
-    /*func getAllMap() async -> Result<[SharedBikesResponseModel], SharedBikesError> {
-        do{
-            let data = try _getAll()
-            return .success(data.map({ contactEntity in
-                [SharedBikesResponseModel()]//_getAll()
-            }))
-        }catch{
-            return .failure(.Get)
-        }    }*/
-    
-    
+import Combine
 
+// Concrete class that make async network call
+class NetworkSharedBikesDataSource : SharedBikesDataSourceProtocol, ObservableObject, Identifiable {
+    
+    
+    func  getSysInfo() async throws -> SysInfoDataClass {
+        let url = stationURLComponents().url!
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let bikeStations = try JSONDecoder().decode(SystemInfo.self,from:data)
+        return bikeStations.data
+    }
+    
+    func getStationInfo() async throws -> [Station]{
+        let url = stationURLComponents().url!
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let bikeStations = try JSONDecoder().decode(StationInfo.self,from:data)
+        return bikeStations.data.stations
+    }
+
+}
+
+// MARK: URL
+private extension NetworkSharedBikesDataSource {
+    struct GobalBikeAPI {
+        static let scheme = "https"
+        static let host = "gbfs.baywheels.com"
+        static let path = "/gbfs/en"
+        //static let key = "<your key>"
+    }
+    
+    func stationURLComponents() -> URLComponents {
+        var components = URLComponents()
+        components.scheme = GobalBikeAPI.scheme
+        components.host = GobalBikeAPI.host
+        components.path = GobalBikeAPI.path + "/station_information.json"
+        
+        components.queryItems = [
+            //URLQueryItem(name: "name", value: value)
+        ]
+        return components
+    }
+    
+    func systemURLComponents() -> URLComponents {
+        var components = URLComponents()
+        components.scheme = GobalBikeAPI.scheme
+        components.host = GobalBikeAPI.host
+        components.path = GobalBikeAPI.path + "/system_information.json"
+        
+        components.queryItems = [
+            //URLQueryItem(name: "name", value: value)
+        ]
+        return components
+    }
 }

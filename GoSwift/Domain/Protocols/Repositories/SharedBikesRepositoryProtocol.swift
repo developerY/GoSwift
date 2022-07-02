@@ -6,6 +6,15 @@
 //
 
 import Foundation
+import Combine
+
 protocol SharedBikesRepositoryProtocol {
-    func getAllSharedBikes() async -> Result<[SharedBikesResponseModel], SharedBikesError>
+    func getAllSharedBikes() async throws -> [Station]
 }
+
+
+//DO NOT DO THIS !!!! func getAllSharedBikes() async ->  Result<[StationInfo], SharedBikesError>
+/*protocol SharedBikesRepositoryNotReactiveResultProtocol { // not reactive
+    func getAllSharedBikes() async -> Result<[SharedBikesResponseModel], SharedBikesError>
+}*/
+

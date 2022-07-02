@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import Combine
+
 class GetAllSharedBikes : GetAllSharedBikesUseCaseProtocol {
-    
     private let sharedBikesRepo: SharedBikesRepositoryProtocol
-    
     init(sharedBikesRepo : SharedBikesRepositoryProtocol) {
         self.sharedBikesRepo = sharedBikesRepo
     }
     
-    func execute() async -> Result<[SharedBikesResponseModel], SharedBikesError> {
-        return await sharedBikesRepo.getAllSharedBikes()
+    // MARK: Get all shared bike stations
+    func execute() async throws ->  [Station] {
+        return try await sharedBikesRepo.getAllSharedBikes()
     }
 }

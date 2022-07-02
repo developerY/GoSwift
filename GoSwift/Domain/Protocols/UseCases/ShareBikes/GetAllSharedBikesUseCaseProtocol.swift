@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import Combine
+
 protocol GetAllSharedBikesUseCaseProtocol {
-    func execute() async -> Result<[SharedBikesResponseModel], SharedBikesError>
+    // func execute() async -> Result<[StationInfo], SharedBikesError>
+    func execute() async throws -> [Station]
 }

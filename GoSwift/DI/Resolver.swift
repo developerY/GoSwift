@@ -14,7 +14,7 @@ class Resolver {
     // get the IOC container
     private var container = buildContainer()
     
-    func resolver<T> (_ type: T.Type) -> T {
+    func resolve<T> (_ type: T.Type) -> T {
         container.resolve(T.self)!
     }
     

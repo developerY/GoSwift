@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    // RayWenderlick Dependency Injection
-    // @ObservedObject var viewModel = SharedBikeViewModel()
-    
     
     var body: some View {
         VStack() {
@@ -19,7 +16,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("Bikes", systemImage: "bicycle.circle.fill")
                     }
-                Text("hi")
+                BikeListView()
                     .tabItem {
                         Label("events", systemImage: "calendar")
                     }
