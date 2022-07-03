@@ -20,6 +20,10 @@ struct ContentView: View {
                     .tabItem {
                         Label("events", systemImage: "calendar")
                     }
+                BikeChartView()
+                    .tabItem {
+                        Label("charts", systemImage: "chart.xyaxis.line")
+                    }
             }
         }
     }

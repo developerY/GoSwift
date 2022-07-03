@@ -11,7 +11,7 @@ class SharedBikesListViewModel: ObservableObject{
     private let getAllSharedBikes : GetAllSharedBikesUseCaseProtocol
     init(getAllSharedBikes: GetAllSharedBikesUseCaseProtocol){
         self.getAllSharedBikes = getAllSharedBikes
-        
+        // timerGetAllSharedBike()
     }
     
     // From Combine  // Get publisher from UseCases.

@@ -15,7 +15,7 @@
 import Foundation
 
 // MARK: - Station
-struct Station: Codable, Identifiable {
+struct Station: Codable, Identifiable, Hashable {
     let id = UUID()
     let regionID: String?
     let eightdHasKeyDispenser: Bool
@@ -31,7 +31,18 @@ struct Station: Codable, Identifiable {
     let stationID: String
     let eightdStationServices: [JSONAny]
     let externalID, legacyID: String
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(lat)
+        hasher.combine(lon)
+        hasher.combine(name)
+    }
 
+    static func == (lhs: Station, rhs: Station) -> Bool {
+        return lhs.id == rhs.id && lhs.name == rhs.name && lhs.lat == rhs.lat && lhs.lon == rhs.lon
+    }
+    
     enum CodingKeys: String, CodingKey {
         case regionID = "region_id"
         case eightdHasKeyDispenser = "eightd_has_key_dispenser"
