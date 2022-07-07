@@ -15,6 +15,8 @@
 		DE087B5E285D61C3009F6477 /* GetAllSharedBikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087B5D285D61C3009F6477 /* GetAllSharedBikes.swift */; };
 		DE087B60285D70B4009F6477 /* SharedBikesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087B5F285D70B4009F6477 /* SharedBikesListViewModel.swift */; };
 		DE087B63285D7A2C009F6477 /* SharedBikesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087B62285D7A2C009F6477 /* SharedBikesRepository.swift */; };
+		DE2A555D2875FEE100A8429D /* BikeMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A555C2875FEE100A8429D /* BikeMapViewModel.swift */; };
+		DE2A555F28765FC400A8429D /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A555E28765FC400A8429D /* MapAnnotation.swift */; };
 		DE3EF5F6285D7C3300A8EE8E /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = DE3EF5F5285D7C3300A8EE8E /* Swinject */; };
 		DE3EF5F8285D7F4B00A8EE8E /* CombineSharedBikesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3EF5F7285D7F4B00A8EE8E /* CombineSharedBikesDataSource.swift */; };
 		DE533875285AD6C900BF1DD3 /* GoSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE533874285AD6C900BF1DD3 /* GoSwiftApp.swift */; };
@@ -42,6 +44,8 @@
 		DE5338C8285C041C00BF1DD3 /* BikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5338C7285C041C00BF1DD3 /* BikeListView.swift */; };
 		DE65CDF6285E521B00E658AF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DE65CDF5285E521B00E658AF /* .gitignore */; };
 		DE65CDF8285E5AAF00E658AF /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = DE65CDF7285E5AAF00E658AF /* ReadMe.md */; };
+		DEA345632873C5D4006F4856 /* CreditCardFlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA345622873C5D4006F4856 /* CreditCardFlipView.swift */; };
+		DEA345652873C6B6006F4856 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA345642873C6B6006F4856 /* CreditCardView.swift */; };
 		DECD4146286FB30F005B99AD /* NetworkSharedBikesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD4145286FB30F005B99AD /* NetworkSharedBikesDataSource.swift */; };
 		DECD414B2870BC54005B99AD /* BikeListDetailMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD414A2870BC54005B99AD /* BikeListDetailMapView.swift */; };
 		DECD414D2870D558005B99AD /* BikeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD414C2870D558005B99AD /* BikeChartView.swift */; };
@@ -74,6 +78,8 @@
 		DE087B5D285D61C3009F6477 /* GetAllSharedBikes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllSharedBikes.swift; sourceTree = "<group>"; };
 		DE087B5F285D70B4009F6477 /* SharedBikesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedBikesListViewModel.swift; sourceTree = "<group>"; };
 		DE087B62285D7A2C009F6477 /* SharedBikesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedBikesRepository.swift; sourceTree = "<group>"; };
+		DE2A555C2875FEE100A8429D /* BikeMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeMapViewModel.swift; path = GoSwift/Presentation/Map/BikeMapViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DE2A555E28765FC400A8429D /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		DE3EF5F7285D7F4B00A8EE8E /* CombineSharedBikesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineSharedBikesDataSource.swift; sourceTree = "<group>"; };
 		DE533871285AD6C900BF1DD3 /* GoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE533874285AD6C900BF1DD3 /* GoSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoSwiftApp.swift; sourceTree = "<group>"; };
@@ -104,6 +110,8 @@
 		DE5338C7285C041C00BF1DD3 /* BikeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeListView.swift; sourceTree = "<group>"; };
 		DE65CDF5285E521B00E658AF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DE65CDF7285E5AAF00E658AF /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		DEA345622873C5D4006F4856 /* CreditCardFlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFlipView.swift; sourceTree = "<group>"; };
+		DEA345642873C6B6006F4856 /* CreditCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
 		DECD4145286FB30F005B99AD /* NetworkSharedBikesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSharedBikesDataSource.swift; sourceTree = "<group>"; };
 		DECD414A2870BC54005B99AD /* BikeListDetailMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeListDetailMapView.swift; sourceTree = "<group>"; };
 		DECD414C2870D558005B99AD /* BikeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeChartView.swift; sourceTree = "<group>"; };
@@ -165,8 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				DE5338C7285C041C00BF1DD3 /* BikeListView.swift */,
-				DE087B5F285D70B4009F6477 /* SharedBikesListViewModel.swift */,
 				DECD414A2870BC54005B99AD /* BikeListDetailMapView.swift */,
+				DE087B5F285D70B4009F6477 /* SharedBikesListViewModel.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -257,6 +265,7 @@
 			children = (
 				DE5338B2285AD9BE00BF1DD3 /* SystemInfo */,
 				DE5338A9285AD9BE00BF1DD3 /* StationInfo */,
+				DE2A555E28765FC400A8429D /* MapAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -287,6 +296,7 @@
 		DE5338C0285BE27F00BF1DD3 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DEA345612873C5BC006F4856 /* CreditCard */,
 				DECD414E2870E7B6005B99AD /* Chart */,
 				DE087B5B285D50A9009F6477 /* List */,
 				DE5338CF285C25C900BF1DD3 /* CoreData */,
@@ -337,6 +347,7 @@
 		DE5338CE285C25BA00BF1DD3 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				DE2A555C2875FEE100A8429D /* BikeMapViewModel.swift */,
 				DE5338C1285BE2E400BF1DD3 /* BikeMapView.swift */,
 			);
 			path = Map;
@@ -373,6 +384,15 @@
 				DE087B42285D2AE6009F6477 /* SharedBikesRepositoryProtocol.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DEA345612873C5BC006F4856 /* CreditCard */ = {
+			isa = PBXGroup;
+			children = (
+				DEA345622873C5D4006F4856 /* CreditCardFlipView.swift */,
+				DEA345642873C6B6006F4856 /* CreditCardView.swift */,
+			);
+			path = CreditCard;
 			sourceTree = "<group>";
 		};
 		DECD4147286FD95C005B99AD /* Combine */ = {
@@ -560,12 +580,15 @@
 				DE5338A5285AD85B00BF1DD3 /* ContentView.swift in Sources */,
 				DE087B41285D2A0D009F6477 /* GetAllSharedBikesUseCaseProtocol.swift in Sources */,
 				DE087B50285D3B07009F6477 /* SharedBikesDataSourceProtocol.swift in Sources */,
+				DE2A555D2875FEE100A8429D /* BikeMapViewModel.swift in Sources */,
 				DE5338C4285BF7D600BF1DD3 /* TestView.swift in Sources */,
+				DE2A555F28765FC400A8429D /* MapAnnotation.swift in Sources */,
 				DECD414B2870BC54005B99AD /* BikeListDetailMapView.swift in Sources */,
 				DE5338BA285AD9BE00BF1DD3 /* JSONSchemaSupport.swift in Sources */,
 				DE5338BE285AD9BE00BF1DD3 /* SysInfoDataClass.swift in Sources */,
 				DE5338BC285AD9BE00BF1DD3 /* StationDataClass.swift in Sources */,
 				DE3EF5F8285D7F4B00A8EE8E /* CombineSharedBikesDataSource.swift in Sources */,
+				DEA345652873C6B6006F4856 /* CreditCardView.swift in Sources */,
 				DE533875285AD6C900BF1DD3 /* GoSwiftApp.swift in Sources */,
 				DE5338B8285AD9BE00BF1DD3 /* StationInfo.swift in Sources */,
 				DE53387C285AD6C900BF1DD3 /* CoreDataView.swift in Sources */,
@@ -577,6 +600,7 @@
 				DE533877285AD6C900BF1DD3 /* Persistence.swift in Sources */,
 				DE087B5E285D61C3009F6477 /* GetAllSharedBikes.swift in Sources */,
 				DE5338BD285AD9BE00BF1DD3 /* SharedBikeService.swift in Sources */,
+				DEA345632873C5D4006F4856 /* CreditCardFlipView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,10 +10,9 @@ import Combine
 class BikeChartViewModel: ObservableObject{
     @Published private(set) var  motion = 20.0
     private var bikeSearchTask: Task<Void, Never>? = nil
-    
-
-    
-    
+        
+    // var genRandomListOverTime : () -> Int  = genNums() { Task { return Int }}
+        
     @MainActor
     func runRandom() { // async - Swift runtime an decide to execute on non-main thread
         Task {

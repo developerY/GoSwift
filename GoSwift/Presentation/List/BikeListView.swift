@@ -28,6 +28,9 @@ struct BikeInfoRow: View {
 }
 
 struct BikeListView: View {
+    @State var seachBikeStation = ""
+    @State var isEditMode: EditMode = .inactive
+    @State private var searchText = ""
     
     // Get viewmodel from DI
     @StateObject var vm = SharedBikesListViewModel(
@@ -38,18 +41,41 @@ struct BikeListView: View {
     var body: some View {
         VStack {
             NavigationStack {
-                List(vm.sharedBikes) { station in
+                List(searchResults) { station in
                     NavigationLink(station.name, value:station)
+                       
                 }
                 .listStyle(.automatic)
-                .navigationTitle("Bike List")
+                .navigationTitle("Bike Stations")
                 .navigationDestination(for: Station.self) { station in
                     //BikeInfoRow(station: station)
                     BikeListDetailMapView(station: station)
                 }
+                .navigationBarTitle("Bike List")
+                .navigationBarItems(trailing: EditButton())
+                .environment(\.editMode, self.$isEditMode)
+                .searchable(text: $searchText)
             }
+            
+            /*List {
+                Section("Public Tansit") {
+                    Text("Buses")
+                }
+                Section("Pulic Access") {
+                    Text("Vans")
+                }
+            }*/
         }.onAppear() {
             vm.getSharedBikes()
+        }
+    }
+    
+    
+    var searchResults:[Station] {
+        if searchText.isEmpty {
+            return vm.sharedBikeStations
+        } else {
+            return vm.sharedBikeStations.filter{$0.name.contains(searchText)}
         }
     }
     

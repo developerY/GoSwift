@@ -22,6 +22,9 @@ struct BikeChartView: View {
     // The only copy.  Pass if needed
     @StateObject var vm = BikeChartViewModel()
     
+    let timer =  Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
+    
     var bikeChartValues: [ChartValues] =
     [
         .init(name:"Carbon Used", value:20, color: .red),
@@ -51,7 +54,7 @@ struct BikeChartView: View {
             VStack {
                 Gauge(value:vm.motion, in: 0...100){
                     Text("   Daily Motion  ")
-                }
+                }//.onReceive(timer){_ in withAnimation(amount += amount)}
                 
                 .padding([.top], 40)
                 .scaleEffect(3)

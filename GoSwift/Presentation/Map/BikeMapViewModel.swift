@@ -9,7 +9,8 @@ import Combine
 import MapKit
 import os.log
 
-class SharedBikesListViewModel: ObservableObject{
+class BikeMapViewModel: ObservableObject{
+
     
     let logger = Logger(subsystem: "com.ylabz.GoSwift", category: "ListBikes")
     
@@ -23,31 +24,26 @@ class SharedBikesListViewModel: ObservableObject{
     //@Published var sharedBikes : AnyPublisher<StationInfo, any Error>
     //@Published var sharedBikes : AnyPublisher<StationInfo, any Error>
     
-    @Published private(set) var  isSearching = false
     @Published private(set) var sharedBikeStations : [Station] = []
     @Published private(set) var mapMarkers :  [MapAnnotationItem] = []
     
     private var bikeSearchTask: Task<Void, Never>? = nil
 
+
     
     @MainActor
     func getSharedBikes() { // async - Swift runtime an decide to execute on non-main thread
-        bikeSearchTask?.cancel()
+        //bikeSearchTask?.cancel()
         
         // TODO:  bikeSearchTask = Task not working
         Task {
-            isSearching = true
 
             sharedBikeStations =  try! await getAllSharedBikes.execute()//Execute the use case
                 
             sharedBikeStations.forEach{ station in
                 logger.debug("\(station.name)")
-                print("BikeListVM \(station)")
+                print("BikeMapVM \(station)")
                 mapMarkers.append(MapAnnotationItem(stationName: station.name, coordinate: CLLocationCoordinate2DMake(station.lat, station.lon)))
-            }
-
-            if !Task.isCancelled {
-                isSearching = false
             }
         }
     }
