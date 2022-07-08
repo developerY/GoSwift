@@ -15,10 +15,17 @@ class BikeMapViewModel: ObservableObject{
     let logger = Logger(subsystem: "com.ylabz.GoSwift", category: "ListBikes")
     
     private let getAllSharedBikes : GetAllSharedBikesUseCaseProtocol
-    init(getAllSharedBikes: GetAllSharedBikesUseCaseProtocol){
+    private let getAllBartStations : GetAllBartStationsUseCaseProtocol
+    private let getAllWalkingRoutes : GetAllWalkingRoutesUseCaseProtocol
+    init(getAllSharedBikes: GetAllSharedBikesUseCaseProtocol,
+         getAllBartStations: GetAllBartStationsUseCaseProtocol,
+         getAllWalkingRoutes: GetAllWalkingRoutesUseCaseProtocol){
         self.getAllSharedBikes = getAllSharedBikes
+        self.getAllBartStations = getAllBartStations
+        self.getAllWalkingRoutes = getAllWalkingRoutes
         // timerGetAllSharedBike()
     }
+    
     
     // From Combine  // Get publisher from UseCases.
     //@Published var sharedBikes : AnyPublisher<StationInfo, any Error>
@@ -32,20 +39,30 @@ class BikeMapViewModel: ObservableObject{
 
     
     @MainActor
-    func getSharedBikes() { // async - Swift runtime an decide to execute on non-main thread
+    func getSharedBikes(transType: String) -> [MapAnnotationItem] { // async - Swift runtime an decide to execute on non-main thread
         //bikeSearchTask?.cancel()
         
         // TODO:  bikeSearchTask = Task not working
         Task {
 
-            sharedBikeStations =  try! await getAllSharedBikes.execute()//Execute the use case
-                
+            switch transType {
+            case "walk":
+                sharedBikeStations =  try! await getAllWalkingRoutes.execute()//Execute the use case
+            case "bike":
+                sharedBikeStations =  try! await getAllSharedBikes.execute()//Execute the use case
+            case "train":
+                sharedBikeStations =  try! await getAllBartStations.execute()//Execute the use case
+            default:
+                sharedBikeStations =  try! await getAllSharedBikes.execute()//Execute the use case
+            }
+                            
             sharedBikeStations.forEach{ station in
                 logger.debug("\(station.name)")
                 print("BikeMapVM \(station)")
                 mapMarkers.append(MapAnnotationItem(stationName: station.name, coordinate: CLLocationCoordinate2DMake(station.lat, station.lon)))
             }
         }
+        return mapMarkers
     }
 }
 

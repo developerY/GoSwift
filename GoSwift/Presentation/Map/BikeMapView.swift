@@ -86,15 +86,10 @@ struct BikeMapView: View {
     //@ObservedObject var sbViewModel:SharedBikeViewModel
     // Get viewmodel from DI
     @StateObject var vm = BikeMapViewModel(
-        getAllSharedBikes: Resolver.shared.resolve(GetAllSharedBikesUseCaseProtocol.self) //GetAllSharedBikesUseCaseProtocol
-        //deleteContact: Resolver.shared.resolve(DeleteContactUseCaseProtocol.self)
+        getAllSharedBikes: Resolver.shared.resolve(GetAllSharedBikesUseCaseProtocol.self),
+        getAllBartStations: Resolver.shared.resolve(GetAllBartStationsUseCaseProtocol.self),
+        getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self)
     )
-    
-    func getBikeStations() {
-        vm.getSharedBikes()
-        bikeStations = vm.sharedBikeStations
-        mapBikeMarkers = vm.mapMarkers
-    }
     
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 37.7749,
@@ -130,17 +125,17 @@ struct BikeMapView: View {
                 Section{
                     Picker("Mode", selection: $selectedTransit) {
                         ForEach(transType,id :\.self) { mode in
-                            Text("\(mode)").font(.title)
+                            Text("\(mode)").font(.title).tag(transType)
                         }
                     }
                     .pickerStyle(.segmented)
-                    .onReceive([self.selectedTransit].publisher.first()) { (value) in
+                    .onChange(of: selectedTransit) { tag in
                         
                         /*Image(systemName: "figure.walk"),
                          Image(systemName: "bike"),
                          Image(systemName: "train.side.front.car"),*/
                         
-                        switch value {
+                        switch tag {
                         case "walk":
                             iconTravel = "figure.walk"
                             
@@ -154,19 +149,11 @@ struct BikeMapView: View {
                             print("Have you done something new?")
                         }
                         
-                        mapBikeMarkers = vm.mapMarkers//(value)
-                        
+                        mapBikeMarkers = vm.getSharedBikes(transType: tag)
                     }
                     //Slider(value: $value)
                     //vm.updateStations(selectedTransit.rawValue)
-                    
-                    
                 }
-            }.onAppear() {
-                vm.getSharedBikes()
-                //getBikeStations()
-                mapBikeMarkers = vm.mapMarkers
-                
             }
         }
     }

@@ -12,3 +12,13 @@ protocol GetAllSharedBikesUseCaseProtocol {
     // func execute() async -> Result<[StationInfo], SharedBikesError>
     func execute() async throws -> [Station]
 }
+
+protocol GetAllBartStationsUseCaseProtocol {
+    // func execute() async -> Result<[StationInfo], SharedBikesError>
+    func execute() async throws -> [Station]
+}
+
+protocol GetAllWalkingRoutesUseCaseProtocol {
+    // func execute() async -> Result<[StationInfo], SharedBikesError>
+    func execute() async throws -> [Station]
+}
