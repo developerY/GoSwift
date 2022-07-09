@@ -18,37 +18,3 @@ class BartStationsDataSource : BartStationsDataSourceProtocol, ObservableObject,
     }
 
 }
-
-// MARK: URL
-private extension NetworkSharedBikesDataSource {
-    struct GobalBikeAPI {
-        static let scheme = "https"
-        static let host = "gbfs.baywheels.com"
-        static let path = "/gbfs/en"
-        //static let key = "<your key>"
-    }
-    
-    func stationURLComponents() -> URLComponents {
-        var components = URLComponents()
-        components.scheme = GobalBikeAPI.scheme
-        components.host = GobalBikeAPI.host
-        components.path = GobalBikeAPI.path + "/station_information.json"
-        
-        components.queryItems = [
-            //URLQueryItem(name: "name", value: value)
-        ]
-        return components
-    }
-    
-    func systemURLComponents() -> URLComponents {
-        var components = URLComponents()
-        components.scheme = GobalBikeAPI.scheme
-        components.host = GobalBikeAPI.host
-        components.path = GobalBikeAPI.path + "/system_information.json"
-        
-        components.queryItems = [
-            //URLQueryItem(name: "name", value: value)
-        ]
-        return components
-    }
-}

@@ -16,7 +16,6 @@ class GetAllBartStations : GetAllBartStationsUseCaseProtocol {
     
     // MARK: Get all shared bike stations
     func execute() async throws ->  [Station] {
-        //return try await bartStationRepo.getAllSharedBikes()
-        return []
+        return try await bartStationRepo.getAllBartStations()
     }
 }

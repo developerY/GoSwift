@@ -8,46 +8,9 @@
 import SwiftUI
 import MapKit
 
-struct typeTransView : View {
-    var vm : BikeMapViewModel
-    
-    @State private var selectedTransitIcon = Image(systemName: "car")
-    let transTypeIcon = [
-        Image(systemName: "figure.walk"),
-        Image(systemName: "bike"),
-        Image(systemName: "train.side.front.car"),
-    ]
-    
-    @State private var selectedTransit = "bike"
-    let transType = ["walk","bike","train"]
-    
-    var body: some View {
-        
-        
-        Section{
-            Picker("Mode", selection: $selectedTransit) {
-                ForEach(transType,id :\.self) { mode in
-                    Text("\(mode)").font(.title)
-                }
-            }
-            .pickerStyle(.segmented)
-            .onReceive([self.selectedTransit].publisher.first()) { (value) in
-                //mapBikeMarkers = vm.mapMarkers
-            }
-            //Slider(value: $value)
-            //vm.updateStations(selectedTransit.rawValue)
-            
-            
-        }
-    }
-    
-}
-
 struct PlaceAnnotationView: View {
     @State var showTitle = true
-    var iconType : String
-    
-    
+    var iconType : TransitType
     let title: String
     
     var body: some View {
@@ -59,7 +22,7 @@ struct PlaceAnnotationView: View {
                 .cornerRadius(10)
                 .opacity(showTitle ? 0 : 1)
             
-            Image(systemName:iconType)
+            Image(systemName:iconType.rawValue)
                 .font(.title)
                 .foregroundColor(.blue).opacity(0.7)
             
@@ -78,18 +41,11 @@ struct PlaceAnnotationView: View {
 
 
 struct BikeMapView: View {
-    
-    @State var mapBikeMarkers :  [MapAnnotationItem] = []
+    @ObservedObject var viewModel: BikeMapViewModel
     @State var bikeStations :  [Station] = []
-    @State var iconTravel : String = "bicycle.circle"
     
-    //@ObservedObject var sbViewModel:SharedBikeViewModel
-    // Get viewmodel from DI
-    @StateObject var vm = BikeMapViewModel(
-        getAllSharedBikes: Resolver.shared.resolve(GetAllSharedBikesUseCaseProtocol.self),
-        getAllBartStations: Resolver.shared.resolve(GetAllBartStationsUseCaseProtocol.self),
-        getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self)
-    )
+    @State private var selectedTransit : TransitType = .bike
+    //let transType = ["figure.walk","bicycle","train.side.front.car"]
     
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 37.7749,
@@ -97,62 +53,30 @@ struct BikeMapView: View {
         latitudinalMeters: 750,
         longitudinalMeters: 750
     )
-    
-    
-    
-    @State private var selectedTransitIcon = Image(systemName: "car")
-    let transTypeIcon = [
-        Image(systemName: "figure.walk"),
-        Image(systemName: "bike"),
-        Image(systemName: "train.side.front.car"),
-    ]
-    
-    @State private var selectedTransit = "bike"
-    let transType = ["walk","bike","train"]
+
     
     
     var body: some View {
         HStack {
             VStack {
-                Map(coordinateRegion: $region, annotationItems: mapBikeMarkers) { item in
+                Map(coordinateRegion: $region, annotationItems: viewModel.mapMarkers) { item in
                     //MapMarker(coordinate: item.coordinate)
                     MapAnnotation(coordinate: item.coordinate) {
-                        PlaceAnnotationView(iconType: iconTravel, title: item.stationName)
+                        PlaceAnnotationView(iconType: selectedTransit, title: item.stationName)
                     }
                 }
                 //bikeSchedualPicker()
                 
                 Section{
                     Picker("Mode", selection: $selectedTransit) {
-                        ForEach(transType,id :\.self) { mode in
-                            Text("\(mode)").font(.title).tag(transType)
+                        ForEach(TransitType.allCases,id :\.self) { mode in
+                            Image(systemName:mode.rawValue)
                         }
                     }
                     .pickerStyle(.segmented)
                     .onChange(of: selectedTransit) { tag in
-                        
-                        /*Image(systemName: "figure.walk"),
-                         Image(systemName: "bike"),
-                         Image(systemName: "train.side.front.car"),*/
-                        
-                        switch tag {
-                        case "walk":
-                            iconTravel = "figure.walk"
-                            
-                        case "bike":
-                            iconTravel = "bicycle"
-                            
-                        case "train":
-                            iconTravel = "train.side.front.car"
-                            
-                        default:
-                            print("Have you done something new?")
-                        }
-                        
-                        mapBikeMarkers = vm.getSharedBikes(transType: tag)
+                        viewModel.getTransStations(transType: tag)
                     }
-                    //Slider(value: $value)
-                    //vm.updateStations(selectedTransit.rawValue)
                 }
             }
         }
@@ -160,8 +84,13 @@ struct BikeMapView: View {
 }
 
 struct BikeMapView_Previews: PreviewProvider {
+    static var vm = BikeMapViewModel(
+        getAllSharedBikes: Resolver.shared.resolve(GetAllSharedBikesUseCaseProtocol.self),
+        getAllBartStations: Resolver.shared.resolve(GetAllBartStationsUseCaseProtocol.self),
+        getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self)
+    )
+    
     static var previews: some View {
-        Text("hi")
-        //BikeMapView()//sbViewModel:SharedBikeViewModel())
+        BikeMapView(viewModel: vm)
     }
 }

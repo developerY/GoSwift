@@ -9,12 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     
+    // @ObservedObject var sbViewModel:SharedBikeViewModel
+    // Get viewmodel from DI
+    @StateObject var vm = BikeMapViewModel(
+        getAllSharedBikes: Resolver.shared.resolve(GetAllSharedBikesUseCaseProtocol.self),
+        getAllBartStations: Resolver.shared.resolve(GetAllBartStationsUseCaseProtocol.self),
+        getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self)
+    )
+    
+    
     var body: some View {
         VStack() {
             TabView {
-                BikeMapView()
+                BikeMapView(viewModel: vm)
                     .tabItem {
-                        Label("Bikes", systemImage: "bicycle.circle.fill")
+                        Label("transit", systemImage: "map")
+                    }.onAppear{
+                        vm.getTransStations(transType: TransitType.bike)
                     }
                 BikeListView()
                     .tabItem {
