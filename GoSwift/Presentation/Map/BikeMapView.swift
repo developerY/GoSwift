@@ -40,12 +40,16 @@ struct PlaceAnnotationView: View {
 }
 
 
+
+
 struct BikeMapView: View {
     @ObservedObject var viewModel: BikeMapViewModel
     @State var bikeStations :  [Station] = []
     
     @State private var selectedTransit : TransitType = .bike
     //let transType = ["figure.walk","bicycle","train.side.front.car"]
+    
+    @State private var transMapPath = NavigationPath()
     
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 37.7749,
@@ -59,35 +63,39 @@ struct BikeMapView: View {
     var body: some View {
         HStack {
             VStack {
-                Map(coordinateRegion: .constant(region), annotationItems: viewModel.mapMarkers) { item in
-                    MapAnnotation(coordinate: item.coordinate) {
-                        ZStack {
-                            PlaceAnnotationView(iconType: selectedTransit, station: item.station)
-                            VStack {
-                                //Text("Rent")
-                                HStack {
-                                    Button("Rent Now", action: {
-                                       
-                                        print("going \(item.station.name)")
-                                    })
-                                }
-                            }.offset(x:0,y:30)
-                        }.padding(.vertical,30)
-                    }
-                }
-                //bikeSchedualPicker()
                 
-                Section{
-                    Picker("Mode", selection: $selectedTransit) {
-                        ForEach(TransitType.allCases,id :\.self) { mode in
-                            Image(systemName:mode.rawValue)
+                
+                NavigationStack {
+                    Map(coordinateRegion: .constant(region), annotationItems: viewModel.mapMarkers) { item in
+                        MapAnnotation(coordinate: item.coordinate) {
+                            ZStack {
+                                PlaceAnnotationView(iconType: selectedTransit, station: item.station)
+                                VStack {
+                                    //Text("Rent")
+                                    HStack {
+                                        NavigationLink(destination: BikeListDetailMapView(station: item.station as! Station)) {
+                                            Text("RENT")
+                                        }
+                                    }
+                                }.offset(x:0,y:30)
+                            }.padding(.vertical,30)
                         }
                     }
-                    .pickerStyle(.segmented)
-                    .onChange(of: selectedTransit) { tag in
-                        viewModel.getTransStations(transType: tag)
+                    
+                    Section{
+                        Picker("Mode", selection: $selectedTransit) {
+                            ForEach(TransitType.allCases,id :\.self) { mode in
+                                Image(systemName:mode.rawValue)
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .onChange(of: selectedTransit) { tag in
+                            viewModel.getTransStations(transType: tag)
+                        }
                     }
+                    
                 }
+                //bikeSchedualPicker()
             }
         }
     }
