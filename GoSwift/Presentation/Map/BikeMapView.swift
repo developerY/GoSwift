@@ -11,11 +11,11 @@ import MapKit
 struct PlaceAnnotationView: View {
     @State var showTitle = true
     var iconType : TransitType
-    let title: String
+    let station: any TransportationStation
     
     var body: some View {
         VStack(spacing: 0) {
-            Text(title)
+            Text(station.name)
                 .font(.callout)
                 .padding(5)
                 .background(Color(.white))
@@ -59,16 +59,16 @@ struct BikeMapView: View {
     var body: some View {
         HStack {
             VStack {
-                Map(coordinateRegion: $region, annotationItems: viewModel.mapMarkers) { item in
-                    //MapMarker(coordinate: item.coordinate)
+                Map(coordinateRegion: .constant(region), annotationItems: viewModel.mapMarkers) { item in
                     MapAnnotation(coordinate: item.coordinate) {
                         ZStack {
-                            PlaceAnnotationView(iconType: selectedTransit, title: item.stationName)
+                            PlaceAnnotationView(iconType: selectedTransit, station: item.station)
                             VStack {
                                 //Text("Rent")
                                 HStack {
                                     Button("Rent Now", action: {
-                                        let _ = print("going")
+                                       
+                                        print("going \(item.station.name)")
                                     })
                                 }
                             }.offset(x:0,y:30)

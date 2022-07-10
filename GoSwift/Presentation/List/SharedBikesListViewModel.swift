@@ -43,7 +43,7 @@ class SharedBikesListViewModel: ObservableObject{
             sharedBikeStations.forEach{ station in
                 logger.debug("\(station.name)")
                 print("BikeListVM \(station)")
-                mapMarkers.append(MapAnnotationItem(stationName: station.name, coordinate: CLLocationCoordinate2DMake(station.lat, station.lon)))
+                mapMarkers.append(MapAnnotationItem(station: station, coordinate: CLLocationCoordinate2DMake(station.lat, station.lon)))
             }
 
             if !Task.isCancelled {

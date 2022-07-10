@@ -69,7 +69,7 @@ class BikeMapViewModel: ObservableObject{
             transStations.forEach{ station in
                 logger.debug("\(station.name)")
                 let _ = print("BikeMapVM \(station)")
-                mapMarkers.append(MapAnnotationItem(stationName: station.name, coordinate: CLLocationCoordinate2DMake(station.lat, station.lon)))
+                mapMarkers.append(MapAnnotationItem(station: station, coordinate: CLLocationCoordinate2DMake(station.lat, station.lon)))
             }
             
             
