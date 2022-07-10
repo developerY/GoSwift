@@ -12,9 +12,24 @@ import Combine
 class BartStationsDataSource : BartStationsDataSourceProtocol, ObservableObject, Identifiable {
     
     
-    func getStationInfo() async throws -> [Station]{
-        let  station : Station  = Station(regionID: nil, eightdHasKeyDispenser: false, stationType: GoSwift.StationType.classic, lon: -122.44419392209238, name: "Hearst Ave at Detroit St", hasKiosk: true, electricBikeSurchargeWaiver: false, rentalUris: GoSwift.RentalUris(android: "https://sfo.lft.to/lastmile_qr_scan", ios: "https://sfo.lft.to/lastmile_qr_scan"), capacity: 19, shortName: "SF-X16", rentalMethods: [GoSwift.RentalMethod.creditcard, GoSwift.RentalMethod.key], lat: 37.73075943972763, stationID: "578", eightdStationServices: [], externalID: "41b2200f-7915-410b-95c6-084bc4d3dee8", legacyID: "578")
-        return [station]
+    func getStationInfo() async throws -> [BartStation]{
+        var bartStations : [BartStation] = []
+        
+        let  station1 : BartStation  = BartStation(name: "Embarcadero", lat: 37.792683, lon: -122.397198)
+        bartStations.append(station1)
+        
+        let  station2 : BartStation  = BartStation(name: "Montgomery St", lat: 37.78139, lon: -122.401511)
+        bartStations.append(station2)
+        
+        let  station3 : BartStation  = BartStation(name: "Powel Street", lat: 37.78203, lon: -122.408075)
+        bartStations.append(station3)
+        
+        
+        let  station4 : BartStation  = BartStation(name: "Civic Center", lat: 37.779421, lon: -122.413634)
+        bartStations.append(station4)
+        
+        
+        return bartStations
     }
 
 }

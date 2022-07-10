@@ -15,7 +15,7 @@
 import Foundation
 
 // MARK: - Station
-struct Station: Codable, Identifiable, Hashable {
+struct Station:  TransportationStation, Codable, Identifiable, Hashable {
     let id = UUID()
     let regionID: String?
     let eightdHasKeyDispenser: Bool

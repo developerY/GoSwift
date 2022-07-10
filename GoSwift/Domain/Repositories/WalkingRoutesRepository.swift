@@ -17,7 +17,7 @@ class WalkingRoutesRepository : WalkingRoutesRepositoryProtocol {
         self.walkingRoutesDataSource = walkingRoutesDataSource
     }
     
-    func getAllWalkingRoutes() async throws -> [Station] {
+    func getAllWalkingRoutes() async throws -> [WalkingRoutePts] {
         try await walkingRoutesDataSource.getStationInfo()
     }
 

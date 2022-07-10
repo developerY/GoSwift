@@ -15,7 +15,7 @@ class GetAllWalkingRoutes : GetAllWalkingRoutesUseCaseProtocol {
     }
     
     // MARK: Get all shared bike stations
-    func execute() async throws ->  [Station] {
+    func execute() async throws ->  [WalkingRoutePts] {
         return try await walkingRoutesRepo.getAllWalkingRoutes()
     }
 }

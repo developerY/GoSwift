@@ -62,7 +62,17 @@ struct BikeMapView: View {
                 Map(coordinateRegion: $region, annotationItems: viewModel.mapMarkers) { item in
                     //MapMarker(coordinate: item.coordinate)
                     MapAnnotation(coordinate: item.coordinate) {
-                        PlaceAnnotationView(iconType: selectedTransit, title: item.stationName)
+                        ZStack {
+                            PlaceAnnotationView(iconType: selectedTransit, title: item.stationName)
+                            VStack {
+                                //Text("Rent")
+                                HStack {
+                                    Button("Rent Now", action: {
+                                        let _ = print("going")
+                                    })
+                                }
+                            }.offset(x:0,y:30)
+                        }.padding(.vertical,30)
                     }
                 }
                 //bikeSchedualPicker()

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol BartStationsDataSourceProtocol{
-    func getStationInfo() async throws -> [Station]
+    func getStationInfo() async throws -> [BartStation]
 }
 
 /*

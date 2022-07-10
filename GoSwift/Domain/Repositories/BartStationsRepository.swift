@@ -17,7 +17,7 @@ class BartStationsRepository : BartStationsRepositoryProtocol {
         self.bartStationsDataSource = bartStationsDataSource
     }
     
-    func getAllBartStations() async throws -> [Station] {
+    func getAllBartStations() async throws -> [BartStation] {
         try await bartStationsDataSource.getStationInfo()
     }
 

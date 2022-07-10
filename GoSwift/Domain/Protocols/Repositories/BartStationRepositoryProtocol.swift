@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol BartStationsRepositoryProtocol {
-    func getAllBartStations() async throws -> [Station]
+    func getAllBartStations() async throws -> [BartStation]
 }
 
 

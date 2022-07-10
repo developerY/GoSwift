@@ -39,7 +39,7 @@ class BikeMapViewModel: ObservableObject{
     //@Published var sharedBikes : AnyPublisher<StationInfo, any Error>
     //@Published var sharedBikes : AnyPublisher<StationInfo, any Error>
     
-    @Published private(set) var transStations : [Station] = []
+    @Published private(set) var transStations : [any TransportationStation] = []
     @Published private(set) var mapMarkers :  [MapAnnotationItem] = []
     
     private var bikeSearchTask: Task<Void, Never>? = nil

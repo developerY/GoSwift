@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol WalkingRoutesDataSourceProtocol{
-    func getStationInfo() async throws -> [Station]
+    func getStationInfo() async throws -> [WalkingRoutePts]
 }
 
 /*
