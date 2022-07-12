@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CreditCard<Content>: View where Content: View {
+struct CreditCard<Content>: View where Content: View { // where content is a type of view
     
     var content: () -> Content
     

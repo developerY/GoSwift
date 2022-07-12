@@ -15,7 +15,7 @@ enum TransitType : String, Equatable, CaseIterable {
     case train = "train.side.front.car"
 }
 
-class BikeMapViewModel: ObservableObject{
+class TransitMapViewModel: ObservableObject{
 
     
     let logger = Logger(subsystem: "com.ylabz.GoSwift", category: "ListBikes")
@@ -39,7 +39,7 @@ class BikeMapViewModel: ObservableObject{
     //@Published var sharedBikes : AnyPublisher<StationInfo, any Error>
     //@Published var sharedBikes : AnyPublisher<StationInfo, any Error>
     
-    @Published private(set) var transStations : [any TransportationStation] = []
+    @Published private(set) var transStations : [any TransportationStation] = [] // any station boxed type erasure - new in Swift 5.7
     @Published private(set) var mapMarkers :  [MapAnnotationItem] = []
     
     private var bikeSearchTask: Task<Void, Never>? = nil
@@ -66,7 +66,7 @@ class BikeMapViewModel: ObservableObject{
             
             
             mapMarkers.removeAll()
-            transStations.forEach{ station in
+            transStations.forEach{ station in  // some station (unboxed) - new in Swift 5.7
                 logger.debug("\(station.name)")
                 let _ = print("BikeMapVM \(station)")
                 mapMarkers.append(MapAnnotationItem(station: station, coordinate: CLLocationCoordinate2DMake(station.lat, station.lon)))
@@ -74,7 +74,8 @@ class BikeMapViewModel: ObservableObject{
             
             
             
-            
+            // constrained opaque type -- some Collection <any station> - new in Swfit 5.7
+            // some / any  Collection <Elements> - new in Swfit 5.7
         }
     }
 }

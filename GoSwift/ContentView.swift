@@ -11,7 +11,7 @@ struct ContentView: View {
     
     // @ObservedObject var sbViewModel:SharedBikeViewModel
     // Get viewmodel from DI
-    @StateObject var vm = BikeMapViewModel(
+    @StateObject var vm = TransitMapViewModel(
         getAllSharedBikes: Resolver.shared.resolve(GetAllSharedBikesUseCaseProtocol.self),
         getAllBartStations: Resolver.shared.resolve(GetAllBartStationsUseCaseProtocol.self),
         getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self)
@@ -21,13 +21,13 @@ struct ContentView: View {
     var body: some View {
         VStack() {
             TabView {
-                BikeMapView(viewModel: vm)
+                TransitMapView(viewModel: vm)
                     .tabItem {
                         Label("transit", systemImage: "map")
                     }.onAppear{
                         vm.getTransStations(transType: TransitType.bike)
                     }
-                BikeListView()
+                CalendarUIView()
                     .tabItem {
                         Label("events", systemImage: "calendar")
                     }

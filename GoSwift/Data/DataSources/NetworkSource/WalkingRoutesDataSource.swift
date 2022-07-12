@@ -13,8 +13,11 @@ class WalkingRoutesDataSource : WalkingRoutesDataSourceProtocol, ObservableObjec
     
     func getStationInfo() async throws -> [WalkingRoutePts]{
         var walkPts : [WalkingRoutePts] = []
+        let  center : WalkingRoutePts  = WalkingRoutePts(name: "Center", lat: 37.7749, lon: -122.4194)
+        walkPts.append(center)
         let  walkPt : WalkingRoutePts  = WalkingRoutePts(name: "first", lat: 37.803664, lon: -122.271604)
         walkPts.append(walkPt)
+
         return walkPts
     }
     

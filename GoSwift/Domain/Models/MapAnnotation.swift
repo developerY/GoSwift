@@ -8,7 +8,7 @@
 import Foundation
 import MapKit
 struct MapAnnotationItem : Identifiable {
-    var station : any TransportationStation
+    var station : any TransportationStation // new in Swift 5.7
     var coordinate: CLLocationCoordinate2D
     let id = UUID()
 }

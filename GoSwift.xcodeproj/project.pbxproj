@@ -15,7 +15,7 @@
 		DE087B5E285D61C3009F6477 /* GetAllSharedBikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087B5D285D61C3009F6477 /* GetAllSharedBikes.swift */; };
 		DE087B60285D70B4009F6477 /* SharedBikesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087B5F285D70B4009F6477 /* SharedBikesListViewModel.swift */; };
 		DE087B63285D7A2C009F6477 /* SharedBikesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087B62285D7A2C009F6477 /* SharedBikesRepository.swift */; };
-		DE2A555D2875FEE100A8429D /* BikeMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A555C2875FEE100A8429D /* BikeMapViewModel.swift */; };
+		DE2A555D2875FEE100A8429D /* TransitMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A555C2875FEE100A8429D /* TransitMapViewModel.swift */; };
 		DE2A555F28765FC400A8429D /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A555E28765FC400A8429D /* MapAnnotation.swift */; };
 		DE2A5561287748FD00A8429D /* GetAllBartStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A5560287748FD00A8429D /* GetAllBartStations.swift */; };
 		DE2A55632877493200A8429D /* GetAllWalkingRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A55622877493200A8429D /* GetAllWalkingRoutes.swift */; };
@@ -49,7 +49,7 @@
 		DE5338BD285AD9BE00BF1DD3 /* SharedBikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5338B1285AD9BE00BF1DD3 /* SharedBikeService.swift */; };
 		DE5338BE285AD9BE00BF1DD3 /* SysInfoDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5338B3285AD9BE00BF1DD3 /* SysInfoDataClass.swift */; };
 		DE5338BF285AD9BE00BF1DD3 /* SystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5338B4285AD9BE00BF1DD3 /* SystemInfo.swift */; };
-		DE5338C2285BE2E400BF1DD3 /* BikeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5338C1285BE2E400BF1DD3 /* BikeMapView.swift */; };
+		DE5338C2285BE2E400BF1DD3 /* TransitMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5338C1285BE2E400BF1DD3 /* TransitMapView.swift */; };
 		DE5338C4285BF7D600BF1DD3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5338C3285BF7D600BF1DD3 /* TestView.swift */; };
 		DE5338C8285C041C00BF1DD3 /* BikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5338C7285C041C00BF1DD3 /* BikeListView.swift */; };
 		DE65CDF6285E521B00E658AF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DE65CDF5285E521B00E658AF /* .gitignore */; };
@@ -57,6 +57,7 @@
 		DE804C75287A328100E0A19E /* TransportationStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE804C74287A328100E0A19E /* TransportationStation.swift */; };
 		DE804C77287A382F00E0A19E /* BartStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE804C76287A382F00E0A19E /* BartStations.swift */; };
 		DE804C79287A3C7F00E0A19E /* WalkingRoutePts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE804C78287A3C7F00E0A19E /* WalkingRoutePts.swift */; };
+		DE804C7F287BA12F00E0A19E /* CalendarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE804C7E287BA12F00E0A19E /* CalendarUIView.swift */; };
 		DEA345632873C5D4006F4856 /* CreditCardFlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA345622873C5D4006F4856 /* CreditCardFlipView.swift */; };
 		DEA345652873C6B6006F4856 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA345642873C6B6006F4856 /* CreditCardView.swift */; };
 		DECD4146286FB30F005B99AD /* NetworkSharedBikesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD4145286FB30F005B99AD /* NetworkSharedBikesDataSource.swift */; };
@@ -91,7 +92,7 @@
 		DE087B5D285D61C3009F6477 /* GetAllSharedBikes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllSharedBikes.swift; sourceTree = "<group>"; };
 		DE087B5F285D70B4009F6477 /* SharedBikesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedBikesListViewModel.swift; sourceTree = "<group>"; };
 		DE087B62285D7A2C009F6477 /* SharedBikesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedBikesRepository.swift; sourceTree = "<group>"; };
-		DE2A555C2875FEE100A8429D /* BikeMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeMapViewModel.swift; path = GoSwift/Presentation/Map/BikeMapViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DE2A555C2875FEE100A8429D /* TransitMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitMapViewModel.swift; path = GoSwift/Presentation/Map/TransitMapViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DE2A555E28765FC400A8429D /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		DE2A5560287748FD00A8429D /* GetAllBartStations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllBartStations.swift; sourceTree = "<group>"; };
 		DE2A55622877493200A8429D /* GetAllWalkingRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllWalkingRoutes.swift; sourceTree = "<group>"; };
@@ -128,7 +129,7 @@
 		DE5338B1285AD9BE00BF1DD3 /* SharedBikeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedBikeService.swift; sourceTree = "<group>"; };
 		DE5338B3285AD9BE00BF1DD3 /* SysInfoDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysInfoDataClass.swift; sourceTree = "<group>"; };
 		DE5338B4285AD9BE00BF1DD3 /* SystemInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemInfo.swift; sourceTree = "<group>"; };
-		DE5338C1285BE2E400BF1DD3 /* BikeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeMapView.swift; sourceTree = "<group>"; };
+		DE5338C1285BE2E400BF1DD3 /* TransitMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitMapView.swift; sourceTree = "<group>"; };
 		DE5338C3285BF7D600BF1DD3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		DE5338C7285C041C00BF1DD3 /* BikeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeListView.swift; sourceTree = "<group>"; };
 		DE65CDF5285E521B00E658AF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -136,6 +137,7 @@
 		DE804C74287A328100E0A19E /* TransportationStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportationStation.swift; sourceTree = "<group>"; };
 		DE804C76287A382F00E0A19E /* BartStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartStations.swift; sourceTree = "<group>"; };
 		DE804C78287A3C7F00E0A19E /* WalkingRoutePts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingRoutePts.swift; sourceTree = "<group>"; };
+		DE804C7E287BA12F00E0A19E /* CalendarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUIView.swift; sourceTree = "<group>"; };
 		DEA345622873C5D4006F4856 /* CreditCardFlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFlipView.swift; sourceTree = "<group>"; };
 		DEA345642873C6B6006F4856 /* CreditCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
 		DECD4145286FB30F005B99AD /* NetworkSharedBikesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSharedBikesDataSource.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		DE5338C0285BE27F00BF1DD3 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE804C7D287B9E2D00E0A19E /* Calendar */,
 				DEA345612873C5BC006F4856 /* CreditCard */,
 				DECD414E2870E7B6005B99AD /* Chart */,
 				DE087B5B285D50A9009F6477 /* List */,
@@ -382,8 +385,8 @@
 		DE5338CE285C25BA00BF1DD3 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				DE2A555C2875FEE100A8429D /* BikeMapViewModel.swift */,
-				DE5338C1285BE2E400BF1DD3 /* BikeMapView.swift */,
+				DE2A555C2875FEE100A8429D /* TransitMapViewModel.swift */,
+				DE5338C1285BE2E400BF1DD3 /* TransitMapView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -423,6 +426,14 @@
 				DE2A55662877567500A8429D /* WalkingRoutesRepositoryProtocol.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DE804C7D287B9E2D00E0A19E /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				DE804C7E287BA12F00E0A19E /* CalendarUIView.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		DEA345612873C5BC006F4856 /* CreditCard */ = {
@@ -614,7 +625,7 @@
 				DE087B63285D7A2C009F6477 /* SharedBikesRepository.swift in Sources */,
 				DE2A55672877567500A8429D /* WalkingRoutesRepositoryProtocol.swift in Sources */,
 				DE5338B7285AD9BE00BF1DD3 /* StationType.swift in Sources */,
-				DE5338C2285BE2E400BF1DD3 /* BikeMapView.swift in Sources */,
+				DE5338C2285BE2E400BF1DD3 /* TransitMapView.swift in Sources */,
 				DE087B4D285D361F009F6477 /* Resolver.swift in Sources */,
 				DE087B43285D2AE6009F6477 /* SharedBikesRepositoryProtocol.swift in Sources */,
 				DE53387A285AD6C900BF1DD3 /* GoSwift.xcdatamodeld in Sources */,
@@ -627,7 +638,7 @@
 				DE087B41285D2A0D009F6477 /* GetAllSharedBikesUseCaseProtocol.swift in Sources */,
 				DE087B50285D3B07009F6477 /* SharedBikesDataSourceProtocol.swift in Sources */,
 				DE2A55652877564700A8429D /* BartStationRepositoryProtocol.swift in Sources */,
-				DE2A555D2875FEE100A8429D /* BikeMapViewModel.swift in Sources */,
+				DE2A555D2875FEE100A8429D /* TransitMapViewModel.swift in Sources */,
 				DE5338C4285BF7D600BF1DD3 /* TestView.swift in Sources */,
 				DE2A555F28765FC400A8429D /* MapAnnotation.swift in Sources */,
 				DE2A55692877BF6600A8429D /* BartStationsDataSourceProtocol.swift in Sources */,
@@ -636,6 +647,7 @@
 				DE5338BE285AD9BE00BF1DD3 /* SysInfoDataClass.swift in Sources */,
 				DE5338BC285AD9BE00BF1DD3 /* StationDataClass.swift in Sources */,
 				DE2A55632877493200A8429D /* GetAllWalkingRoutes.swift in Sources */,
+				DE804C7F287BA12F00E0A19E /* CalendarUIView.swift in Sources */,
 				DE2A55732877D0F700A8429D /* BartStationsDataSource.swift in Sources */,
 				DE3EF5F8285D7F4B00A8EE8E /* CombineSharedBikesDataSource.swift in Sources */,
 				DEA345652873C6B6006F4856 /* CreditCardView.swift in Sources */,

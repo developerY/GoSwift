@@ -15,6 +15,11 @@ class BartStationsDataSource : BartStationsDataSourceProtocol, ObservableObject,
     func getStationInfo() async throws -> [BartStation]{
         var bartStations : [BartStation] = []
         
+        //  center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
+        
+        let  station : BartStation  = BartStation(name: "Center", lat: 37.7749, lon: -122.4194)
+        bartStations.append(station)
+        
         let  station1 : BartStation  = BartStation(name: "Embarcadero", lat: 37.792683, lon: -122.397198)
         bartStations.append(station1)
         

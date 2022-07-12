@@ -6,7 +6,11 @@
 //
 
 import Foundation
-import Combine
+
+enum BikeNetworkAPIError: Error {
+    case netNotWork
+    case badData
+}
 
 // Concrete class that make async network call
 class NetworkSharedBikesDataSource : SharedBikesDataSourceProtocol, ObservableObject, Identifiable {
@@ -14,18 +18,34 @@ class NetworkSharedBikesDataSource : SharedBikesDataSourceProtocol, ObservableOb
     
     func  getSysInfo() async throws -> SysInfoDataClass {
         let url = stationURLComponents().url!
-        let (data, _) = try await URLSession.shared.data(from: url)
+        let (data, _) = try await URLSession.shared.data(from: url) //  Swift Structured Concurrency. Nonblocking
         let bikeStations = try JSONDecoder().decode(SystemInfo.self,from:data)
         return bikeStations.data
     }
     
     func getStationInfo() async throws -> [Station]{
         let url = stationURLComponents().url!
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw BikeNetworkAPIError.netNotWork
+        }
+        
+        guard let bikeStations = try? JSONDecoder().decode(StationInfo.self,from:data) else {
+            throw BikeNetworkAPIError.badData
+        }
+        
+        return bikeStations.data.stations
+    }
+    
+    func getStationInfoNotSafe() async throws -> [Station]{
+        let url = stationURLComponents().url!
         let (data, _) = try await URLSession.shared.data(from: url)
         let bikeStations = try JSONDecoder().decode(StationInfo.self,from:data)
         return bikeStations.data.stations
     }
-
+    
 }
 
 // MARK: URL

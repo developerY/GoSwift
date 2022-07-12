@@ -42,8 +42,8 @@ struct PlaceAnnotationView: View {
 
 
 
-struct BikeMapView: View {
-    @ObservedObject var viewModel: BikeMapViewModel
+struct TransitMapView: View {
+    @ObservedObject var viewModel: TransitMapViewModel
     @State var bikeStations :  [Station] = []
     
     @State private var selectedTransit : TransitType = .bike
@@ -63,9 +63,7 @@ struct BikeMapView: View {
     var body: some View {
         HStack {
             VStack {
-                
-                
-                NavigationStack {
+                NavigationStack(path: $transMapPath) { // new in iOS 16.0+ Beta (SwiftUI 4)
                     Map(coordinateRegion: .constant(region), annotationItems: viewModel.mapMarkers) { item in
                         MapAnnotation(coordinate: item.coordinate) {
                             ZStack {
@@ -73,8 +71,10 @@ struct BikeMapView: View {
                                 VStack {
                                     //Text("Rent")
                                     HStack {
-                                        NavigationLink(destination: BikeListDetailMapView(station: item.station as! Station)) {
-                                            Text("RENT")
+                                        if item.station is Station {
+                                            NavigationLink(destination: BikeListDetailMapView(station: item.station as! Station)) {
+                                                Text("RENT")
+                                            }
                                         }
                                     }
                                 }.offset(x:0,y:30)
@@ -101,14 +101,14 @@ struct BikeMapView: View {
     }
 }
 
-struct BikeMapView_Previews: PreviewProvider {
-    static var vm = BikeMapViewModel(
+struct TransitMapView_Previews: PreviewProvider {
+    static var vm = TransitMapViewModel(
         getAllSharedBikes: Resolver.shared.resolve(GetAllSharedBikesUseCaseProtocol.self),
         getAllBartStations: Resolver.shared.resolve(GetAllBartStationsUseCaseProtocol.self),
         getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self)
     )
     
     static var previews: some View {
-        BikeMapView(viewModel: vm)
+        TransitMapView(viewModel: vm)
     }
 }
