@@ -10,21 +10,23 @@ import SwiftUI
 struct CalendarUIView: View {
     @ObservedObject var viewModel: CalendarViewModel
     @State private var date = Date()
-    // @State private var dates: Set<DateComponents> = []
+    @State private var dates: Set<DateComponents> = []
     
     
         var body: some View {
-            if #available(iOS 13, *) { // for fun try iOS 17
-                DatePicker(
-                    "Start Date",
-                    selection: $date,
-                    displayedComponents: [.date, .hourAndMinute]
-                )
-                .datePickerStyle(.graphical)
-            } else {
-                VStack {
-                    Text("Why are you running such an old OS!")
-                    Text("UPDATE NOW!")
+            VStack {
+                /*
+                 MultiDatePicker("Start Date",selection: $dates, displayedComponents: .hourAndMinute)
+                 */
+                
+                if #available(iOS 13, *) { // for fun try iOS 17
+                    DatePicker("Start Date",selection: $date)
+                        //.datePickerStyle(.graphical)
+                } else {
+                    VStack {
+                        Text("Why are you running such an old OS!")
+                        Text("UPDATE NOW!")
+                    }
                 }
             }
         }

@@ -56,7 +56,8 @@ struct BikeListDetailMapView: View {
     @State private var showingCredits = false
     @State private var bikeNumPicker = 1
 
-    
+    @State private var date = Date()
+
     
     init(station:Station) {
         self.station = station
@@ -93,6 +94,18 @@ struct BikeListDetailMapView: View {
                     }
                 }
             }
+            
+            if #available(iOS 13, *) { // for fun try iOS 17
+                DatePicker("Date/Time",selection: $date)
+                    .padding()
+                    //.datePickerStyle(.graphical)
+            } else {
+                VStack {
+                    Text("Why are you running such an old OS!")
+                    Text("UPDATE NOW!")
+                }
+            }
+            
             
             Button("Pay Here") {//"\(station.name)") {
                 showingCredits.toggle()
