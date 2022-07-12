@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE074297287DD51C009CACFB /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE074296287DD51C009CACFB /* CalendarViewModel.swift */; };
 		DE087B41285D2A0D009F6477 /* GetAllSharedBikesUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087B40285D2A0D009F6477 /* GetAllSharedBikesUseCaseProtocol.swift */; };
 		DE087B43285D2AE6009F6477 /* SharedBikesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087B42285D2AE6009F6477 /* SharedBikesRepositoryProtocol.swift */; };
 		DE087B46285D2ED7009F6477 /* IocShareBikesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087B45285D2ED7009F6477 /* IocShareBikesContainer.swift */; };
@@ -84,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE074296287DD51C009CACFB /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		DE087B40285D2A0D009F6477 /* GetAllSharedBikesUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllSharedBikesUseCaseProtocol.swift; sourceTree = "<group>"; };
 		DE087B42285D2AE6009F6477 /* SharedBikesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedBikesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		DE087B45285D2ED7009F6477 /* IocShareBikesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IocShareBikesContainer.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				DE804C7E287BA12F00E0A19E /* CalendarUIView.swift */,
+				DE074296287DD51C009CACFB /* CalendarViewModel.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				DE804C77287A382F00E0A19E /* BartStations.swift in Sources */,
 				DE5338B9285AD9BE00BF1DD3 /* RentalMethod.swift in Sources */,
 				DE2A556F2877CAFF00A8429D /* WalkingRoutesRepository.swift in Sources */,
+				DE074297287DD51C009CACFB /* CalendarViewModel.swift in Sources */,
 				DECD4146286FB30F005B99AD /* NetworkSharedBikesDataSource.swift in Sources */,
 				DE2A556B2877BFEF00A8429D /* WalkingRoutesDataSourceProtocol.swift in Sources */,
 				DE087B63285D7A2C009F6477 /* SharedBikesRepository.swift in Sources */,
