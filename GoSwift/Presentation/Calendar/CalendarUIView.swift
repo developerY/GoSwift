@@ -28,10 +28,9 @@ struct CalendarUIView: View {
                 }
                 
                 List(calVM.events ?? [], id: \.self) { event in
-                    // "\(event.title) @ \(event.location ?? "No Location")")
-                    NavigationLink(event.title, value: event)
+                    NavigationLink("\(event.title) @ \(event.location ?? "No Location")", value: event)
                 }.navigationDestination(for: EKEvent.self){ event in
-                    DetailedCalendarUIView(path: $calPath,event: event )
+                    DetailedCalendarUIView(calVM: calVM, path: $calPath,event: event )
                 }
                
                 Text("Current event \(calVM.currentCalEvent.eventName)")

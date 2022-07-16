@@ -30,4 +30,11 @@ class CalendarViewModel: ObservableObject{
             try await currentCalEvent = getCurrentCalEvent.execute()
         }
     }
+    
+    @MainActor
+    func setCurrentEvent(myEvent: String, eventLoc: CLLocation) {
+        Task {
+            try await getCurrentCalEvent.execute(myEvent:myEvent, loc:eventLoc)
+        }
+    }
 }

@@ -10,7 +10,7 @@ import EventKit
 
 
 struct DetailedCalendarUIView: View {
-    //@ObservedObject var calVM: CalendarViewModel
+    @ObservedObject var calVM: CalendarViewModel
     @Binding var path: NavigationPath
     let event: EKEvent
     
@@ -29,12 +29,11 @@ struct DetailedCalendarUIView: View {
             }
             
             Button("Set Event \(path.count)") {
-                path.removeLast(1)
+                path.removeLast(1) // NOTE: new in iOS 16 programmatic navigation
                 // Navigate back and pass event
-                /*if let map_event = event.structuredLocation?.geoLocation?.coordinate {
-                    myEvent.location  = CLLocation(latitude: map_event.latitude, longitude: map_event.longitude)
+                if let map_event = event.structuredLocation?.geoLocation?.coordinate {
+                    calVM.setCurrentEvent(myEvent: event.title, eventLoc:CLLocation(latitude: map_event.latitude, longitude: map_event.longitude))
                 }
-                myEvent.eventName = event.title*/
             }
             
             Spacer()

@@ -58,14 +58,28 @@ struct TransitMapView: View {
         longitudinalMeters: 750
     )
     
+    /*@State private var regionVM = MKCoordinateRegion(
+     center: CLLocationCoordinate2D(latitude: viewModel.currentCalEvent.location.coordinate.longitude,
+     longitude: viewModel.currentCalEvent.location.coordinate.longitude),
+     latitudinalMeters: 750,
+     longitudinalMeters: 750
+     )*/
+    
+    private func regionVM() -> MKCoordinateRegion {
+        MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: viewModel.currentCalEvent.location.coordinate.latitude,
+                                           longitude: viewModel.currentCalEvent.location.coordinate.longitude),
+            latitudinalMeters: 750,
+            longitudinalMeters: 750
+        )
+    }
+    
     
     var body: some View {
         HStack {
             VStack {
                 NavigationStack(path: $transMapPath) { // new in iOS 16.0+ Beta (SwiftUI 4)
-                    Map(coordinateRegion: .constant(region
-
-                    ), annotationItems: viewModel.mapMarkers) { item in
+                    Map(coordinateRegion: .constant(regionVM()), annotationItems: viewModel.mapMarkers) { item in
                         MapAnnotation(coordinate: item.coordinate) {
                             ZStack {
                                 PlaceAnnotationView(iconType: selectedTransit, station: item.station)
@@ -83,8 +97,6 @@ struct TransitMapView: View {
                         }
                     }
                     
-                    Text("Current Event \(viewModel.currentCalEvent.eventName)")
-                    
                     Section{
                         Picker("Mode", selection: $selectedTransit) {
                             ForEach(TransitType.allCases,id :\.self) { mode in
@@ -98,7 +110,7 @@ struct TransitMapView: View {
                     }
                     
                 }
-                
+                Text("Current Event \(viewModel.currentCalEvent.eventName)")
             }
         }
     }
