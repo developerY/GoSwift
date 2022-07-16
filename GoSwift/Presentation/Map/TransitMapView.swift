@@ -43,7 +43,6 @@ struct PlaceAnnotationView: View {
 
 
 struct TransitMapView: View {
-    @EnvironmentObject var myEvent : MyEvent
     @ObservedObject var viewModel: TransitMapViewModel
     @State var bikeStations :  [Station] = []
     
@@ -97,7 +96,7 @@ struct TransitMapView: View {
                     }
                     
                 }
-                Text("Current Event \(myEvent.eventName)")
+                //Text("Current Event \(myEvent.eventName)")
             }
         }
     }

@@ -8,14 +8,9 @@
 import SwiftUI
 import EventKit
 
-class MyEvent : ObservableObject{
-    @Published var eventName:String = "SF Downtown"
-    @Published  var location:CLLocation = CLLocation.init(latitude: 37.22, longitude: -122.22)
-}
-
 
 struct ContentView: View {
-    @StateObject var myEvent = MyEvent()
+
     
     // @ObservedObject var sbViewModel:SharedBikeViewModel
     // Get viewmodel from DI
@@ -26,7 +21,9 @@ struct ContentView: View {
         getCurrentCalEvent: Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self)
     )
     
-    @StateObject var calVM = CalendarViewModel()
+    @StateObject var calVM = CalendarViewModel(
+        getCurrentCalEvent: Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self)
+    )
 
     
     
@@ -48,7 +45,7 @@ struct ContentView: View {
                         Label("charts", systemImage: "chart.xyaxis.line")
                     }
             }
-        }.environmentObject(myEvent)
+        }
     }
 }
 

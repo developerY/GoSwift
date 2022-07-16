@@ -11,10 +11,23 @@ import SwiftUI
 
 
 class CalendarViewModel: ObservableObject{
-    @ObservedObject var calRepo = CalendarRepo()
+    private let getCurrentCalEvent : GetCurrentCalEventUseCaseProtocol
+
+    // TODO: REMOVE THIS!
+    @ObservedObject var calRepo = CalendarRepo() // NOTE: calendar should never talk to the repo
     var events: [EKEvent]?
     
-    init() {
+    @Published private(set) var currentCalEvent : CurrentCalEvent = CurrentCalEvent(eventName: "NOT SET!", location: CLLocation.init(latitude: 37.0, longitude: -122.0))
+    
+    init(getCurrentCalEvent: GetCurrentCalEventUseCaseProtocol) {
+        self.getCurrentCalEvent = getCurrentCalEvent
         events = calRepo.loadEvents() ?? [EKEvent()]
+    }
+    
+    @MainActor
+    func getCurrentEvent() {
+        Task {
+            try await currentCalEvent = getCurrentCalEvent.execute()
+        }
     }
 }

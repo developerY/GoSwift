@@ -10,10 +10,8 @@ import EventKit
 
 
 struct DetailedCalendarUIView: View {
+    //@ObservedObject var calVM: CalendarViewModel
     let event: EKEvent
-    @EnvironmentObject var myEvent: MyEvent
-    
-    
     
     var body: some View {
         
@@ -22,19 +20,18 @@ struct DetailedCalendarUIView: View {
             
             
             VStack(alignment: .leading) {
-                Text("\(event)")
                 Text("Event Title \(event.title)")
                     .padding(.bottom, 2)
                 Text("Event Time \(event.startDate)")
                     .font(.headline)
-                Text("Current Event \(myEvent.eventName)")
+                //Text("Current Event \(calVM.currentCalEvent.eventName)")
             }
             
             Button("Set Event") {
-                if let map_event = event.structuredLocation?.geoLocation?.coordinate {
+                /*if let map_event = event.structuredLocation?.geoLocation?.coordinate {
                     myEvent.location  = CLLocation(latitude: map_event.latitude, longitude: map_event.longitude)
                 }
-                myEvent.eventName = event.title
+                myEvent.eventName = event.title*/
             }
             
             Spacer()
@@ -93,6 +90,7 @@ struct DetailedCalendarUIView_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        DetailedCalendarUIView(event: EKEvent(eventStore: eventStore))
+        //DetailedCalendarUIView(event: EKEvent(eventStore: eventStore))
+        Text("ON HOLD")
     }
 }

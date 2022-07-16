@@ -11,7 +11,6 @@ struct CalendarUIView: View {
     @ObservedObject var calVM: CalendarViewModel
     @State private var date = Date()
     @State private var dates: Set<DateComponents> = []
-    @EnvironmentObject var myEvent: MyEvent
     
     
     
@@ -34,7 +33,10 @@ struct CalendarUIView: View {
                             }
                         
                     }
+                Text("Current event \(calVM.currentCalEvent.eventName)")
                 
+            }.onAppear {
+                calVM.getCurrentEvent()
             }
         
             if #available(iOS 13, *) { // for fun try iOS 17
@@ -53,7 +55,7 @@ struct CalendarUIView: View {
 
 
 struct CalendarUIView_Previews: PreviewProvider {
-    static var vm = CalendarViewModel()
+    //static var vm = CalendarViewModel()
     // static var transVM = TransitMapViewModel()
     static var previews: some View {
         //CalendarUIView(calVM: vm, transVM: transVM)
