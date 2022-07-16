@@ -22,3 +22,8 @@ protocol GetAllWalkingRoutesUseCaseProtocol {
     // func execute() async -> Result<[StationInfo], SharedBikesError>
     func execute() async throws -> [WalkingRoutePts]
 }
+
+
+protocol GetCurrentCalEventUseCaseProtocol {
+    func execute() async throws -> CurrentCalEvent
+}

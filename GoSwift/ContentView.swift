@@ -6,8 +6,16 @@
 //
 //  dependence injection with needle
 import SwiftUI
+import EventKit
+
+class MyEvent : ObservableObject{
+    @Published var eventName:String = "SF Downtown"
+    @Published  var location:CLLocation = CLLocation.init(latitude: 37.22, longitude: -122.22)
+}
+
 
 struct ContentView: View {
+    @StateObject var myEvent = MyEvent()
     
     // @ObservedObject var sbViewModel:SharedBikeViewModel
     // Get viewmodel from DI
@@ -15,9 +23,11 @@ struct ContentView: View {
         getAllSharedBikes: Resolver.shared.resolve(GetAllSharedBikesUseCaseProtocol.self),
         getAllBartStations: Resolver.shared.resolve(GetAllBartStationsUseCaseProtocol.self),
         getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self)
+        //getCurrentCalEvent: Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self)
     )
     
     @StateObject var calVM = CalendarViewModel()
+
     
     
     var body: some View {
@@ -29,7 +39,7 @@ struct ContentView: View {
                     }.onAppear{
                         transMapVM.getTransStations(transType: TransitType.bike)
                     }
-                CalendarUIView(viewModel: calVM)
+                CalendarUIView(calVM: calVM)
                     .tabItem {
                         Label("events", systemImage: "calendar")
                     }
@@ -38,7 +48,7 @@ struct ContentView: View {
                         Label("charts", systemImage: "chart.xyaxis.line")
                     }
             }
-        }
+        }.environmentObject(myEvent)
     }
 }
 
@@ -47,6 +57,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        VStack {
+            Text("hi")
+            ContentView()
+        }
     }
 }

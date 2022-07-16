@@ -23,14 +23,18 @@ class TransitMapViewModel: ObservableObject{
     private let getAllSharedBikes : GetAllSharedBikesUseCaseProtocol
     private let getAllBartStations : GetAllBartStationsUseCaseProtocol
     private let getAllWalkingRoutes : GetAllWalkingRoutesUseCaseProtocol
+    //private let getCurrentCalEvent : GetCurrentCalEventUseCaseProtocol
     
     
     init(getAllSharedBikes: GetAllSharedBikesUseCaseProtocol,
          getAllBartStations: GetAllBartStationsUseCaseProtocol,
-         getAllWalkingRoutes: GetAllWalkingRoutesUseCaseProtocol){
+         getAllWalkingRoutes: GetAllWalkingRoutesUseCaseProtocol
+         //getCurrentCalEvent: GetCurrentCalEventUseCaseProtocol
+    ){
         self.getAllSharedBikes = getAllSharedBikes
         self.getAllBartStations = getAllBartStations
         self.getAllWalkingRoutes = getAllWalkingRoutes
+        //self.getCurrentCalEvent = getCurrentCalEvent
         // timerGetAllSharedBike()
     }
     
@@ -41,6 +45,7 @@ class TransitMapViewModel: ObservableObject{
     
     @Published private(set) var transStations : [any TransportationStation] = [] // any station boxed type erasure - new in Swift 5.7
     @Published private(set) var mapMarkers :  [MapAnnotationItem] = []
+    //@Published private(set) var currEvent: CurrentCalEvent
     
     private var bikeSearchTask: Task<Void, Never>? = nil
 

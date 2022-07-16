@@ -7,26 +7,14 @@
 
 import Foundation
 import EventKit
-import EventKitUI
+import SwiftUI
 
 
 class CalendarViewModel: ObservableObject{
-    var eventStore: EKEventStore
+    @ObservedObject var calRepo = CalendarRepo()
+    var events: [EKEvent]?
     
     init() {
-        eventStore = EKEventStore()
+        events = calRepo.loadEvents() ?? [EKEvent()]
     }
-    
-    func requestAccess() {
-        eventStore.requestAccess(to: .event) { (granted, error) in
-            if granted {
-                DispatchQueue.main.async {
-                    // load events
-                }
-            }
-            
-        }
-    }
-    
-    
 }

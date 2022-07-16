@@ -43,6 +43,7 @@ struct PlaceAnnotationView: View {
 
 
 struct TransitMapView: View {
+    @EnvironmentObject var myEvent : MyEvent
     @ObservedObject var viewModel: TransitMapViewModel
     @State var bikeStations :  [Station] = []
     
@@ -57,14 +58,15 @@ struct TransitMapView: View {
         latitudinalMeters: 750,
         longitudinalMeters: 750
     )
-
     
     
     var body: some View {
         HStack {
             VStack {
                 NavigationStack(path: $transMapPath) { // new in iOS 16.0+ Beta (SwiftUI 4)
-                    Map(coordinateRegion: .constant(region), annotationItems: viewModel.mapMarkers) { item in
+                    Map(coordinateRegion: .constant(region
+
+                    ), annotationItems: viewModel.mapMarkers) { item in
                         MapAnnotation(coordinate: item.coordinate) {
                             ZStack {
                                 PlaceAnnotationView(iconType: selectedTransit, station: item.station)
@@ -95,7 +97,7 @@ struct TransitMapView: View {
                     }
                     
                 }
-                //bikeSchedualPicker()
+                Text("Current Event \(myEvent.eventName)")
             }
         }
     }
@@ -106,6 +108,7 @@ struct TransitMapView_Previews: PreviewProvider {
         getAllSharedBikes: Resolver.shared.resolve(GetAllSharedBikesUseCaseProtocol.self),
         getAllBartStations: Resolver.shared.resolve(GetAllBartStationsUseCaseProtocol.self),
         getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self)
+        //getCurrentCalEvent : Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self)
     )
     
     static var previews: some View {
