@@ -6,39 +6,40 @@
 //
 
 import SwiftUI
+import EventKit
 
 struct CalendarUIView: View {
     @ObservedObject var calVM: CalendarViewModel
     @State private var date = Date()
     @State private var dates: Set<DateComponents> = []
     
+    @State private var calPath = NavigationPath()// New in iOS 16
+
     
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $calPath) {
             VStack {
                 /*
                  MultiDatePicker("Start Date",selection: $dates, displayedComponents: .hourAndMinute)
                  */
-                    if calVM.events?.isEmpty ?? true {
-                        Text("No Events")
-                    }
-                    List(calVM.events ?? [], id: \.self) { event in
-                        NavigationLink {
-                            DetailedCalendarUIView(event: event)
-                            } label: {
-                                VStack {
-                                    Text("\(event.title) @ \(event.location ?? "No Location")")
-                                }
-                            }
-                        
-                    }
+                if calVM.events?.isEmpty ?? true {
+                    Text("No Events")
+                }
+                
+                List(calVM.events ?? [], id: \.self) { event in
+                    // "\(event.title) @ \(event.location ?? "No Location")")
+                    NavigationLink(event.title, value: event)
+                }.navigationDestination(for: EKEvent.self){ event in
+                    DetailedCalendarUIView(path: $calPath,event: event )
+                }
+               
                 Text("Current event \(calVM.currentCalEvent.eventName)")
                 
             }.onAppear {
                 calVM.getCurrentEvent()
             }
-        
+            
             if #available(iOS 13, *) { // for fun try iOS 17
                 DatePicker("Start Date",selection: $date)
                     .datePickerStyle(.graphical)

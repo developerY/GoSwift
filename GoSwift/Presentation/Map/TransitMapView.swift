@@ -83,6 +83,8 @@ struct TransitMapView: View {
                         }
                     }
                     
+                    Text("Current Event \(viewModel.currentCalEvent.eventName)")
+                    
                     Section{
                         Picker("Mode", selection: $selectedTransit) {
                             ForEach(TransitType.allCases,id :\.self) { mode in
@@ -96,7 +98,7 @@ struct TransitMapView: View {
                     }
                     
                 }
-                //Text("Current Event \(myEvent.eventName)")
+                
             }
         }
     }

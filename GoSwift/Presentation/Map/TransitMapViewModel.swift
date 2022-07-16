@@ -45,7 +45,7 @@ class TransitMapViewModel: ObservableObject{
     
     @Published private(set) var transStations : [any TransportationStation] = [] // any station boxed type erasure - new in Swift 5.7
     @Published private(set) var mapMarkers :  [MapAnnotationItem] = []
-    //@Published private(set) var currEvent: CurrentCalEvent
+    @Published private(set) var currentCalEvent : CurrentCalEvent = CurrentCalEvent(eventName: "NOT SET!", location: CLLocation.init(latitude: 37.0, longitude: -122.0))
     
     private var bikeSearchTask: Task<Void, Never>? = nil
 
@@ -77,6 +77,8 @@ class TransitMapViewModel: ObservableObject{
                 mapMarkers.append(MapAnnotationItem(station: station, coordinate: CLLocationCoordinate2DMake(station.lat, station.lon)))
             }
             
+            
+            currentCalEvent = try! await getCurrentCalEvent.execute()//Execute the use case
             
             
             // constrained opaque type -- some Collection <any station> - new in Swfit 5.7

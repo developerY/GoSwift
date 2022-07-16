@@ -11,6 +11,7 @@ import EventKit
 
 struct DetailedCalendarUIView: View {
     //@ObservedObject var calVM: CalendarViewModel
+    @Binding var path: NavigationPath
     let event: EKEvent
     
     var body: some View {
@@ -27,7 +28,9 @@ struct DetailedCalendarUIView: View {
                 //Text("Current Event \(calVM.currentCalEvent.eventName)")
             }
             
-            Button("Set Event") {
+            Button("Set Event \(path.count)") {
+                path.removeLast(1)
+                // Navigate back and pass event
                 /*if let map_event = event.structuredLocation?.geoLocation?.coordinate {
                     myEvent.location  = CLLocation(latitude: map_event.latitude, longitude: map_event.longitude)
                 }
