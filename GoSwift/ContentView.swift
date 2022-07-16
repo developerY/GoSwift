@@ -22,8 +22,8 @@ struct ContentView: View {
     @StateObject var transMapVM = TransitMapViewModel(
         getAllSharedBikes: Resolver.shared.resolve(GetAllSharedBikesUseCaseProtocol.self),
         getAllBartStations: Resolver.shared.resolve(GetAllBartStationsUseCaseProtocol.self),
-        getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self)
-        //getCurrentCalEvent: Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self)
+        getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self),
+        getCurrentCalEvent: Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self)
     )
     
     @StateObject var calVM = CalendarViewModel()

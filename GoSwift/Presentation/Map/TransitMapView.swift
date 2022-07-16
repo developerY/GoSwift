@@ -107,8 +107,8 @@ struct TransitMapView_Previews: PreviewProvider {
     static var vm = TransitMapViewModel(
         getAllSharedBikes: Resolver.shared.resolve(GetAllSharedBikesUseCaseProtocol.self),
         getAllBartStations: Resolver.shared.resolve(GetAllBartStationsUseCaseProtocol.self),
-        getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self)
-        //getCurrentCalEvent : Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self)
+        getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self),
+        getCurrentCalEvent : Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self)
     )
     
     static var previews: some View {

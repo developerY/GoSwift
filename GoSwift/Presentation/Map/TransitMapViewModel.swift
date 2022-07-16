@@ -23,18 +23,18 @@ class TransitMapViewModel: ObservableObject{
     private let getAllSharedBikes : GetAllSharedBikesUseCaseProtocol
     private let getAllBartStations : GetAllBartStationsUseCaseProtocol
     private let getAllWalkingRoutes : GetAllWalkingRoutesUseCaseProtocol
-    //private let getCurrentCalEvent : GetCurrentCalEventUseCaseProtocol
+    private let getCurrentCalEvent : GetCurrentCalEventUseCaseProtocol
     
     
     init(getAllSharedBikes: GetAllSharedBikesUseCaseProtocol,
          getAllBartStations: GetAllBartStationsUseCaseProtocol,
-         getAllWalkingRoutes: GetAllWalkingRoutesUseCaseProtocol
-         //getCurrentCalEvent: GetCurrentCalEventUseCaseProtocol
+         getAllWalkingRoutes: GetAllWalkingRoutesUseCaseProtocol,
+         getCurrentCalEvent: GetCurrentCalEventUseCaseProtocol
     ){
         self.getAllSharedBikes = getAllSharedBikes
         self.getAllBartStations = getAllBartStations
         self.getAllWalkingRoutes = getAllWalkingRoutes
-        //self.getCurrentCalEvent = getCurrentCalEvent
+        self.getCurrentCalEvent = getCurrentCalEvent
         // timerGetAllSharedBike()
     }
     

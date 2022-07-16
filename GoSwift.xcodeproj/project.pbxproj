@@ -19,6 +19,11 @@
 		DE195C16287FC4290002B011 /* CalendarRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE195C15287FC4290002B011 /* CalendarRepo.swift */; };
 		DE195C1A2881CB400002B011 /* DetailedCalendarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE195C192881CB400002B011 /* DetailedCalendarUIView.swift */; };
 		DE195C1C2881DE430002B011 /* CurrentCalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE195C1B2881DE430002B011 /* CurrentCalEvent.swift */; };
+		DE195C1E288251440002B011 /* CurrentCalEventDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE195C1D288251440002B011 /* CurrentCalEventDataSource.swift */; };
+		DE195C20288251DF0002B011 /* CurrentCalEventDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE195C1F288251DF0002B011 /* CurrentCalEventDataSourceProtocol.swift */; };
+		DE195C222882579C0002B011 /* CurrentCalEventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE195C212882579C0002B011 /* CurrentCalEventRepository.swift */; };
+		DE195C24288258070002B011 /* CurrentCalEventRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE195C23288258070002B011 /* CurrentCalEventRepositoryProtocol.swift */; };
+		DE195C26288258CF0002B011 /* GetCurrentCalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE195C25288258CF0002B011 /* GetCurrentCalEvent.swift */; };
 		DE2A555D2875FEE100A8429D /* TransitMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A555C2875FEE100A8429D /* TransitMapViewModel.swift */; };
 		DE2A555F28765FC400A8429D /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A555E28765FC400A8429D /* MapAnnotation.swift */; };
 		DE2A5561287748FD00A8429D /* GetAllBartStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A5560287748FD00A8429D /* GetAllBartStations.swift */; };
@@ -100,6 +105,11 @@
 		DE195C15287FC4290002B011 /* CalendarRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRepo.swift; sourceTree = "<group>"; };
 		DE195C192881CB400002B011 /* DetailedCalendarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCalendarUIView.swift; sourceTree = "<group>"; };
 		DE195C1B2881DE430002B011 /* CurrentCalEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCalEvent.swift; sourceTree = "<group>"; };
+		DE195C1D288251440002B011 /* CurrentCalEventDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCalEventDataSource.swift; sourceTree = "<group>"; };
+		DE195C1F288251DF0002B011 /* CurrentCalEventDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCalEventDataSourceProtocol.swift; sourceTree = "<group>"; };
+		DE195C212882579C0002B011 /* CurrentCalEventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCalEventRepository.swift; sourceTree = "<group>"; };
+		DE195C23288258070002B011 /* CurrentCalEventRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCalEventRepositoryProtocol.swift; sourceTree = "<group>"; };
+		DE195C25288258CF0002B011 /* GetCurrentCalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentCalEvent.swift; sourceTree = "<group>"; };
 		DE2A555C2875FEE100A8429D /* TransitMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitMapViewModel.swift; path = GoSwift/Presentation/Map/TransitMapViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DE2A555E28765FC400A8429D /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		DE2A5560287748FD00A8429D /* GetAllBartStations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllBartStations.swift; sourceTree = "<group>"; };
@@ -220,6 +230,7 @@
 			children = (
 				DE087B5D285D61C3009F6477 /* GetAllSharedBikes.swift */,
 				DE2A55622877493200A8429D /* GetAllWalkingRoutes.swift */,
+				DE195C25288258CF0002B011 /* GetCurrentCalEvent.swift */,
 				DE2A5560287748FD00A8429D /* GetAllBartStations.swift */,
 			);
 			path = UseCases;
@@ -231,6 +242,7 @@
 				DE087B62285D7A2C009F6477 /* SharedBikesRepository.swift */,
 				DE2A556C2877C43700A8429D /* BartStationsRepository.swift */,
 				DE2A556E2877CAFF00A8429D /* WalkingRoutesRepository.swift */,
+				DE195C212882579C0002B011 /* CurrentCalEventRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -376,6 +388,7 @@
 			children = (
 				DECD41482870A1EF005B99AD /* CoreData */,
 				DE5338CC285C258100BF1DD3 /* NetworkSource */,
+				DE195C1D288251440002B011 /* CurrentCalEventDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -414,6 +427,7 @@
 				DE087B4F285D3B07009F6477 /* SharedBikesDataSourceProtocol.swift */,
 				DE2A55682877BF6600A8429D /* BartStationsDataSourceProtocol.swift */,
 				DE2A556A2877BFEF00A8429D /* WalkingRoutesDataSourceProtocol.swift */,
+				DE195C1F288251DF0002B011 /* CurrentCalEventDataSourceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -433,6 +447,7 @@
 				DE087B42285D2AE6009F6477 /* SharedBikesRepositoryProtocol.swift */,
 				DE2A55642877564700A8429D /* BartStationRepositoryProtocol.swift */,
 				DE2A55662877567500A8429D /* WalkingRoutesRepositoryProtocol.swift */,
+				DE195C23288258070002B011 /* CurrentCalEventRepositoryProtocol.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -638,11 +653,13 @@
 				DE087B63285D7A2C009F6477 /* SharedBikesRepository.swift in Sources */,
 				DE2A55672877567500A8429D /* WalkingRoutesRepositoryProtocol.swift in Sources */,
 				DE5338B7285AD9BE00BF1DD3 /* StationType.swift in Sources */,
+				DE195C24288258070002B011 /* CurrentCalEventRepositoryProtocol.swift in Sources */,
 				DE5338C2285BE2E400BF1DD3 /* TransitMapView.swift in Sources */,
 				DE195C16287FC4290002B011 /* CalendarRepo.swift in Sources */,
 				DE087B4D285D361F009F6477 /* Resolver.swift in Sources */,
 				DE087B43285D2AE6009F6477 /* SharedBikesRepositoryProtocol.swift in Sources */,
 				DE53387A285AD6C900BF1DD3 /* GoSwift.xcdatamodeld in Sources */,
+				DE195C222882579C0002B011 /* CurrentCalEventRepository.swift in Sources */,
 				DE087B46285D2ED7009F6477 /* IocShareBikesContainer.swift in Sources */,
 				DE2A5561287748FD00A8429D /* GetAllBartStations.swift in Sources */,
 				DE5338B6285AD9BE00BF1DD3 /* RentalUris.swift in Sources */,
@@ -662,12 +679,15 @@
 				DE5338BA285AD9BE00BF1DD3 /* JSONSchemaSupport.swift in Sources */,
 				DE5338BE285AD9BE00BF1DD3 /* SysInfoDataClass.swift in Sources */,
 				DE5338BC285AD9BE00BF1DD3 /* StationDataClass.swift in Sources */,
+				DE195C1E288251440002B011 /* CurrentCalEventDataSource.swift in Sources */,
 				DE2A55632877493200A8429D /* GetAllWalkingRoutes.swift in Sources */,
 				DE804C7F287BA12F00E0A19E /* CalendarUIView.swift in Sources */,
 				DE2A55732877D0F700A8429D /* BartStationsDataSource.swift in Sources */,
 				DE3EF5F8285D7F4B00A8EE8E /* CombineSharedBikesDataSource.swift in Sources */,
 				DEA345652873C6B6006F4856 /* CreditCardView.swift in Sources */,
+				DE195C26288258CF0002B011 /* GetCurrentCalEvent.swift in Sources */,
 				DE533875285AD6C900BF1DD3 /* GoSwiftApp.swift in Sources */,
+				DE195C20288251DF0002B011 /* CurrentCalEventDataSourceProtocol.swift in Sources */,
 				DE804C79287A3C7F00E0A19E /* WalkingRoutePts.swift in Sources */,
 				DE5338B8285AD9BE00BF1DD3 /* StationInfo.swift in Sources */,
 				DE53387C285AD6C900BF1DD3 /* CoreDataView.swift in Sources */,

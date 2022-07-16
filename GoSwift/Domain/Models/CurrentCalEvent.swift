@@ -8,7 +8,8 @@
 import Foundation
 import CoreLocation
 
-struct CurrentCalEvent {
-    var eventName:String = "SF Downtown"
-    var location:CLLocation = CLLocation.init(latitude: 37.22, longitude: -122.22)
+struct CurrentCalEvent : Identifiable{
+    let id = UUID()
+    var eventName:String
+    var location:CLLocation
 }

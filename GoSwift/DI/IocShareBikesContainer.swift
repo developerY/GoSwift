@@ -25,6 +25,10 @@ func buildContainer() -> Container {
         return WalkingRoutesDataSource()
     }.inObjectScope(.container)
     
+    container.register(CurrentCalEventDataSourceProtocol.self) { _ in
+        return CurrentCalEventDataSource()
+    }.inObjectScope(.container)
+    
     container.register(SharedBikesRepositoryProtocol.self) { _ in
         return SharedBikesRepository(sharedBikesDataSource: container.resolve(SharedBikesDataSourceProtocol.self)!)
     }.inObjectScope(.container)
@@ -35,6 +39,11 @@ func buildContainer() -> Container {
     
     container.register(WalkingRoutesRepositoryProtocol.self) { _ in
         return WalkingRoutesRepository(walkingRoutesDataSource: container.resolve(WalkingRoutesDataSourceProtocol.self)!)
+    }.inObjectScope(.container)
+    
+    
+    container.register(CurrentCalEventRepositoryProtocol.self) { _ in
+        return CurrentCalEventRepository(currentCalEventDataSource: container.resolve(CurrentCalEventDataSourceProtocol.self)!)
     }.inObjectScope(.container)
     
     container.register(GetAllSharedBikesUseCaseProtocol.self) { _ in
@@ -48,6 +57,10 @@ func buildContainer() -> Container {
     
     container.register(GetAllWalkingRoutesUseCaseProtocol.self) { _ in
         return GetAllWalkingRoutes(walkingRoutesRepo: container.resolve(WalkingRoutesRepositoryProtocol.self)!)
+    }.inObjectScope(.container)
+    
+    container.register(GetCurrentCalEventUseCaseProtocol.self) { _ in
+        return GetCurrentCalEvent(currentCalEventRepo: container.resolve(CurrentCalEventRepositoryProtocol.self)!)
     }.inObjectScope(.container)
     
     return container

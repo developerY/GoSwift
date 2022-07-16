@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CoreLocation
 
 protocol GetAllSharedBikesUseCaseProtocol {
     // func execute() async -> Result<[StationInfo], SharedBikesError>
@@ -26,4 +27,5 @@ protocol GetAllWalkingRoutesUseCaseProtocol {
 
 protocol GetCurrentCalEventUseCaseProtocol {
     func execute() async throws -> CurrentCalEvent
+    func execute(myEvent: String, loc :CLLocation) async throws
 }
