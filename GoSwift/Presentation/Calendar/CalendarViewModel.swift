@@ -14,7 +14,7 @@ class CalendarViewModel: ObservableObject{
     private let getCurrentCalEvent : GetCurrentCalEventUseCaseProtocol
 
     // TODO: REMOVE THIS!
-    @ObservedObject var calRepo = CalendarRepo() // NOTE: calendar should never talk to the repo
+    @ObservedObject var calRepo = CalendarRepo() // NOTE: calendar should never talk to the repo (Use Case Protocal)
     var events: [EKEvent]?
     
     @Published private(set) var currentCalEvent : CurrentCalEvent = CurrentCalEvent(eventName: "NOT SET!", location: CLLocation.init(latitude: 37.0, longitude: -122.0))

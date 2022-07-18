@@ -25,7 +25,7 @@ class CalendarRepo: ObservableObject {
         let oneDayAgo = calendar.date(byAdding: oneDayAgoComponents, to: Date(), wrappingComponents: false)
         // Create the end date components
         var oneWeekFromNowComponents = DateComponents()
-        oneWeekFromNowComponents.day = +7
+        oneWeekFromNowComponents.year = +1
         let oneWeekFromNow = calendar.date(byAdding: oneWeekFromNowComponents, to: Date(), wrappingComponents: false)
         
         var predicate: NSPredicate? = nil
@@ -34,8 +34,11 @@ class CalendarRepo: ObservableObject {
         }
         
         if let aPredicate = predicate {
-            events = eventStore.events(matching: aPredicate)
+            events = eventStore.events(matching: aPredicate).filter{
+                $0.location?.isEmpty == false
+            }
         }
+        
         
         return events
         

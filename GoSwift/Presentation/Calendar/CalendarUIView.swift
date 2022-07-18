@@ -39,7 +39,7 @@ struct CalendarUIView: View {
                 calVM.getCurrentEvent()
             }
             
-            if #available(iOS 13, *) { // for fun try iOS 17
+            /*if #available(iOS 13, *) { // for fun try iOS 17
                 DatePicker("Start Date",selection: $date)
                     .datePickerStyle(.graphical)
                 
@@ -48,7 +48,7 @@ struct CalendarUIView: View {
                     Text("Why are you running such an old OS!")
                     Text("UPDATE NOW!")
                 }
-            }
+            }*/
         }
     }
 }

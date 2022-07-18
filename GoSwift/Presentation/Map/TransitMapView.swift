@@ -51,13 +51,6 @@ struct TransitMapView: View {
     
     @State private var transMapPath = NavigationPath()
     
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 37.7749,
-                                       longitude: -122.4194),
-        latitudinalMeters: 750,
-        longitudinalMeters: 750
-    )
-    
     /*@State private var regionVM = MKCoordinateRegion(
      center: CLLocationCoordinate2D(latitude: viewModel.currentCalEvent.location.coordinate.longitude,
      longitude: viewModel.currentCalEvent.location.coordinate.longitude),
