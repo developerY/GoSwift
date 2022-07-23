@@ -21,6 +21,10 @@ class CalendarViewModel: ObservableObject{
     
     init(getCurrentCalEvent: GetCurrentCalEventUseCaseProtocol) {
         self.getCurrentCalEvent = getCurrentCalEvent
+        calRepo.getPermission()
+    }
+    
+    func loadEvents() {
         events = calRepo.loadEvents() ?? [EKEvent()]
     }
     

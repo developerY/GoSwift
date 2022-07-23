@@ -20,6 +20,9 @@ struct CalendarUIView: View {
     var body: some View {
         NavigationStack(path: $calPath) {
             VStack {
+                Button("Get Events"){
+                    calVM.loadEvents()
+                }
                 /*
                  MultiDatePicker("Start Date",selection: $dates, displayedComponents: .hourAndMinute)
                  */

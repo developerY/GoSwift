@@ -18,6 +18,17 @@ class CalendarRepo: ObservableObject {
     
     @Published var events: [EKEvent]?
     
+    func getPermission(){
+        eventStore.requestAccess(to: .event) { (granted, error) in
+            if (granted) && (error == nil) {
+                print("CAL ACCESS granted \(granted)")
+            }
+            else{
+                print("CAL ACCESS failed to save event with error : \(String(describing: error)) or access not granted")
+            }
+        }
+    }
+    
     func loadEvents() -> [EKEvent]? {
         // Create the start date components
         var oneDayAgoComponents = DateComponents()
