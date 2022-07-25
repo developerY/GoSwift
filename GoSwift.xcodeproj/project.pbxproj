@@ -74,6 +74,7 @@
 		DE8A7197288DD9B1001355BC /* GoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7196288DD9B1001355BC /* GoSwiftTests.swift */; };
 		DE8A71A1288DD9B1001355BC /* GoSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A71A0288DD9B1001355BC /* GoSwiftUITests.swift */; };
 		DE8A71A3288DD9B1001355BC /* GoSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A71A2288DD9B1001355BC /* GoSwiftUITestsLaunchTests.swift */; };
+		DEF5F462288E2785004447E8 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = DEF5F461288E2785004447E8 /* ReadMe.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,7 @@
 		DE8A719C288DD9B1001355BC /* GoSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8A71A0288DD9B1001355BC /* GoSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoSwiftUITests.swift; sourceTree = "<group>"; };
 		DE8A71A2288DD9B1001355BC /* GoSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DEF5F461288E2785004447E8 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +458,7 @@
 		DE8A7174288DD9B0001355BC = {
 			isa = PBXGroup;
 			children = (
+				DEF5F461288E2785004447E8 /* ReadMe.md */,
 				DE8A717F288DD9B0001355BC /* GoSwift */,
 				DE8A7195288DD9B1001355BC /* GoSwiftTests */,
 				DE8A719F288DD9B1001355BC /* GoSwiftUITests */,
@@ -479,14 +482,14 @@
 			children = (
 				DE172C41288E19C900D7E619 /* Info.plist */,
 				DE172C3D288E19B600D7E619 /* GoSwift.entitlements */,
-				DE8A7180288DD9B0001355BC /* GoSwiftApp.swift */,
-				DE8A7182288DD9B0001355BC /* ContentView.swift */,
 				DE172BCA288E158B00D7E619 /* Data */,
 				DE172BB0288E158B00D7E619 /* DI */,
 				DE172BDB288E158B00D7E619 /* Domain */,
 				DE172BB3288E158B00D7E619 /* Presentation */,
 				DE8A7184288DD9B1001355BC /* Assets.xcassets */,
+				DE8A7180288DD9B0001355BC /* GoSwiftApp.swift */,
 				DE8A7189288DD9B1001355BC /* Persistence.swift */,
+				DE8A7182288DD9B0001355BC /* ContentView.swift */,
 				DE8A718B288DD9B1001355BC /* GoSwift.xcdatamodeld */,
 				DE8A7186288DD9B1001355BC /* Preview Content */,
 			);
@@ -632,6 +635,7 @@
 			files = (
 				DE8A7188288DD9B1001355BC /* Preview Assets.xcassets in Resources */,
 				DE8A7185288DD9B1001355BC /* Assets.xcassets in Resources */,
+				DEF5F462288E2785004447E8 /* ReadMe.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

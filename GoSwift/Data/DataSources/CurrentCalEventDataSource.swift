@@ -12,7 +12,7 @@ import CoreLocation
 
 // Concrete class that make async network call
 class CurrentCalEventDataSource : CurrentCalEventDataSourceProtocol, ObservableObject, Identifiable {
-    let myEventLoc :CLLocation = CLLocation.init(latitude: 37.22, longitude: -122.22)
+    let myEventLoc :CLLocation = CLLocation.init(latitude: 37.773972, longitude: -122.431297)
     var currEvnt : CurrentCalEvent
     init() {
         currEvnt  = CurrentCalEvent(eventName: "SF Downtown",location:myEventLoc)

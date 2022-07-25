@@ -22,7 +22,7 @@ struct ContentView: View {
         getCurrentCalEvent: Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self)
     )
     
-    
+    @StateObject var healthVM = HealthViewModel()
     
     var body: some View {
         VStack() {
@@ -37,7 +37,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("events", systemImage: "calendar")
                     }
-                BikeChartView()
+                BikeChartView(healthVM: healthVM)
                     .tabItem {
                         Label("charts", systemImage: "chart.xyaxis.line")
                     }

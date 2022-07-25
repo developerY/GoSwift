@@ -15,16 +15,16 @@ class BikeChartViewModel: ObservableObject{
         
     @MainActor
     func runRandom() { // async - Swift runtime an decide to execute on non-main thread
-        Task {
+        /*Task {
             for _ in 1...100 {
                 self.motion = Double.random(in: 1...100)
                 print("num \(motion)")
                 try await Task.sleep(nanoseconds: 2_000_000_000)
             }
-        }
-        }
-
+        }*/
     }
+
+}
 
 /*
  Given to the view

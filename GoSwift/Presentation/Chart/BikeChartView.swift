@@ -18,12 +18,13 @@ struct ChartValues: Identifiable {
 }
 
 struct BikeChartView: View {
+    @StateObject var healthVM : HealthViewModel
     
     // The only copy.  Pass if needed
     @StateObject var vm = BikeChartViewModel()
     
     let timer =  Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-
+    
     
     var bikeChartValues: [ChartValues] =
     [
@@ -33,44 +34,50 @@ struct BikeChartView: View {
     ]
     
     var body: some View {
-        ZStack {
-            
-            Chart{
-                ForEach(bikeChartValues) {
-                    (chart) in
-                    BarMark(x:.value("Bike Info", chart.name),
-                            y:.value("Bike Info", chart.value))
-                    .foregroundStyle(chart.color)
-                    
-                    
-                    /*LineMark(x:.value("Bike Info", chart.name),
-                             y:.value("Bike Info", chart.value))
-                     .foregroundStyle(chart.color)*/
-
-                }
-            }.padding()
-            
-            
-            VStack {
-                Gauge(value:vm.motion, in: 0...100){
-                    Text("   Daily Motion  ")
-                }//.onReceive(timer){_ in withAnimation(amount += amount)}
-                
-                .padding([.top], 40)
-                .scaleEffect(3)
-                .gaugeStyle(.accessoryCircular).tint(.cyan)
-                .shadow(radius: 5)
-                
-                Spacer()
+        VStack {
+            Button("Get steps ") {
+                healthVM.getSteps()
             }
-        }.onAppear() {
-            vm.runRandom()
+            ZStack {
+            
+                Chart{
+                    ForEach(bikeChartValues) {
+                        (chart) in
+                        BarMark(x:.value("Bike Info", chart.name),
+                                y:.value("Bike Info", chart.value))
+                        .foregroundStyle(chart.color)
+                        
+                        
+                        /*LineMark(x:.value("Bike Info", chart.name),
+                         y:.value("Bike Info", chart.value))
+                         .foregroundStyle(chart.color)*/
+                        
+                    }
+                }.padding()
+                
+                
+                VStack {
+                    Gauge(value:vm.motion, in: 0...100){
+                        Text("   Daily Motion  ")
+                    }//.onReceive(timer){_ in withAnimation(amount += amount)}
+                    
+                    .padding([.top], 40)
+                    .scaleEffect(3)
+                    .gaugeStyle(.accessoryCircular).tint(.cyan)
+                    .shadow(radius: 5)
+                    
+                    Spacer()
+                }
+            }.onAppear() {
+                vm.runRandom()
+            }
         }
     }
 }
 
 struct BikeChartView_Previews: PreviewProvider {
+    static let healthVM = HealthViewModel()
     static var previews: some View {
-        BikeChartView()
+        BikeChartView(healthVM: healthVM)
     }
 }

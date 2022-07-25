@@ -12,7 +12,7 @@ import SwiftUI
 class HealthViewModel: ObservableObject{
     
     // TODO: REMOVE THIS!
-    @ObservedObject var healthRepo = HealthRepo() // NOTE: calendar should never talk to the repo (Use Case Protocal)
+    @ObservedObject var healthRepo = HealthRepo() // NOTE: HealthViewModel should never talk to the repo (Use Case Protocal)
     
     init() {
         Task{
@@ -22,6 +22,10 @@ class HealthViewModel: ObservableObject{
                 print("\(error)")
             }
         }
+    }
+    
+    func getSteps() {
+        healthRepo.getSteps()
     }
     
 }
