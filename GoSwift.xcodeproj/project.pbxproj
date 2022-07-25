@@ -1,0 +1,1101 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE172C00288E158B00D7E619 /* IocShareBikesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB1288E158B00D7E619 /* IocShareBikesContainer.swift */; };
+		DE172C01288E158B00D7E619 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB2288E158B00D7E619 /* Resolver.swift */; };
+		DE172C02288E158B00D7E619 /* CalendarRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB5288E158B00D7E619 /* CalendarRepo.swift */; };
+		DE172C03288E158B00D7E619 /* CalendarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB6288E158B00D7E619 /* CalendarUIView.swift */; };
+		DE172C04288E158B00D7E619 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB7288E158B00D7E619 /* CalendarViewModel.swift */; };
+		DE172C05288E158B00D7E619 /* DetailedCalendarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB8288E158B00D7E619 /* DetailedCalendarUIView.swift */; };
+		DE172C06288E158B00D7E619 /* HealthRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBA288E158B00D7E619 /* HealthRepo.swift */; };
+		DE172C07288E158B00D7E619 /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBB288E158B00D7E619 /* HealthViewModel.swift */; };
+		DE172C08288E158B00D7E619 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBC288E158B00D7E619 /* HealthView.swift */; };
+		DE172C09288E158B00D7E619 /* BikeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBE288E158B00D7E619 /* BikeChartView.swift */; };
+		DE172C0A288E158B00D7E619 /* BikeChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBF288E158B00D7E619 /* BikeChartViewModel.swift */; };
+		DE172C0B288E158B00D7E619 /* TransitMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BC1288E158B00D7E619 /* TransitMapView.swift */; };
+		DE172C0C288E158B00D7E619 /* TransitMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BC2288E158B00D7E619 /* TransitMapViewModel.swift */; };
+		DE172C0D288E158B00D7E619 /* BikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BC4288E158B00D7E619 /* BikeListView.swift */; };
+		DE172C0E288E158B00D7E619 /* SharedBikesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BC5288E158B00D7E619 /* SharedBikesListViewModel.swift */; };
+		DE172C0F288E158B00D7E619 /* BikeListDetailMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BC6288E158B00D7E619 /* BikeListDetailMapView.swift */; };
+		DE172C10288E158B00D7E619 /* CreditCardFlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BC8288E158B00D7E619 /* CreditCardFlipView.swift */; };
+		DE172C11288E158B00D7E619 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BC9288E158B00D7E619 /* CreditCardView.swift */; };
+		DE172C12288E158B00D7E619 /* CurrentCalEventDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BCC288E158B00D7E619 /* CurrentCalEventDataSource.swift */; };
+		DE172C13288E158B00D7E619 /* CombineSharedBikesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BCF288E158B00D7E619 /* CombineSharedBikesDataSource.swift */; };
+		DE172C14288E158B00D7E619 /* SharedBikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BD0288E158B00D7E619 /* SharedBikeService.swift */; };
+		DE172C15288E158B00D7E619 /* WalkingRoutesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BD1288E158B00D7E619 /* WalkingRoutesDataSource.swift */; };
+		DE172C16288E158B00D7E619 /* NetworkSharedBikesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BD2288E158B00D7E619 /* NetworkSharedBikesDataSource.swift */; };
+		DE172C17288E158B00D7E619 /* BartStationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BD3288E158B00D7E619 /* BartStationsDataSource.swift */; };
+		DE172C18288E158B00D7E619 /* WalkingRoutesDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BD7288E158B00D7E619 /* WalkingRoutesDataSourceProtocol.swift */; };
+		DE172C19288E158B00D7E619 /* SharedBikesDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BD8288E158B00D7E619 /* SharedBikesDataSourceProtocol.swift */; };
+		DE172C1A288E158B00D7E619 /* CurrentCalEventDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BD9288E158B00D7E619 /* CurrentCalEventDataSourceProtocol.swift */; };
+		DE172C1B288E158B00D7E619 /* BartStationsDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BDA288E158B00D7E619 /* BartStationsDataSourceProtocol.swift */; };
+		DE172C1C288E158B00D7E619 /* CurrentCalEventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BDD288E158B00D7E619 /* CurrentCalEventRepository.swift */; };
+		DE172C1D288E158B00D7E619 /* WalkingRoutesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BDE288E158B00D7E619 /* WalkingRoutesRepository.swift */; };
+		DE172C1E288E158B00D7E619 /* SharedBikesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BDF288E158B00D7E619 /* SharedBikesRepository.swift */; };
+		DE172C1F288E158B00D7E619 /* BartStationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BE0288E158B00D7E619 /* BartStationsRepository.swift */; };
+		DE172C20288E158B00D7E619 /* WalkingRoutePts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BE2288E158B00D7E619 /* WalkingRoutePts.swift */; };
+		DE172C21288E158B00D7E619 /* RentalUris.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BE4288E158B00D7E619 /* RentalUris.swift */; };
+		DE172C22288E158B00D7E619 /* StationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BE5288E158B00D7E619 /* StationType.swift */; };
+		DE172C23288E158B00D7E619 /* StationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BE6288E158B00D7E619 /* StationInfo.swift */; };
+		DE172C24288E158B00D7E619 /* RentalMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BE7288E158B00D7E619 /* RentalMethod.swift */; };
+		DE172C25288E158B00D7E619 /* JSONSchemaSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BE8288E158B00D7E619 /* JSONSchemaSupport.swift */; };
+		DE172C26288E158B00D7E619 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BE9288E158B00D7E619 /* Station.swift */; };
+		DE172C27288E158B00D7E619 /* StationDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BEA288E158B00D7E619 /* StationDataClass.swift */; };
+		DE172C28288E158B00D7E619 /* CurrentCalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BEB288E158B00D7E619 /* CurrentCalEvent.swift */; };
+		DE172C29288E158B00D7E619 /* TransportationStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BEC288E158B00D7E619 /* TransportationStation.swift */; };
+		DE172C2A288E158B00D7E619 /* SysInfoDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BEE288E158B00D7E619 /* SysInfoDataClass.swift */; };
+		DE172C2B288E158B00D7E619 /* SystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BEF288E158B00D7E619 /* SystemInfo.swift */; };
+		DE172C2C288E158B00D7E619 /* BartStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BF0288E158B00D7E619 /* BartStations.swift */; };
+		DE172C2D288E158B00D7E619 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BF1288E158B00D7E619 /* MapAnnotation.swift */; };
+		DE172C2E288E158B00D7E619 /* WalkingRoutesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BF4288E158B00D7E619 /* WalkingRoutesRepositoryProtocol.swift */; };
+		DE172C2F288E158B00D7E619 /* BartStationRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BF5288E158B00D7E619 /* BartStationRepositoryProtocol.swift */; };
+		DE172C30288E158B00D7E619 /* SharedBikesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BF6288E158B00D7E619 /* SharedBikesRepositoryProtocol.swift */; };
+		DE172C31288E158B00D7E619 /* CurrentCalEventRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BF7288E158B00D7E619 /* CurrentCalEventRepositoryProtocol.swift */; };
+		DE172C32288E158B00D7E619 /* GetAllSharedBikesUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BFA288E158B00D7E619 /* GetAllSharedBikesUseCaseProtocol.swift */; };
+		DE172C33288E158B00D7E619 /* GetCurrentCalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BFC288E158B00D7E619 /* GetCurrentCalEvent.swift */; };
+		DE172C34288E158B00D7E619 /* GetAllWalkingRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BFD288E158B00D7E619 /* GetAllWalkingRoutes.swift */; };
+		DE172C35288E158B00D7E619 /* GetAllSharedBikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BFE288E158B00D7E619 /* GetAllSharedBikes.swift */; };
+		DE172C36288E158B00D7E619 /* GetAllBartStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BFF288E158B00D7E619 /* GetAllBartStations.swift */; };
+		DE172C39288E161D00D7E619 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DE172C38288E161D00D7E619 /* Algorithms */; };
+		DE172C3C288E163200D7E619 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = DE172C3B288E163200D7E619 /* Swinject */; };
+		DE172C40288E19B600D7E619 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE172C3F288E19B600D7E619 /* HealthKit.framework */; };
+		DE8A7181288DD9B0001355BC /* GoSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7180288DD9B0001355BC /* GoSwiftApp.swift */; };
+		DE8A7183288DD9B0001355BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7182288DD9B0001355BC /* ContentView.swift */; };
+		DE8A7185288DD9B1001355BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8A7184288DD9B1001355BC /* Assets.xcassets */; };
+		DE8A7188288DD9B1001355BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8A7187288DD9B1001355BC /* Preview Assets.xcassets */; };
+		DE8A718A288DD9B1001355BC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7189288DD9B1001355BC /* Persistence.swift */; };
+		DE8A718D288DD9B1001355BC /* GoSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE8A718B288DD9B1001355BC /* GoSwift.xcdatamodeld */; };
+		DE8A7197288DD9B1001355BC /* GoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A7196288DD9B1001355BC /* GoSwiftTests.swift */; };
+		DE8A71A1288DD9B1001355BC /* GoSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A71A0288DD9B1001355BC /* GoSwiftUITests.swift */; };
+		DE8A71A3288DD9B1001355BC /* GoSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A71A2288DD9B1001355BC /* GoSwiftUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE8A7193288DD9B1001355BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE8A7175288DD9B0001355BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE8A717C288DD9B0001355BC;
+			remoteInfo = GoSwift;
+		};
+		DE8A719D288DD9B1001355BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE8A7175288DD9B0001355BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE8A717C288DD9B0001355BC;
+			remoteInfo = GoSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE172BB1288E158B00D7E619 /* IocShareBikesContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IocShareBikesContainer.swift; sourceTree = "<group>"; };
+		DE172BB2288E158B00D7E619 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
+		DE172BB5288E158B00D7E619 /* CalendarRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarRepo.swift; sourceTree = "<group>"; };
+		DE172BB6288E158B00D7E619 /* CalendarUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarUIView.swift; sourceTree = "<group>"; };
+		DE172BB7288E158B00D7E619 /* CalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		DE172BB8288E158B00D7E619 /* DetailedCalendarUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCalendarUIView.swift; sourceTree = "<group>"; };
+		DE172BBA288E158B00D7E619 /* HealthRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthRepo.swift; sourceTree = "<group>"; };
+		DE172BBB288E158B00D7E619 /* HealthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
+		DE172BBC288E158B00D7E619 /* HealthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
+		DE172BBE288E158B00D7E619 /* BikeChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeChartView.swift; sourceTree = "<group>"; };
+		DE172BBF288E158B00D7E619 /* BikeChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeChartViewModel.swift; sourceTree = "<group>"; };
+		DE172BC1288E158B00D7E619 /* TransitMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitMapView.swift; sourceTree = "<group>"; };
+		DE172BC2288E158B00D7E619 /* TransitMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitMapViewModel.swift; sourceTree = "<group>"; };
+		DE172BC4288E158B00D7E619 /* BikeListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeListView.swift; sourceTree = "<group>"; };
+		DE172BC5288E158B00D7E619 /* SharedBikesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedBikesListViewModel.swift; sourceTree = "<group>"; };
+		DE172BC6288E158B00D7E619 /* BikeListDetailMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeListDetailMapView.swift; sourceTree = "<group>"; };
+		DE172BC8288E158B00D7E619 /* CreditCardFlipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardFlipView.swift; sourceTree = "<group>"; };
+		DE172BC9288E158B00D7E619 /* CreditCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
+		DE172BCC288E158B00D7E619 /* CurrentCalEventDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCalEventDataSource.swift; sourceTree = "<group>"; };
+		DE172BCF288E158B00D7E619 /* CombineSharedBikesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineSharedBikesDataSource.swift; sourceTree = "<group>"; };
+		DE172BD0288E158B00D7E619 /* SharedBikeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedBikeService.swift; sourceTree = "<group>"; };
+		DE172BD1288E158B00D7E619 /* WalkingRoutesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingRoutesDataSource.swift; sourceTree = "<group>"; };
+		DE172BD2288E158B00D7E619 /* NetworkSharedBikesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSharedBikesDataSource.swift; sourceTree = "<group>"; };
+		DE172BD3288E158B00D7E619 /* BartStationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartStationsDataSource.swift; sourceTree = "<group>"; };
+		DE172BD7288E158B00D7E619 /* WalkingRoutesDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingRoutesDataSourceProtocol.swift; sourceTree = "<group>"; };
+		DE172BD8288E158B00D7E619 /* SharedBikesDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedBikesDataSourceProtocol.swift; sourceTree = "<group>"; };
+		DE172BD9288E158B00D7E619 /* CurrentCalEventDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCalEventDataSourceProtocol.swift; sourceTree = "<group>"; };
+		DE172BDA288E158B00D7E619 /* BartStationsDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartStationsDataSourceProtocol.swift; sourceTree = "<group>"; };
+		DE172BDD288E158B00D7E619 /* CurrentCalEventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCalEventRepository.swift; sourceTree = "<group>"; };
+		DE172BDE288E158B00D7E619 /* WalkingRoutesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingRoutesRepository.swift; sourceTree = "<group>"; };
+		DE172BDF288E158B00D7E619 /* SharedBikesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedBikesRepository.swift; sourceTree = "<group>"; };
+		DE172BE0288E158B00D7E619 /* BartStationsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartStationsRepository.swift; sourceTree = "<group>"; };
+		DE172BE2288E158B00D7E619 /* WalkingRoutePts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingRoutePts.swift; sourceTree = "<group>"; };
+		DE172BE4288E158B00D7E619 /* RentalUris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalUris.swift; sourceTree = "<group>"; };
+		DE172BE5288E158B00D7E619 /* StationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationType.swift; sourceTree = "<group>"; };
+		DE172BE6288E158B00D7E619 /* StationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationInfo.swift; sourceTree = "<group>"; };
+		DE172BE7288E158B00D7E619 /* RentalMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalMethod.swift; sourceTree = "<group>"; };
+		DE172BE8288E158B00D7E619 /* JSONSchemaSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSchemaSupport.swift; sourceTree = "<group>"; };
+		DE172BE9288E158B00D7E619 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		DE172BEA288E158B00D7E619 /* StationDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationDataClass.swift; sourceTree = "<group>"; };
+		DE172BEB288E158B00D7E619 /* CurrentCalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCalEvent.swift; sourceTree = "<group>"; };
+		DE172BEC288E158B00D7E619 /* TransportationStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationStation.swift; sourceTree = "<group>"; };
+		DE172BEE288E158B00D7E619 /* SysInfoDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysInfoDataClass.swift; sourceTree = "<group>"; };
+		DE172BEF288E158B00D7E619 /* SystemInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemInfo.swift; sourceTree = "<group>"; };
+		DE172BF0288E158B00D7E619 /* BartStations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartStations.swift; sourceTree = "<group>"; };
+		DE172BF1288E158B00D7E619 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		DE172BF4288E158B00D7E619 /* WalkingRoutesRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingRoutesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		DE172BF5288E158B00D7E619 /* BartStationRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartStationRepositoryProtocol.swift; sourceTree = "<group>"; };
+		DE172BF6288E158B00D7E619 /* SharedBikesRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedBikesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		DE172BF7288E158B00D7E619 /* CurrentCalEventRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCalEventRepositoryProtocol.swift; sourceTree = "<group>"; };
+		DE172BFA288E158B00D7E619 /* GetAllSharedBikesUseCaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllSharedBikesUseCaseProtocol.swift; sourceTree = "<group>"; };
+		DE172BFC288E158B00D7E619 /* GetCurrentCalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentCalEvent.swift; sourceTree = "<group>"; };
+		DE172BFD288E158B00D7E619 /* GetAllWalkingRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllWalkingRoutes.swift; sourceTree = "<group>"; };
+		DE172BFE288E158B00D7E619 /* GetAllSharedBikes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllSharedBikes.swift; sourceTree = "<group>"; };
+		DE172BFF288E158B00D7E619 /* GetAllBartStations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllBartStations.swift; sourceTree = "<group>"; };
+		DE172C3D288E19B600D7E619 /* GoSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoSwift.entitlements; sourceTree = "<group>"; };
+		DE172C3F288E19B600D7E619 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		DE172C41288E19C900D7E619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8A717D288DD9B0001355BC /* GoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8A7180288DD9B0001355BC /* GoSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoSwiftApp.swift; sourceTree = "<group>"; };
+		DE8A7182288DD9B0001355BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DE8A7184288DD9B1001355BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE8A7187288DD9B1001355BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DE8A7189288DD9B1001355BC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		DE8A718C288DD9B1001355BC /* GoSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoSwift.xcdatamodel; sourceTree = "<group>"; };
+		DE8A7192288DD9B1001355BC /* GoSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8A7196288DD9B1001355BC /* GoSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoSwiftTests.swift; sourceTree = "<group>"; };
+		DE8A719C288DD9B1001355BC /* GoSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8A71A0288DD9B1001355BC /* GoSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoSwiftUITests.swift; sourceTree = "<group>"; };
+		DE8A71A2288DD9B1001355BC /* GoSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE8A717A288DD9B0001355BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE172C40288E19B600D7E619 /* HealthKit.framework in Frameworks */,
+				DE172C39288E161D00D7E619 /* Algorithms in Frameworks */,
+				DE172C3C288E163200D7E619 /* Swinject in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A718F288DD9B1001355BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A7199288DD9B1001355BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE172BB0288E158B00D7E619 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BB1288E158B00D7E619 /* IocShareBikesContainer.swift */,
+				DE172BB2288E158B00D7E619 /* Resolver.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		DE172BB3288E158B00D7E619 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BB4288E158B00D7E619 /* Calendar */,
+				DE172BB9288E158B00D7E619 /* Health */,
+				DE172BBD288E158B00D7E619 /* Chart */,
+				DE172BC0288E158B00D7E619 /* Map */,
+				DE172BC3288E158B00D7E619 /* List */,
+				DE172BC7288E158B00D7E619 /* CreditCard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DE172BB4288E158B00D7E619 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BB5288E158B00D7E619 /* CalendarRepo.swift */,
+				DE172BB6288E158B00D7E619 /* CalendarUIView.swift */,
+				DE172BB7288E158B00D7E619 /* CalendarViewModel.swift */,
+				DE172BB8288E158B00D7E619 /* DetailedCalendarUIView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		DE172BB9288E158B00D7E619 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BBA288E158B00D7E619 /* HealthRepo.swift */,
+				DE172BBB288E158B00D7E619 /* HealthViewModel.swift */,
+				DE172BBC288E158B00D7E619 /* HealthView.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		DE172BBD288E158B00D7E619 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BBE288E158B00D7E619 /* BikeChartView.swift */,
+				DE172BBF288E158B00D7E619 /* BikeChartViewModel.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		DE172BC0288E158B00D7E619 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BC1288E158B00D7E619 /* TransitMapView.swift */,
+				DE172BC2288E158B00D7E619 /* TransitMapViewModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		DE172BC3288E158B00D7E619 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BC4288E158B00D7E619 /* BikeListView.swift */,
+				DE172BC5288E158B00D7E619 /* SharedBikesListViewModel.swift */,
+				DE172BC6288E158B00D7E619 /* BikeListDetailMapView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		DE172BC7288E158B00D7E619 /* CreditCard */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BC8288E158B00D7E619 /* CreditCardFlipView.swift */,
+				DE172BC9288E158B00D7E619 /* CreditCardView.swift */,
+			);
+			path = CreditCard;
+			sourceTree = "<group>";
+		};
+		DE172BCA288E158B00D7E619 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BCB288E158B00D7E619 /* DataSources */,
+				DE172BD6288E158B00D7E619 /* Protocols */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DE172BCB288E158B00D7E619 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BCC288E158B00D7E619 /* CurrentCalEventDataSource.swift */,
+				DE172BCD288E158B00D7E619 /* NetworkSource */,
+				DE172BD4288E158B00D7E619 /* CoreData */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		DE172BCD288E158B00D7E619 /* NetworkSource */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BCE288E158B00D7E619 /* Combine */,
+				DE172BD1288E158B00D7E619 /* WalkingRoutesDataSource.swift */,
+				DE172BD2288E158B00D7E619 /* NetworkSharedBikesDataSource.swift */,
+				DE172BD3288E158B00D7E619 /* BartStationsDataSource.swift */,
+			);
+			path = NetworkSource;
+			sourceTree = "<group>";
+		};
+		DE172BCE288E158B00D7E619 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BCF288E158B00D7E619 /* CombineSharedBikesDataSource.swift */,
+				DE172BD0288E158B00D7E619 /* SharedBikeService.swift */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
+		DE172BD4288E158B00D7E619 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BD5288E158B00D7E619 /* Entities */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		DE172BD5288E158B00D7E619 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		DE172BD6288E158B00D7E619 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BD7288E158B00D7E619 /* WalkingRoutesDataSourceProtocol.swift */,
+				DE172BD8288E158B00D7E619 /* SharedBikesDataSourceProtocol.swift */,
+				DE172BD9288E158B00D7E619 /* CurrentCalEventDataSourceProtocol.swift */,
+				DE172BDA288E158B00D7E619 /* BartStationsDataSourceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DE172BDB288E158B00D7E619 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BDC288E158B00D7E619 /* Repositories */,
+				DE172BE1288E158B00D7E619 /* Models */,
+				DE172BF2288E158B00D7E619 /* Protocols */,
+				DE172BFB288E158B00D7E619 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		DE172BDC288E158B00D7E619 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BDD288E158B00D7E619 /* CurrentCalEventRepository.swift */,
+				DE172BDE288E158B00D7E619 /* WalkingRoutesRepository.swift */,
+				DE172BDF288E158B00D7E619 /* SharedBikesRepository.swift */,
+				DE172BE0288E158B00D7E619 /* BartStationsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DE172BE1288E158B00D7E619 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BE2288E158B00D7E619 /* WalkingRoutePts.swift */,
+				DE172BE3288E158B00D7E619 /* StationInfo */,
+				DE172BEB288E158B00D7E619 /* CurrentCalEvent.swift */,
+				DE172BEC288E158B00D7E619 /* TransportationStation.swift */,
+				DE172BED288E158B00D7E619 /* SystemInfo */,
+				DE172BF0288E158B00D7E619 /* BartStations.swift */,
+				DE172BF1288E158B00D7E619 /* MapAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE172BE3288E158B00D7E619 /* StationInfo */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BE4288E158B00D7E619 /* RentalUris.swift */,
+				DE172BE5288E158B00D7E619 /* StationType.swift */,
+				DE172BE6288E158B00D7E619 /* StationInfo.swift */,
+				DE172BE7288E158B00D7E619 /* RentalMethod.swift */,
+				DE172BE8288E158B00D7E619 /* JSONSchemaSupport.swift */,
+				DE172BE9288E158B00D7E619 /* Station.swift */,
+				DE172BEA288E158B00D7E619 /* StationDataClass.swift */,
+			);
+			path = StationInfo;
+			sourceTree = "<group>";
+		};
+		DE172BED288E158B00D7E619 /* SystemInfo */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BEE288E158B00D7E619 /* SysInfoDataClass.swift */,
+				DE172BEF288E158B00D7E619 /* SystemInfo.swift */,
+			);
+			path = SystemInfo;
+			sourceTree = "<group>";
+		};
+		DE172BF2288E158B00D7E619 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BF3288E158B00D7E619 /* Repositories */,
+				DE172BF8288E158B00D7E619 /* UseCases */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DE172BF3288E158B00D7E619 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BF4288E158B00D7E619 /* WalkingRoutesRepositoryProtocol.swift */,
+				DE172BF5288E158B00D7E619 /* BartStationRepositoryProtocol.swift */,
+				DE172BF6288E158B00D7E619 /* SharedBikesRepositoryProtocol.swift */,
+				DE172BF7288E158B00D7E619 /* CurrentCalEventRepositoryProtocol.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DE172BF8288E158B00D7E619 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BF9288E158B00D7E619 /* ShareBikes */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		DE172BF9288E158B00D7E619 /* ShareBikes */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BFA288E158B00D7E619 /* GetAllSharedBikesUseCaseProtocol.swift */,
+			);
+			path = ShareBikes;
+			sourceTree = "<group>";
+		};
+		DE172BFB288E158B00D7E619 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BFC288E158B00D7E619 /* GetCurrentCalEvent.swift */,
+				DE172BFD288E158B00D7E619 /* GetAllWalkingRoutes.swift */,
+				DE172BFE288E158B00D7E619 /* GetAllSharedBikes.swift */,
+				DE172BFF288E158B00D7E619 /* GetAllBartStations.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		DE172C3E288E19B600D7E619 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE172C3F288E19B600D7E619 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE8A7174288DD9B0001355BC = {
+			isa = PBXGroup;
+			children = (
+				DE8A717F288DD9B0001355BC /* GoSwift */,
+				DE8A7195288DD9B1001355BC /* GoSwiftTests */,
+				DE8A719F288DD9B1001355BC /* GoSwiftUITests */,
+				DE8A717E288DD9B0001355BC /* Products */,
+				DE172C3E288E19B600D7E619 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DE8A717E288DD9B0001355BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A717D288DD9B0001355BC /* GoSwift.app */,
+				DE8A7192288DD9B1001355BC /* GoSwiftTests.xctest */,
+				DE8A719C288DD9B1001355BC /* GoSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE8A717F288DD9B0001355BC /* GoSwift */ = {
+			isa = PBXGroup;
+			children = (
+				DE172C41288E19C900D7E619 /* Info.plist */,
+				DE172C3D288E19B600D7E619 /* GoSwift.entitlements */,
+				DE8A7180288DD9B0001355BC /* GoSwiftApp.swift */,
+				DE8A7182288DD9B0001355BC /* ContentView.swift */,
+				DE172BCA288E158B00D7E619 /* Data */,
+				DE172BB0288E158B00D7E619 /* DI */,
+				DE172BDB288E158B00D7E619 /* Domain */,
+				DE172BB3288E158B00D7E619 /* Presentation */,
+				DE8A7184288DD9B1001355BC /* Assets.xcassets */,
+				DE8A7189288DD9B1001355BC /* Persistence.swift */,
+				DE8A718B288DD9B1001355BC /* GoSwift.xcdatamodeld */,
+				DE8A7186288DD9B1001355BC /* Preview Content */,
+			);
+			path = GoSwift;
+			sourceTree = "<group>";
+		};
+		DE8A7186288DD9B1001355BC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A7187288DD9B1001355BC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DE8A7195288DD9B1001355BC /* GoSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A7196288DD9B1001355BC /* GoSwiftTests.swift */,
+			);
+			path = GoSwiftTests;
+			sourceTree = "<group>";
+		};
+		DE8A719F288DD9B1001355BC /* GoSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A71A0288DD9B1001355BC /* GoSwiftUITests.swift */,
+				DE8A71A2288DD9B1001355BC /* GoSwiftUITestsLaunchTests.swift */,
+			);
+			path = GoSwiftUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE8A717C288DD9B0001355BC /* GoSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE8A71A6288DD9B1001355BC /* Build configuration list for PBXNativeTarget "GoSwift" */;
+			buildPhases = (
+				DE8A7179288DD9B0001355BC /* Sources */,
+				DE8A717A288DD9B0001355BC /* Frameworks */,
+				DE8A717B288DD9B0001355BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoSwift;
+			packageProductDependencies = (
+				DE172C38288E161D00D7E619 /* Algorithms */,
+				DE172C3B288E163200D7E619 /* Swinject */,
+			);
+			productName = GoSwift;
+			productReference = DE8A717D288DD9B0001355BC /* GoSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE8A7191288DD9B1001355BC /* GoSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE8A71A9288DD9B1001355BC /* Build configuration list for PBXNativeTarget "GoSwiftTests" */;
+			buildPhases = (
+				DE8A718E288DD9B1001355BC /* Sources */,
+				DE8A718F288DD9B1001355BC /* Frameworks */,
+				DE8A7190288DD9B1001355BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE8A7194288DD9B1001355BC /* PBXTargetDependency */,
+			);
+			name = GoSwiftTests;
+			productName = GoSwiftTests;
+			productReference = DE8A7192288DD9B1001355BC /* GoSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE8A719B288DD9B1001355BC /* GoSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE8A71AC288DD9B1001355BC /* Build configuration list for PBXNativeTarget "GoSwiftUITests" */;
+			buildPhases = (
+				DE8A7198288DD9B1001355BC /* Sources */,
+				DE8A7199288DD9B1001355BC /* Frameworks */,
+				DE8A719A288DD9B1001355BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE8A719E288DD9B1001355BC /* PBXTargetDependency */,
+			);
+			name = GoSwiftUITests;
+			productName = GoSwiftUITests;
+			productReference = DE8A719C288DD9B1001355BC /* GoSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE8A7175288DD9B0001355BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					DE8A717C288DD9B0001355BC = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					DE8A7191288DD9B1001355BC = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = DE8A717C288DD9B0001355BC;
+					};
+					DE8A719B288DD9B1001355BC = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = DE8A717C288DD9B0001355BC;
+					};
+				};
+			};
+			buildConfigurationList = DE8A7178288DD9B0001355BC /* Build configuration list for PBXProject "GoSwift" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE8A7174288DD9B0001355BC;
+			packageReferences = (
+				DE172C37288E161D00D7E619 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				DE172C3A288E163100D7E619 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
+			productRefGroup = DE8A717E288DD9B0001355BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE8A717C288DD9B0001355BC /* GoSwift */,
+				DE8A7191288DD9B1001355BC /* GoSwiftTests */,
+				DE8A719B288DD9B1001355BC /* GoSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE8A717B288DD9B0001355BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8A7188288DD9B1001355BC /* Preview Assets.xcassets in Resources */,
+				DE8A7185288DD9B1001355BC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A7190288DD9B1001355BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A719A288DD9B1001355BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE8A7179288DD9B0001355BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE172C02288E158B00D7E619 /* CalendarRepo.swift in Sources */,
+				DE172C31288E158B00D7E619 /* CurrentCalEventRepositoryProtocol.swift in Sources */,
+				DE172C24288E158B00D7E619 /* RentalMethod.swift in Sources */,
+				DE172C22288E158B00D7E619 /* StationType.swift in Sources */,
+				DE172C1E288E158B00D7E619 /* SharedBikesRepository.swift in Sources */,
+				DE172C0A288E158B00D7E619 /* BikeChartViewModel.swift in Sources */,
+				DE8A718A288DD9B1001355BC /* Persistence.swift in Sources */,
+				DE172C12288E158B00D7E619 /* CurrentCalEventDataSource.swift in Sources */,
+				DE172C03288E158B00D7E619 /* CalendarUIView.swift in Sources */,
+				DE172C06288E158B00D7E619 /* HealthRepo.swift in Sources */,
+				DE172C16288E158B00D7E619 /* NetworkSharedBikesDataSource.swift in Sources */,
+				DE172C0F288E158B00D7E619 /* BikeListDetailMapView.swift in Sources */,
+				DE172C34288E158B00D7E619 /* GetAllWalkingRoutes.swift in Sources */,
+				DE172C19288E158B00D7E619 /* SharedBikesDataSourceProtocol.swift in Sources */,
+				DE172C25288E158B00D7E619 /* JSONSchemaSupport.swift in Sources */,
+				DE172C00288E158B00D7E619 /* IocShareBikesContainer.swift in Sources */,
+				DE8A7183288DD9B0001355BC /* ContentView.swift in Sources */,
+				DE172C2F288E158B00D7E619 /* BartStationRepositoryProtocol.swift in Sources */,
+				DE172C1D288E158B00D7E619 /* WalkingRoutesRepository.swift in Sources */,
+				DE172C2E288E158B00D7E619 /* WalkingRoutesRepositoryProtocol.swift in Sources */,
+				DE172C0C288E158B00D7E619 /* TransitMapViewModel.swift in Sources */,
+				DE172C11288E158B00D7E619 /* CreditCardView.swift in Sources */,
+				DE172C20288E158B00D7E619 /* WalkingRoutePts.swift in Sources */,
+				DE172C21288E158B00D7E619 /* RentalUris.swift in Sources */,
+				DE172C18288E158B00D7E619 /* WalkingRoutesDataSourceProtocol.swift in Sources */,
+				DE172C01288E158B00D7E619 /* Resolver.swift in Sources */,
+				DE172C15288E158B00D7E619 /* WalkingRoutesDataSource.swift in Sources */,
+				DE172C10288E158B00D7E619 /* CreditCardFlipView.swift in Sources */,
+				DE172C1C288E158B00D7E619 /* CurrentCalEventRepository.swift in Sources */,
+				DE172C0D288E158B00D7E619 /* BikeListView.swift in Sources */,
+				DE172C26288E158B00D7E619 /* Station.swift in Sources */,
+				DE172C14288E158B00D7E619 /* SharedBikeService.swift in Sources */,
+				DE172C2B288E158B00D7E619 /* SystemInfo.swift in Sources */,
+				DE172C2C288E158B00D7E619 /* BartStations.swift in Sources */,
+				DE172C04288E158B00D7E619 /* CalendarViewModel.swift in Sources */,
+				DE172C23288E158B00D7E619 /* StationInfo.swift in Sources */,
+				DE172C09288E158B00D7E619 /* BikeChartView.swift in Sources */,
+				DE8A7181288DD9B0001355BC /* GoSwiftApp.swift in Sources */,
+				DE172C28288E158B00D7E619 /* CurrentCalEvent.swift in Sources */,
+				DE172C05288E158B00D7E619 /* DetailedCalendarUIView.swift in Sources */,
+				DE172C13288E158B00D7E619 /* CombineSharedBikesDataSource.swift in Sources */,
+				DE172C33288E158B00D7E619 /* GetCurrentCalEvent.swift in Sources */,
+				DE172C07288E158B00D7E619 /* HealthViewModel.swift in Sources */,
+				DE172C27288E158B00D7E619 /* StationDataClass.swift in Sources */,
+				DE172C36288E158B00D7E619 /* GetAllBartStations.swift in Sources */,
+				DE172C32288E158B00D7E619 /* GetAllSharedBikesUseCaseProtocol.swift in Sources */,
+				DE172C0B288E158B00D7E619 /* TransitMapView.swift in Sources */,
+				DE172C1B288E158B00D7E619 /* BartStationsDataSourceProtocol.swift in Sources */,
+				DE172C2D288E158B00D7E619 /* MapAnnotation.swift in Sources */,
+				DE172C17288E158B00D7E619 /* BartStationsDataSource.swift in Sources */,
+				DE172C30288E158B00D7E619 /* SharedBikesRepositoryProtocol.swift in Sources */,
+				DE172C2A288E158B00D7E619 /* SysInfoDataClass.swift in Sources */,
+				DE8A718D288DD9B1001355BC /* GoSwift.xcdatamodeld in Sources */,
+				DE172C1A288E158B00D7E619 /* CurrentCalEventDataSourceProtocol.swift in Sources */,
+				DE172C29288E158B00D7E619 /* TransportationStation.swift in Sources */,
+				DE172C1F288E158B00D7E619 /* BartStationsRepository.swift in Sources */,
+				DE172C0E288E158B00D7E619 /* SharedBikesListViewModel.swift in Sources */,
+				DE172C35288E158B00D7E619 /* GetAllSharedBikes.swift in Sources */,
+				DE172C08288E158B00D7E619 /* HealthView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A718E288DD9B1001355BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8A7197288DD9B1001355BC /* GoSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8A7198288DD9B1001355BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8A71A3288DD9B1001355BC /* GoSwiftUITestsLaunchTests.swift in Sources */,
+				DE8A71A1288DD9B1001355BC /* GoSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE8A7194288DD9B1001355BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE8A717C288DD9B0001355BC /* GoSwift */;
+			targetProxy = DE8A7193288DD9B1001355BC /* PBXContainerItemProxy */;
+		};
+		DE8A719E288DD9B1001355BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE8A717C288DD9B0001355BC /* GoSwift */;
+			targetProxy = DE8A719D288DD9B1001355BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DE8A71A4288DD9B1001355BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE8A71A5288DD9B1001355BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE8A71A7288DD9B1001355BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GoSwift/GoSwift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GoSwift/Preview Content\"";
+				DEVELOPMENT_TEAM = 3F6FBJA4J7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoSwift/Info.plist;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "add calendar events to transit map";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "add transit (step / bike) to health data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "add transit (step / bike) to health data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "add transit (step / bike) to health data";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylabz.GoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE8A71A8288DD9B1001355BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GoSwift/GoSwift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GoSwift/Preview Content\"";
+				DEVELOPMENT_TEAM = 3F6FBJA4J7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoSwift/Info.plist;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "add calendar events to transit map";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "add transit (step / bike) to health data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "add transit (step / bike) to health data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "add transit (step / bike) to health data";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylabz.GoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE8A71AA288DD9B1001355BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F6FBJA4J7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylabz.GoSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoSwift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GoSwift";
+			};
+			name = Debug;
+		};
+		DE8A71AB288DD9B1001355BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F6FBJA4J7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylabz.GoSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoSwift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GoSwift";
+			};
+			name = Release;
+		};
+		DE8A71AD288DD9B1001355BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F6FBJA4J7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylabz.GoSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoSwift;
+			};
+			name = Debug;
+		};
+		DE8A71AE288DD9B1001355BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F6FBJA4J7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylabz.GoSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE8A7178288DD9B0001355BC /* Build configuration list for PBXProject "GoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8A71A4288DD9B1001355BC /* Debug */,
+				DE8A71A5288DD9B1001355BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE8A71A6288DD9B1001355BC /* Build configuration list for PBXNativeTarget "GoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8A71A7288DD9B1001355BC /* Debug */,
+				DE8A71A8288DD9B1001355BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE8A71A9288DD9B1001355BC /* Build configuration list for PBXNativeTarget "GoSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8A71AA288DD9B1001355BC /* Debug */,
+				DE8A71AB288DD9B1001355BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE8A71AC288DD9B1001355BC /* Build configuration list for PBXNativeTarget "GoSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8A71AD288DD9B1001355BC /* Debug */,
+				DE8A71AE288DD9B1001355BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE172C37288E161D00D7E619 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		DE172C3A288E163100D7E619 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE172C38288E161D00D7E619 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE172C37288E161D00D7E619 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		DE172C3B288E163200D7E619 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE172C3A288E163100D7E619 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		DE8A718B288DD9B1001355BC /* GoSwift.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE8A718C288DD9B1001355BC /* GoSwift.xcdatamodel */,
+			);
+			currentVersion = DE8A718C288DD9B1001355BC /* GoSwift.xcdatamodel */;
+			path = GoSwift.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DE8A7175288DD9B0001355BC /* Project object */;
+}
