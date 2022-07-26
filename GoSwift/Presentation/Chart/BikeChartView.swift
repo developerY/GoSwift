@@ -67,6 +67,7 @@ struct BikeChartView: View {
                 }
             }.onAppear() {
                 vm.runRandom()
+                healthVM.getWorkouts()
             }
         }
     }

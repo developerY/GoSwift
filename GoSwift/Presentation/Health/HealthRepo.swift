@@ -46,6 +46,42 @@ class HealthRepo: ObservableObject {
         try await healthStore?.requestAuthorization(toShare: [], read: stepType)
     }
     
+    func fetchWorkouts() async throws -> [HKWorkout]? {
+        //let activityType = PulseConfiguration.activityType
+        
+        // 1. Get all workouts with the configured activity type.
+        //let walkingPredictate = HKQuery.predicateForWorkouts(with: activityType)
+        
+        // 2. Get all workouts that only came from this app.
+        let sourcePredicate = HKQuery.predicateForObjects(from: .default())
+        
+        // 3. Combine the predicates into a single predicate.
+        //let compound = NSCompoundPredicate(andPredicateWithSubpredicates:[walkingPredictate, sourcePredicate])
+        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+        
+        typealias WorkoutsContinuation = CheckedContinuation<[HKWorkout], Error>
+        
+        return try await withCheckedThrowingContinuation { (continuation: WorkoutsContinuation) in
+            let query = HKSampleQuery(
+                sampleType: .workoutType(),
+                predicate: nil, //compound,
+                limit: HKObjectQueryNoLimit,
+                sortDescriptors: [sortDescriptor]
+            ) { _, samples, error in
+                guard let samples = samples as? [HKWorkout], error == nil else {
+                    if let error = error {
+                        print("This is the error\(error)")
+                        continuation.resume(throwing: error)
+                    }
+                    return
+                }
+                continuation.resume(returning: samples)
+            }
+            healthStore?.execute(query)
+        }
+    }
+    
     
     
     func readWorkouts() async throws -> [HKSample]? {
@@ -78,10 +114,10 @@ class HealthRepo: ObservableObject {
                                   }))
             }
         }
-    
+        
         /*guard let workouts = samples as? [HKWorkout] else {
-            return nil
-        }*/
+         return nil
+         }*/
         
         //print("This is the workout \(workouts)")
         return samples

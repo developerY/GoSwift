@@ -30,7 +30,7 @@ class HealthViewModel: ObservableObject{
         var distance:[Int] = []
         Task {
             do {
-                workouts = try await healthRepo.readWorkouts()
+                workouts = try await healthRepo.fetchWorkouts() //.readWorkouts()
             } catch {
                 print("Unexpected error in getWorkouts: \(error).")
                 // throw(error)
