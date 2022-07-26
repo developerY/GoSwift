@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import HealthKit
 
 
 class HealthViewModel: ObservableObject{
@@ -19,13 +20,29 @@ class HealthViewModel: ObservableObject{
             do {
                 try await healthRepo.requestAuth()
             } catch {
-                print("\(error)")
+                print("Unexpected error: \(error).")
             }
         }
     }
     
-    func getSteps() {
-        healthRepo.getSteps()
+    func getWorkouts() -> [Int] {
+        var workouts: [HKSample]?
+        var distance:[Int] = []
+        Task {
+            do {
+                workouts = try await healthRepo.readWorkouts()
+            } catch {
+                print("Unexpected error in getWorkouts: \(error).")
+                // throw(error)
+            }
+            
+            workouts?.forEach { workout in
+                print("These are the work outs \(workout.description.split(by: " ")[1])")
+                distance.append(Int(workout.description.split(by: " ")[1]) ?? 0)
+            }
+        }
+        return distance
     }
+   
     
 }

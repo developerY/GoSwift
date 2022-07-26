@@ -35,9 +35,6 @@ struct BikeChartView: View {
     
     var body: some View {
         VStack {
-            Button("Get steps ") {
-                healthVM.getSteps()
-            }
             ZStack {
             
                 Chart{

@@ -147,5 +147,83 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6F1BC20-885D-46EF-A5D1-AAFE050D3368"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoSwift/Presentation/Health/HealthViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getWorkouts()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E6F1BC20-885D-46EF-A5D1-AAFE050D3368 - 3e1b74f124af99d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GoSwift.HealthViewModel.getWorkouts() -&gt; ()"
+                  moduleName = "GoSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ashrafi/Desktop/iOS%20Project/GoSwift/GoSwift/Presentation/Health/HealthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "E6F1BC20-885D-46EF-A5D1-AAFE050D3368 - 921bad187b96f53c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in GoSwift.HealthViewModel.getWorkouts() -&gt; ()"
+                  moduleName = "GoSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ashrafi/Desktop/iOS%20Project/GoSwift/GoSwift/Presentation/Health/HealthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "E6F1BC20-885D-46EF-A5D1-AAFE050D3368 - 8455dde4ba80ddd9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GoSwift.HealthViewModel.getWorkouts() -&gt; ()"
+                  moduleName = "GoSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ashrafi/Desktop/iOS%20Project/GoSwift/GoSwift/Presentation/Health/HealthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "E6F1BC20-885D-46EF-A5D1-AAFE050D3368 - 29ae919e4875b3d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in GoSwift.HealthViewModel.getWorkouts() -&gt; ()"
+                  moduleName = "GoSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ashrafi/Desktop/iOS%20Project/GoSwift/GoSwift/Presentation/Health/HealthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

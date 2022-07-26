@@ -18,46 +18,95 @@ class HealthRepo: ObservableObject {
     var healthStore : HKHealthStore?
     var query: HKStatisticsCollectionQuery?
     
+    let stepType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
+    
+    let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
+    
+    let anchorDate = Date.mondayAt12AM()
+    
+    let daily = DateComponents(day: 1)
+    
+    let predicate : NSPredicate
+    
     init() {
         if HKHealthStore.isHealthDataAvailable() {
             healthStore =  HKHealthStore()
         }
+        predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
     }
     
     func requestAuth() async throws {
-        let stepType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
-        try await healthStore?.requestAuthorization(toShare: [], read: [stepType])
+        let stepType : Set = [
+            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
+            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceCycling)!,
+            HKSeriesType.activitySummaryType(),
+            HKSeriesType.workoutRoute(),
+            HKSeriesType.workoutType()
+        ]
+        try await healthStore?.requestAuthorization(toShare: [], read: stepType)
     }
     
-    func getSteps() {
-        let stepType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
+    
+    
+    func readWorkouts() async throws -> [HKSample]? {
+        //let cycling = HKQuery.predicateForWorkouts(with: .)
+        let samples: [HKSample]?
         
-        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
+        let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceCycling)!
         
-        let anchorDate = Date.mondayAt12AM()
-        
-        let daily = DateComponents(day: 1)
-        
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
-        
-        query = HKStatisticsCollectionQuery(quantityType: stepType, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: anchorDate, intervalComponents: daily)
-        
-        query!.initialResultsHandler = { query, statisticsCollection, error in
-            let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
-            let endDate = Date()
-            
-            statisticsCollection?.enumerateStatistics(from: startDate, to: endDate) { (statistics, stop) in
+        do {
+            samples = try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<[HKSample], Error>) in
                 
-                let count = statistics.sumQuantity()?.doubleValue(for: .count())
-                
-                print("Steps count \(String(describing: count))")
+                healthStore?.execute(
+                    HKSampleQuery(sampleType: sampleType,
+                                  predicate: nil, //cycling,
+                                  limit: HKObjectQueryNoLimit,
+                                  sortDescriptors: nil,//[.init(keyPath: \HKSample.startDate, ascending: false)],
+                                  resultsHandler: { query, samples, error in
+                                      // throw the error
+                                      if let hasError = error {
+                                          //throw(hasError)
+                                          continuation.resume(throwing: hasError)
+                                          return
+                                      }
+                                      
+                                      guard let samples = samples else {
+                                          fatalError("*** Invalid State: This can only fail if there was an error. ***")
+                                      }
+                                      // Happy path
+                                      continuation.resume(returning: samples)
+                                  }))
             }
         }
+    
+        /*guard let workouts = samples as? [HKWorkout] else {
+            return nil
+        }*/
         
-        
-        if let healthStore = healthStore, let query = self.query {
-            healthStore.execute(query)
-        }
+        //print("This is the workout \(workouts)")
+        return samples
     }
+    
+    /*func getSteps() async ->  {
+     
+     let steps : [Double]
+     query = HKStatisticsCollectionQuery(quantityType: stepType, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: anchorDate, intervalComponents: daily)
+     
+     query!.initialResultsHandler = { query, statisticsCollection, error in
+     let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+     let endDate = Date()
+     
+     statisticsCollection?.enumerateStatistics(from: startDate, to: endDate) { steps in
+     steps = steps
+     }
+     }
+     
+     if let healthStore = healthStore, let query = self.query {
+     healthStore.execute(query)
+     }
+     
+     return count
+     
+     }*/
     
 }
