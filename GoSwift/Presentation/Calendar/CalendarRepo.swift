@@ -49,8 +49,6 @@ class CalendarRepo: ObservableObject {
                 $0.location?.isEmpty == false
             }
         }
-        
-        
         return events
         
     }

@@ -38,6 +38,9 @@ struct BikeChartView: View {
             ZStack {
             
                 Chart{
+                    BarMark(x: .value("Bike Info", "Steps"),
+                            y: .value("Value", healthVM.steps[0]))
+                    // FIXME: Place holder data still need to build
                     ForEach(bikeChartValues) {
                         (chart) in
                         BarMark(x:.value("Bike Info", chart.name),
@@ -48,7 +51,6 @@ struct BikeChartView: View {
                         /*LineMark(x:.value("Bike Info", chart.name),
                          y:.value("Bike Info", chart.value))
                          .foregroundStyle(chart.color)*/
-                        
                     }
                 }.padding()
                 
@@ -67,7 +69,7 @@ struct BikeChartView: View {
                 }
             }.onAppear() {
                 vm.runRandom()
-                healthVM.getWorkouts()
+                Task { await healthVM.getHealthInfo(healthType: "steps") }
             }
         }
     }
