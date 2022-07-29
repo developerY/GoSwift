@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import CoreLocation
+import EventKit
 
 protocol GetAllSharedBikesUseCaseProtocol {
     // func execute() async -> Result<[StationInfo], SharedBikesError>
@@ -36,4 +37,7 @@ protocol GetHealthInfoUseCaseProtocol {
     func execute(activity:String) async throws -> HealthWorkoutInfo
 }
 
+protocol CalEventsUseCaseProtocol {
+    func execute() async throws -> [EKEvent]?
+}
 

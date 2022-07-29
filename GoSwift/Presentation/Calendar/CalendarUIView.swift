@@ -39,7 +39,7 @@ struct CalendarUIView: View {
                 
             }.onAppear {
                 Task {
-                    await calVM.loadEvents()
+                    await calVM.getCalEvents()
                 }
                 //calVM.getCurrentEvent()
             }

@@ -11,12 +11,14 @@ import EventKit
 import EventKitUI
 import SwiftUI
 
-class CalendarRepo: ObservableObject {
-    
+class CalEventsDataSource:  CalEventsDataSourceProtocol {
+
     var eventStore = EKEventStore()
     var calendar = Calendar.current
     
-    @Published var events: [EKEvent]?
+    init() {
+        getPermission()
+    }
     
     func getPermission(){
         eventStore.requestAccess(to: .event) { (granted, error) in
@@ -29,7 +31,8 @@ class CalendarRepo: ObservableObject {
         }
     }
     
-    func loadEvents() async -> [EKEvent]? {
+    func getCalEvents() async -> [EKEvent]? {
+        var events: [EKEvent]?
         // Create the start date components
         var oneDayAgoComponents = DateComponents()
         oneDayAgoComponents.day = -1

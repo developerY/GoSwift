@@ -11,6 +11,10 @@
 		DE12A68D2892FD34000225BC /* GetHealthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A68C2892FD34000225BC /* GetHealthInfo.swift */; };
 		DE12A68F28930206000225BC /* HealthInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A68E28930206000225BC /* HealthInfoRepository.swift */; };
 		DE12A691289305FF000225BC /* HealthInfoRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A690289305FF000225BC /* HealthInfoRepositoryProtocol.swift */; };
+		DE12A69428937D65000225BC /* GetAllCalEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A69328937D65000225BC /* GetAllCalEvents.swift */; };
+		DE12A696289383C2000225BC /* CalEventsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A695289383C2000225BC /* CalEventsRepositoryProtocol.swift */; };
+		DE12A69828939DCD000225BC /* CalEventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A69728939DCD000225BC /* CalEventRepository.swift */; };
+		DE12A69A2893A3CB000225BC /* CalEventsDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A6992893A3CB000225BC /* CalEventsDataSourceProtocol.swift */; };
 		DE172C00288E158B00D7E619 /* IocShareBikesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB1288E158B00D7E619 /* IocShareBikesContainer.swift */; };
 		DE172C01288E158B00D7E619 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB2288E158B00D7E619 /* Resolver.swift */; };
 		DE172C02288E158B00D7E619 /* CalendarRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB5288E158B00D7E619 /* CalendarRepo.swift */; };
@@ -103,6 +107,10 @@
 		DE12A68C2892FD34000225BC /* GetHealthInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHealthInfo.swift; sourceTree = "<group>"; };
 		DE12A68E28930206000225BC /* HealthInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInfoRepository.swift; sourceTree = "<group>"; };
 		DE12A690289305FF000225BC /* HealthInfoRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthInfoRepositoryProtocol.swift; sourceTree = "<group>"; };
+		DE12A69328937D65000225BC /* GetAllCalEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllCalEvents.swift; sourceTree = "<group>"; };
+		DE12A695289383C2000225BC /* CalEventsRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalEventsRepositoryProtocol.swift; sourceTree = "<group>"; };
+		DE12A69728939DCD000225BC /* CalEventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalEventRepository.swift; sourceTree = "<group>"; };
+		DE12A6992893A3CB000225BC /* CalEventsDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalEventsDataSourceProtocol.swift; sourceTree = "<group>"; };
 		DE172BB1288E158B00D7E619 /* IocShareBikesContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IocShareBikesContainer.swift; sourceTree = "<group>"; };
 		DE172BB2288E158B00D7E619 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		DE172BB5288E158B00D7E619 /* CalendarRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarRepo.swift; sourceTree = "<group>"; };
@@ -212,6 +220,14 @@
 			path = HealthData;
 			sourceTree = "<group>";
 		};
+		DE12A69228937973000225BC /* CalendarData */ = {
+			isa = PBXGroup;
+			children = (
+				DE172BB5288E158B00D7E619 /* CalendarRepo.swift */,
+			);
+			path = CalendarData;
+			sourceTree = "<group>";
+		};
 		DE172BB0288E158B00D7E619 /* DI */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,7 +253,6 @@
 		DE172BB4288E158B00D7E619 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				DE172BB5288E158B00D7E619 /* CalendarRepo.swift */,
 				DE172BB6288E158B00D7E619 /* CalendarUIView.swift */,
 				DE172BB7288E158B00D7E619 /* CalendarViewModel.swift */,
 				DE172BB8288E158B00D7E619 /* DetailedCalendarUIView.swift */,
@@ -303,6 +318,7 @@
 		DE172BCB288E158B00D7E619 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				DE12A69228937973000225BC /* CalendarData */,
 				DE12A6892892FA53000225BC /* HealthData */,
 				DE172BCC288E158B00D7E619 /* CurrentCalEventDataSource.swift */,
 				DE172BCD288E158B00D7E619 /* NetworkSource */,
@@ -351,6 +367,7 @@
 			children = (
 				DE172BD7288E158B00D7E619 /* WalkingRoutesDataSourceProtocol.swift */,
 				DE12A68A2892FC9B000225BC /* HealthDataSourceProtocol.swift */,
+				DE12A6992893A3CB000225BC /* CalEventsDataSourceProtocol.swift */,
 				DE172BD8288E158B00D7E619 /* SharedBikesDataSourceProtocol.swift */,
 				DE172BD9288E158B00D7E619 /* CurrentCalEventDataSourceProtocol.swift */,
 				DE172BDA288E158B00D7E619 /* BartStationsDataSourceProtocol.swift */,
@@ -377,6 +394,7 @@
 				DE172BDF288E158B00D7E619 /* SharedBikesRepository.swift */,
 				DE172BE0288E158B00D7E619 /* BartStationsRepository.swift */,
 				DE12A68E28930206000225BC /* HealthInfoRepository.swift */,
+				DE12A69728939DCD000225BC /* CalEventRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -433,6 +451,7 @@
 				DE172BF4288E158B00D7E619 /* WalkingRoutesRepositoryProtocol.swift */,
 				DE172BF5288E158B00D7E619 /* BartStationRepositoryProtocol.swift */,
 				DE12A690289305FF000225BC /* HealthInfoRepositoryProtocol.swift */,
+				DE12A695289383C2000225BC /* CalEventsRepositoryProtocol.swift */,
 				DE172BF6288E158B00D7E619 /* SharedBikesRepositoryProtocol.swift */,
 				DE172BF7288E158B00D7E619 /* CurrentCalEventRepositoryProtocol.swift */,
 			);
@@ -460,6 +479,7 @@
 			children = (
 				DE172BFC288E158B00D7E619 /* GetCurrentCalEvent.swift */,
 				DE12A68C2892FD34000225BC /* GetHealthInfo.swift */,
+				DE12A69328937D65000225BC /* GetAllCalEvents.swift */,
 				DE172BFD288E158B00D7E619 /* GetAllWalkingRoutes.swift */,
 				DE172BFE288E158B00D7E619 /* GetAllSharedBikes.swift */,
 				DE172BFF288E158B00D7E619 /* GetAllBartStations.swift */,
@@ -683,9 +703,11 @@
 				DE172C02288E158B00D7E619 /* CalendarRepo.swift in Sources */,
 				DE172C31288E158B00D7E619 /* CurrentCalEventRepositoryProtocol.swift in Sources */,
 				DE172C24288E158B00D7E619 /* RentalMethod.swift in Sources */,
+				DE12A69428937D65000225BC /* GetAllCalEvents.swift in Sources */,
 				DE172C22288E158B00D7E619 /* StationType.swift in Sources */,
 				DE172C1E288E158B00D7E619 /* SharedBikesRepository.swift in Sources */,
 				DE172C0A288E158B00D7E619 /* BikeChartViewModel.swift in Sources */,
+				DE12A69828939DCD000225BC /* CalEventRepository.swift in Sources */,
 				DE8A718A288DD9B1001355BC /* Persistence.swift in Sources */,
 				DE172C12288E158B00D7E619 /* CurrentCalEventDataSource.swift in Sources */,
 				DE172C03288E158B00D7E619 /* CalendarUIView.swift in Sources */,
@@ -717,6 +739,7 @@
 				DE172C2B288E158B00D7E619 /* SystemInfo.swift in Sources */,
 				DE172C2C288E158B00D7E619 /* BartStations.swift in Sources */,
 				DE172C04288E158B00D7E619 /* CalendarViewModel.swift in Sources */,
+				DE12A69A2893A3CB000225BC /* CalEventsDataSourceProtocol.swift in Sources */,
 				DE172C23288E158B00D7E619 /* StationInfo.swift in Sources */,
 				DE172C09288E158B00D7E619 /* BikeChartView.swift in Sources */,
 				DE8A7181288DD9B0001355BC /* GoSwiftApp.swift in Sources */,
@@ -734,6 +757,7 @@
 				DE12A68D2892FD34000225BC /* GetHealthInfo.swift in Sources */,
 				DE172C2D288E158B00D7E619 /* MapAnnotation.swift in Sources */,
 				DE172C17288E158B00D7E619 /* BartStationsDataSource.swift in Sources */,
+				DE12A696289383C2000225BC /* CalEventsRepositoryProtocol.swift in Sources */,
 				DE172C30288E158B00D7E619 /* SharedBikesRepositoryProtocol.swift in Sources */,
 				DE172C2A288E158B00D7E619 /* SysInfoDataClass.swift in Sources */,
 				DE8A718D288DD9B1001355BC /* GoSwift.xcdatamodeld in Sources */,

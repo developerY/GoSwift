@@ -92,7 +92,8 @@ struct DetailedCalendarUIView: View {
 struct DetailedCalendarUIView_Previews: PreviewProvider {
     
     static var calVM = CalendarViewModel(
-        getCurrentCalEvent: Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self)
+        getCurrentCalEvent: Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self),
+        getCalEvents: Resolver.shared.resolve(CalEventsUseCaseProtocol.self)
     )
     
     
