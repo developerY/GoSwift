@@ -39,7 +39,7 @@ struct BikeChartView: View {
             
                 Chart{
                     BarMark(x: .value("Bike Info", "Steps"),
-                            y: .value("Value", healthVM.steps[0]))
+                            y: .value("Value", healthVM.totalHealthSteps)) // published data
                     // FIXME: Place holder data still need to build
                     ForEach(bikeChartValues) {
                         (chart) in
@@ -69,14 +69,16 @@ struct BikeChartView: View {
                 }
             }.onAppear() {
                 vm.runRandom()
-                Task { await healthVM.getHealthInfo(healthType: "steps") }
+                healthVM.getTotalSteps()
             }
         }
     }
 }
 
 struct BikeChartView_Previews: PreviewProvider {
-    static let healthVM = HealthViewModel()
+    static var healthVM = HealthViewModel(
+        getAllHealtInfo: Resolver.shared.resolve(GetHealthInfoUseCaseProtocol.self)
+    )
     static var previews: some View {
         BikeChartView(healthVM: healthVM)
     }

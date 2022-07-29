@@ -34,7 +34,26 @@ extension Date {
 }
 
 // might be actor?
-class HealthRepo: ObservableObject {
+class HealthInfoDataSource: HealthInfoDataSourceProtocol {
+
+    init() {
+        Task {
+            await load()
+            await loadNewDataFromHealthKit()
+        }
+    }
+    
+    func getHealthInfo(activity: String) async throws -> HealthWorkoutInfo {
+        return HealthWorkoutInfo([10])
+    }
+    
+    // read health data
+    func load() async {
+        guard await requestAuthorization() else {
+            logger.debug("unable to authorize HealthKit.")
+            return
+        }
+    }
     
     let logger = Logger(subsystem: "com.ylabz.goswift.HealthRepo", category: "HealthKit")
     
@@ -45,7 +64,7 @@ class HealthRepo: ObservableObject {
 
     
     // MARK: - Public Methods
-    public func requestAuthorization() async -> Bool {
+    func requestAuthorization() async -> Bool {
         guard isAvailable else { return false }
         
         do {

@@ -22,7 +22,9 @@ struct ContentView: View {
         getCurrentCalEvent: Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self)
     )
     
-    @StateObject var healthVM = HealthViewModel()
+    @StateObject var healthVM = HealthViewModel(
+        getAllHealtInfo: Resolver.shared.resolve(GetHealthInfoUseCaseProtocol.self)
+    )
     
     var body: some View {
         VStack() {
@@ -55,7 +57,7 @@ private let itemFormatter: DateFormatter = {
 }()
 
 struct ContentView_Previews: PreviewProvider {
-    static var healthVM = HealthViewModel()
+    //static var healthVM = HealthViewModel()
     static var previews: some View {
         Text("ToDo")
         //ContentView(healthVM: healthVM)

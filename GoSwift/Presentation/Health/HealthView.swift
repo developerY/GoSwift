@@ -17,7 +17,10 @@ struct HealthView: View {
 }
 
 struct HealthUIView_Previews: PreviewProvider {
-    static var healthVM = HealthViewModel()
+    
+    static var healthVM = HealthViewModel(
+        getAllHealtInfo: Resolver.shared.resolve(GetHealthInfoUseCaseProtocol.self)
+    )
     static var previews: some View {
         HealthView(healthVM: healthVM)
     }

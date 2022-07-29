@@ -29,3 +29,11 @@ protocol GetCurrentCalEventUseCaseProtocol {
     func execute() async throws -> CurrentCalEvent
     func execute(myEvent: String, loc :CLLocation) async throws
 }
+
+
+typealias HealthWorkoutInfo = [Int]
+protocol GetHealthInfoUseCaseProtocol {
+    func execute(activity:String) async throws -> HealthWorkoutInfo
+}
+
+

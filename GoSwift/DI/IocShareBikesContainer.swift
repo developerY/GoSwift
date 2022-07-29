@@ -29,6 +29,10 @@ func buildContainer() -> Container {
         return CurrentCalEventDataSource()
     }.inObjectScope(.container)
     
+    container.register(HealthInfoDataSourceProtocol.self) { _ in
+        return HealthInfoDataSource()
+    }.inObjectScope(.container)
+    
     container.register(SharedBikesRepositoryProtocol.self) { _ in
         return SharedBikesRepository(sharedBikesDataSource: container.resolve(SharedBikesDataSourceProtocol.self)!)
     }.inObjectScope(.container)
@@ -46,6 +50,10 @@ func buildContainer() -> Container {
         return CurrentCalEventRepository(currentCalEventDataSource: container.resolve(CurrentCalEventDataSourceProtocol.self)!)
     }.inObjectScope(.container)
     
+    container.register(HealthInfoRepositoryProtocol.self) { _ in
+        return HealthInfoRepository(healthInfoDataSource: container.resolve(HealthInfoDataSourceProtocol.self)!)
+    }.inObjectScope(.container)
+    
     container.register(GetAllSharedBikesUseCaseProtocol.self) { _ in
         return GetAllSharedBikes(sharedBikesRepo: container.resolve(SharedBikesRepositoryProtocol.self)!)
     }.inObjectScope(.container)
@@ -61,6 +69,10 @@ func buildContainer() -> Container {
     
     container.register(GetCurrentCalEventUseCaseProtocol.self) { _ in
         return GetCurrentCalEvent(currentCalEventRepo: container.resolve(CurrentCalEventRepositoryProtocol.self)!)
+    }.inObjectScope(.container)
+    
+    container.register(GetHealthInfoUseCaseProtocol.self) { _ in
+        return GetHealthInfo(healthInfoRepo: container.resolve(HealthInfoRepositoryProtocol.self)!)
     }.inObjectScope(.container)
     
     return container
