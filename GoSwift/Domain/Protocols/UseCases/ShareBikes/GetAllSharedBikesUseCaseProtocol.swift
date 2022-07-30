@@ -34,7 +34,7 @@ protocol GetCurrentCalEventUseCaseProtocol {
 
 typealias HealthWorkoutInfo = [Int]
 protocol GetHealthInfoUseCaseProtocol {
-    func execute(activity:String) async throws -> HealthWorkoutInfo
+    func execute(activity:ActivityType) async throws -> HealthWorkoutInfo
 }
 
 protocol CalEventsUseCaseProtocol {

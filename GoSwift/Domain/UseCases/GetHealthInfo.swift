@@ -17,7 +17,7 @@ class GetHealthInfo : GetHealthInfoUseCaseProtocol {
     }
     
     // MARK: Get/Set current event
-    func execute(activity:String) async throws -> HealthWorkoutInfo {
+    func execute(activity: ActivityType) async throws -> HealthWorkoutInfo {
         return try await healthInfoRepo.getHealthInfo(activity: activity)
     }
 }

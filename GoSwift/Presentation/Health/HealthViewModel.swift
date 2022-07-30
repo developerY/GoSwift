@@ -15,21 +15,24 @@ class HealthViewModel: ObservableObject{
     
     private let getAllHealthInfo : GetHealthInfoUseCaseProtocol
     @Published private(set) var totalHealthSteps = 0 // add up all health step to get total
+    @Published private(set) var totalHealthBikeMiles = 0
     
     init(getAllHealtInfo: GetHealthInfoUseCaseProtocol){
         self.getAllHealthInfo = getAllHealtInfo
     }
     
     @MainActor
-    func getTotalSteps() -> Int {
-        var steps:[Int]?
+    func getTotalStepsAndBike() {
         Task {
-            steps = try await getAllHealthInfo.execute(activity: "steps")
+            let steps = try await getAllHealthInfo.execute(activity: ActivityType.steps)
+            steps.forEach { step in
+                totalHealthSteps += step
+            }
+            
+            let bikeMiles = try await getAllHealthInfo.execute(activity: ActivityType.bike)
+            bikeMiles.forEach { bkMile in
+                totalHealthBikeMiles += bkMile
+            }
         }
-        steps?.forEach { step in
-            totalHealthSteps += step
-        }
-        return totalHealthSteps
     }
-    
 }

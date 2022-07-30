@@ -69,7 +69,7 @@ struct BikeChartView: View {
                 }
             }.onAppear() {
                 vm.runRandom()
-                healthVM.getTotalSteps()
+                healthVM.getTotalStepsAndBike()
             }
         }
     }

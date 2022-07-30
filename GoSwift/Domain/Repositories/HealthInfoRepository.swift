@@ -14,7 +14,7 @@ class HealthInfoRepository : HealthInfoRepositoryProtocol {
         self.healthInfoDataSource = healthInfoDataSource
     }
     
-    func getHealthInfo(activity:String) async throws -> HealthWorkoutInfo {
+    func getHealthInfo(activity:ActivityType) async throws -> HealthWorkoutInfo {
         try await healthInfoDataSource.getHealthInfo(activity: activity)
     }
 

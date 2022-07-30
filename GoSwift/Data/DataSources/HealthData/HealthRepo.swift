@@ -20,21 +20,23 @@ private let healthStore = HKHealthStore()
 private let isAvailable = HKHealthStore.isHealthDataAvailable()
 
 // NOT NEEDED
-var query: HKStatisticsCollectionQuery?
-let stepType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
-let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
-let anchorDate = Date.mondayAt12AM()
-let daily = DateComponents(day: 1)
-// let predicate : NSPredicate
 
-extension Date {
+
+private extension Date {
     static func mondayAt12AM() -> Date {
         return Calendar(identifier: .iso8601).date(from: Calendar(identifier: .iso8601).dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date()))!
     }
 }
 
+private var query: HKStatisticsCollectionQuery?
+private let stepType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
+private let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
+private let anchorDate = Date.mondayAt12AM()
+private let daily = DateComponents(day: 1)
+// let predicate : NSPredicate
+
 // might be actor?
-class HealthInfoDataSource: HealthInfoDataSourceProtocol {
+private class HealthInfoRepo {
 
     init() {
         Task {

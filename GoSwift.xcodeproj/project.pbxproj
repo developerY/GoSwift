@@ -15,6 +15,7 @@
 		DE12A696289383C2000225BC /* CalEventsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A695289383C2000225BC /* CalEventsRepositoryProtocol.swift */; };
 		DE12A69828939DCD000225BC /* CalEventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A69728939DCD000225BC /* CalEventRepository.swift */; };
 		DE12A69A2893A3CB000225BC /* CalEventsDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A6992893A3CB000225BC /* CalEventsDataSourceProtocol.swift */; };
+		DE12A69C289437BF000225BC /* HealthDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A69B289437BF000225BC /* HealthDataSource.swift */; };
 		DE172C00288E158B00D7E619 /* IocShareBikesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB1288E158B00D7E619 /* IocShareBikesContainer.swift */; };
 		DE172C01288E158B00D7E619 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB2288E158B00D7E619 /* Resolver.swift */; };
 		DE172C02288E158B00D7E619 /* CalendarRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB5288E158B00D7E619 /* CalendarRepo.swift */; };
@@ -111,6 +112,7 @@
 		DE12A695289383C2000225BC /* CalEventsRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalEventsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		DE12A69728939DCD000225BC /* CalEventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalEventRepository.swift; sourceTree = "<group>"; };
 		DE12A6992893A3CB000225BC /* CalEventsDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalEventsDataSourceProtocol.swift; sourceTree = "<group>"; };
+		DE12A69B289437BF000225BC /* HealthDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDataSource.swift; sourceTree = "<group>"; };
 		DE172BB1288E158B00D7E619 /* IocShareBikesContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IocShareBikesContainer.swift; sourceTree = "<group>"; };
 		DE172BB2288E158B00D7E619 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		DE172BB5288E158B00D7E619 /* CalendarRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarRepo.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				DE172BBA288E158B00D7E619 /* HealthRepo.swift */,
+				DE12A69B289437BF000225BC /* HealthDataSource.swift */,
 			);
 			path = HealthData;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				DE12A69428937D65000225BC /* GetAllCalEvents.swift in Sources */,
 				DE172C22288E158B00D7E619 /* StationType.swift in Sources */,
 				DE172C1E288E158B00D7E619 /* SharedBikesRepository.swift in Sources */,
+				DE12A69C289437BF000225BC /* HealthDataSource.swift in Sources */,
 				DE172C0A288E158B00D7E619 /* BikeChartViewModel.swift in Sources */,
 				DE12A69828939DCD000225BC /* CalEventRepository.swift in Sources */,
 				DE8A718A288DD9B1001355BC /* Persistence.swift in Sources */,

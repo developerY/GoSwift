@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol HealthInfoRepositoryProtocol {
-    func getHealthInfo(activity:String) async throws -> HealthWorkoutInfo
+    func getHealthInfo(activity:ActivityType) async throws -> HealthWorkoutInfo
 }
 
 
