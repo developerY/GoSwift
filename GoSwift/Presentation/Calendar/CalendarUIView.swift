@@ -7,34 +7,47 @@
 
 import SwiftUI
 import EventKit
+import MapKit
 
 struct CalendarUIView: View {
     @ObservedObject var calVM: CalendarViewModel
     @State private var date = Date()
     @State private var dates: Set<DateComponents> = []
     
-    @State private var calPath = NavigationPath()// New in iOS 16
-
+    @State var  myEvent: MKCoordinateRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0),
+        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     
+    @State private var calPath = NavigationPath()// New in iOS 16
+    
+    /*
+     region: MKCoordinateRegion(
+     center: CLLocationCoordinate2D(latitude: event.location?.coordinate.latitude, longitude: event.location?.coordinate.longitude),
+     span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+     */
+    
+    var region = MKCoordinateRegion(
+        center:CLLocationCoordinate2D(latitude: 34.011, longitude: -122.177),
+        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     
     var body: some View {
         NavigationStack(path: $calPath) {
             VStack {
-            
-        
                 /*
                  MultiDatePicker("Start Date",selection: $dates, displayedComponents: .hourAndMinute)
                  */
                 if calVM.events?.isEmpty ?? true {
                     Text("No Events")
                 }
-                
                 List(calVM.events ?? [], id: \.self) { event in
-                    NavigationLink("\(event.title) @ \(event.location ?? "No Location")", value: event)
+                    HStack {
+                        GeoEventMapView(event: event)
+                        NavigationLink("\(event.title) @ \(event.location ?? "No Location")", value: event)
+                    }
                 }.navigationDestination(for: EKEvent.self){ event in
-                    DetailedCalendarUIView(calVM: calVM, path: $calPath,event: event )
-                }
-               
+                    DetailedCalendarUIView(calVM: calVM, path: $calPath, event: event )
+                } // NEW iOS 16
+                
                 //Text("Current event \(calVM.currentCalEvent.eventName)")
                 
             }.onAppear {
@@ -45,25 +58,37 @@ struct CalendarUIView: View {
             }
             
             /*if #available(iOS 13, *) { // for fun try iOS 17
-                DatePicker("Start Date",selection: $date)
-                    .datePickerStyle(.graphical)
-                
-            } else {
-                VStack {
-                    Text("Why are you running such an old OS!")
-                    Text("UPDATE NOW!")
-                }
-            }*/
+             DatePicker("Start Date",selection: $date)
+             .datePickerStyle(.graphical)
+             
+             } else {
+             VStack {
+             Text("Why are you running such an old OS!")
+             Text("UPDATE NOW!")
+             }
+             }*/
         }
     }
 }
 
 
 struct CalendarUIView_Previews: PreviewProvider {
-    //static var vm = CalendarViewModel()
-    // static var transVM = TransitMapViewModel()
+    
+    
+    static var transVM = TransitMapViewModel(
+        getAllSharedBikes: Resolver.shared.resolve(GetAllSharedBikesUseCaseProtocol.self),
+        getAllBartStations: Resolver.shared.resolve(GetAllBartStationsUseCaseProtocol.self),
+        getAllWalkingRoutes: Resolver.shared.resolve(GetAllWalkingRoutesUseCaseProtocol.self),
+        getCurrentCalEvent : Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self)
+    )
+    
+    static var calVM = CalendarViewModel(
+        getCurrentCalEvent: Resolver.shared.resolve(GetCurrentCalEventUseCaseProtocol.self),
+        getCalEvents: Resolver.shared.resolve(CalEventsUseCaseProtocol.self)
+    )
+    
+    
     static var previews: some View {
-        //CalendarUIView(calVM: vm, transVM: transVM)
-        Text("HOLD")
+        CalendarUIView(calVM: calVM)
     }
 }

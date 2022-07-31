@@ -7,7 +7,7 @@
 import Foundation
 import Combine
 
-class BikeChartViewModel: ObservableObject{
+class HealthChartViewModel: ObservableObject{
     @Published private(set) var  motion = 20.0
     private var bikeSearchTask: Task<Void, Never>? = nil
         

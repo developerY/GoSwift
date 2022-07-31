@@ -40,7 +40,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("events", systemImage: "calendar")
                     }
-                BikeChartView(healthVM: healthVM)
+                HealthChartView(healthVM: healthVM)
                     .tabItem {
                         Label("charts", systemImage: "chart.xyaxis.line")
                     }

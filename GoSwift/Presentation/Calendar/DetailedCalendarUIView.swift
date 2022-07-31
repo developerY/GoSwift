@@ -13,41 +13,8 @@ import MapKit
 struct DetailedCalendarUIView: View {
     @ObservedObject var calVM: CalendarViewModel
     @Binding var path: NavigationPath
-    @State var eventAddress = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 0.0,
-                                       longitude: 0.0),
-        latitudinalMeters: 750,
-        longitudinalMeters: 750)
-    
-    
     let event: EKEvent
-    let geoCoder = CLGeocoder()
     
-    
-    private func region(event:EKEvent) -> MKCoordinateRegion? {
-        guard let eventLoc = event.location else {
-            return eventAddress
-        }
-        
-        geoCoder.geocodeAddressString(eventLoc) { (placemarkes, error) in
-            
-            if error == nil {
-                if let placemarker = placemarkes?[0]{
-                    if let locPlace = placemarker.location {
-                        eventAddress = MKCoordinateRegion(
-                            center: CLLocationCoordinate2D(latitude: locPlace.coordinate.latitude, longitude: locPlace.coordinate.longitude ),
-                            latitudinalMeters: 750,
-                            longitudinalMeters: 750
-                        )
-                        print("Event lat long \(String(describing: eventAddress))")
-                    }
-                    return
-                }
-            }
-        }
-        return eventAddress
-    }
-
     
     var body: some View {
         
@@ -67,7 +34,7 @@ struct DetailedCalendarUIView: View {
             }
             
             Button("Set Event") {
-                path.removeLast(1) // NOTE: new in iOS 16 programmatic navigation
+                path.removeLast(1) // NEW: new in iOS 16 programmatic navigation
                 // Navigate back and pass event
                 if let map_event = event.structuredLocation?.geoLocation?.coordinate {
                     calVM.setCurrentEvent(myEvent: event.title, eventLoc:CLLocation(latitude: map_event.latitude, longitude: map_event.longitude))
@@ -75,13 +42,7 @@ struct DetailedCalendarUIView: View {
             }.padding()
                 .border(.gray)
             Spacer()
-           
-            if let myEvent = region(event: event) {
-                Map(coordinateRegion: .constant(myEvent)).padding()//.frame(width: 400, height: 300).
-            } else {
-                Text("NO MAP")
-            }
-                
+            GeoEventMapView(event: event)
             Spacer()
         }.padding(.vertical, 5)
     }

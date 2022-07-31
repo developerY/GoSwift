@@ -17,11 +17,12 @@ struct ChartValues: Identifiable {
     var id = UUID() /// :String {name}
 }
 
-struct BikeChartView: View {
+struct HealthChartView: View {
     @StateObject var healthVM : HealthViewModel
+    @State private var showingSheet = false
     
     // The only copy.  Pass if needed
-    @StateObject var vm = BikeChartViewModel()
+    @StateObject var vm = HealthChartViewModel()
     
     let timer =  Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -35,11 +36,43 @@ struct BikeChartView: View {
     
     var body: some View {
         VStack {
-            ZStack {
+            Text("See all your health data")
+                .font(.subheadline)
+            Spacer()
+            HStack(alignment: .center) {
+                Button("Health Data") {
+                    showingSheet.toggle()
+                }
+                .padding()
+                .buttonStyle(.borderedProminent)
+                .sheet(isPresented: $showingSheet){
+                    ChartPagingView(healthVM: healthVM)
+                }
+                .shadow(radius: 7)
+                
+                
+                
+                
+                
+                Button {
+                    print("actin here")
+                } label: {
+                    Image(systemName: "bolt.heart.fill")
+                }.padding()
+                    .overlay {
+                        Circle().stroke(.white, lineWidth: 4)
+                    }
+                    .foregroundColor(Color.white)
+                    .background(Color.cyan)
+                    .clipShape(Circle())
+                    .shadow(radius: 7)
+            }
             
+            Divider()
+            
+            ZStack {
+                
                 Chart{
-                    BarMark(x: .value("Bike Info", "Steps"),
-                            y: .value("Value", healthVM.totalHealthSteps)) // published data
                     // FIXME: Place holder data still need to build
                     ForEach(bikeChartValues) {
                         (chart) in
@@ -80,6 +113,6 @@ struct BikeChartView_Previews: PreviewProvider {
         getAllHealtInfo: Resolver.shared.resolve(GetHealthInfoUseCaseProtocol.self)
     )
     static var previews: some View {
-        BikeChartView(healthVM: healthVM)
+        HealthChartView(healthVM: healthVM)
     }
 }

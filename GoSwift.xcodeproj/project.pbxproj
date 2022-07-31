@@ -16,6 +16,11 @@
 		DE12A69828939DCD000225BC /* CalEventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A69728939DCD000225BC /* CalEventRepository.swift */; };
 		DE12A69A2893A3CB000225BC /* CalEventsDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A6992893A3CB000225BC /* CalEventsDataSourceProtocol.swift */; };
 		DE12A69C289437BF000225BC /* HealthDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A69B289437BF000225BC /* HealthDataSource.swift */; };
+		DE12A69E2894AFC9000225BC /* ChartPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A69D2894AFC9000225BC /* ChartPagingView.swift */; };
+		DE12A6A02894B701000225BC /* ChartStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A69F2894B701000225BC /* ChartStepsView.swift */; };
+		DE12A6A22894BA29000225BC /* ChartBikeMilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A6A12894BA29000225BC /* ChartBikeMilesView.swift */; };
+		DE12A6A42894BAC8000225BC /* ChartHeartHealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A6A32894BAC8000225BC /* ChartHeartHealthView.swift */; };
+		DE12A6A82895D55E000225BC /* GeoEventMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A6A72895D55E000225BC /* GeoEventMapView.swift */; };
 		DE172C00288E158B00D7E619 /* IocShareBikesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB1288E158B00D7E619 /* IocShareBikesContainer.swift */; };
 		DE172C01288E158B00D7E619 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB2288E158B00D7E619 /* Resolver.swift */; };
 		DE172C02288E158B00D7E619 /* CalendarRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB5288E158B00D7E619 /* CalendarRepo.swift */; };
@@ -25,8 +30,8 @@
 		DE172C06288E158B00D7E619 /* HealthRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBA288E158B00D7E619 /* HealthRepo.swift */; };
 		DE172C07288E158B00D7E619 /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBB288E158B00D7E619 /* HealthViewModel.swift */; };
 		DE172C08288E158B00D7E619 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBC288E158B00D7E619 /* HealthView.swift */; };
-		DE172C09288E158B00D7E619 /* BikeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBE288E158B00D7E619 /* BikeChartView.swift */; };
-		DE172C0A288E158B00D7E619 /* BikeChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBF288E158B00D7E619 /* BikeChartViewModel.swift */; };
+		DE172C09288E158B00D7E619 /* HeatlthChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBE288E158B00D7E619 /* HeatlthChartView.swift */; };
+		DE172C0A288E158B00D7E619 /* HealthChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBF288E158B00D7E619 /* HealthChartViewModel.swift */; };
 		DE172C0B288E158B00D7E619 /* TransitMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BC1288E158B00D7E619 /* TransitMapView.swift */; };
 		DE172C0C288E158B00D7E619 /* TransitMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BC2288E158B00D7E619 /* TransitMapViewModel.swift */; };
 		DE172C0D288E158B00D7E619 /* BikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BC4288E158B00D7E619 /* BikeListView.swift */; };
@@ -113,6 +118,11 @@
 		DE12A69728939DCD000225BC /* CalEventRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalEventRepository.swift; sourceTree = "<group>"; };
 		DE12A6992893A3CB000225BC /* CalEventsDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalEventsDataSourceProtocol.swift; sourceTree = "<group>"; };
 		DE12A69B289437BF000225BC /* HealthDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDataSource.swift; sourceTree = "<group>"; };
+		DE12A69D2894AFC9000225BC /* ChartPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPagingView.swift; sourceTree = "<group>"; };
+		DE12A69F2894B701000225BC /* ChartStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartStepsView.swift; sourceTree = "<group>"; };
+		DE12A6A12894BA29000225BC /* ChartBikeMilesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartBikeMilesView.swift; sourceTree = "<group>"; };
+		DE12A6A32894BAC8000225BC /* ChartHeartHealthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartHeartHealthView.swift; sourceTree = "<group>"; };
+		DE12A6A72895D55E000225BC /* GeoEventMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoEventMapView.swift; sourceTree = "<group>"; };
 		DE172BB1288E158B00D7E619 /* IocShareBikesContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IocShareBikesContainer.swift; sourceTree = "<group>"; };
 		DE172BB2288E158B00D7E619 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		DE172BB5288E158B00D7E619 /* CalendarRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarRepo.swift; sourceTree = "<group>"; };
@@ -122,8 +132,8 @@
 		DE172BBA288E158B00D7E619 /* HealthRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthRepo.swift; sourceTree = "<group>"; };
 		DE172BBB288E158B00D7E619 /* HealthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
 		DE172BBC288E158B00D7E619 /* HealthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
-		DE172BBE288E158B00D7E619 /* BikeChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeChartView.swift; sourceTree = "<group>"; };
-		DE172BBF288E158B00D7E619 /* BikeChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeChartViewModel.swift; sourceTree = "<group>"; };
+		DE172BBE288E158B00D7E619 /* HeatlthChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatlthChartView.swift; sourceTree = "<group>"; };
+		DE172BBF288E158B00D7E619 /* HealthChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthChartViewModel.swift; sourceTree = "<group>"; };
 		DE172BC1288E158B00D7E619 /* TransitMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitMapView.swift; sourceTree = "<group>"; };
 		DE172BC2288E158B00D7E619 /* TransitMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitMapViewModel.swift; sourceTree = "<group>"; };
 		DE172BC4288E158B00D7E619 /* BikeListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeListView.swift; sourceTree = "<group>"; };
@@ -275,8 +285,12 @@
 		DE172BBD288E158B00D7E619 /* Chart */ = {
 			isa = PBXGroup;
 			children = (
-				DE172BBE288E158B00D7E619 /* BikeChartView.swift */,
-				DE172BBF288E158B00D7E619 /* BikeChartViewModel.swift */,
+				DE172BBE288E158B00D7E619 /* HeatlthChartView.swift */,
+				DE172BBF288E158B00D7E619 /* HealthChartViewModel.swift */,
+				DE12A69D2894AFC9000225BC /* ChartPagingView.swift */,
+				DE12A69F2894B701000225BC /* ChartStepsView.swift */,
+				DE12A6A12894BA29000225BC /* ChartBikeMilesView.swift */,
+				DE12A6A32894BAC8000225BC /* ChartHeartHealthView.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -286,6 +300,7 @@
 			children = (
 				DE172BC1288E158B00D7E619 /* TransitMapView.swift */,
 				DE172BC2288E158B00D7E619 /* TransitMapViewModel.swift */,
+				DE12A6A72895D55E000225BC /* GeoEventMapView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -704,13 +719,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE172C02288E158B00D7E619 /* CalendarRepo.swift in Sources */,
+				DE12A6A82895D55E000225BC /* GeoEventMapView.swift in Sources */,
 				DE172C31288E158B00D7E619 /* CurrentCalEventRepositoryProtocol.swift in Sources */,
 				DE172C24288E158B00D7E619 /* RentalMethod.swift in Sources */,
 				DE12A69428937D65000225BC /* GetAllCalEvents.swift in Sources */,
 				DE172C22288E158B00D7E619 /* StationType.swift in Sources */,
+				DE12A6A42894BAC8000225BC /* ChartHeartHealthView.swift in Sources */,
+				DE12A6A02894B701000225BC /* ChartStepsView.swift in Sources */,
 				DE172C1E288E158B00D7E619 /* SharedBikesRepository.swift in Sources */,
 				DE12A69C289437BF000225BC /* HealthDataSource.swift in Sources */,
-				DE172C0A288E158B00D7E619 /* BikeChartViewModel.swift in Sources */,
+				DE172C0A288E158B00D7E619 /* HealthChartViewModel.swift in Sources */,
 				DE12A69828939DCD000225BC /* CalEventRepository.swift in Sources */,
 				DE8A718A288DD9B1001355BC /* Persistence.swift in Sources */,
 				DE172C12288E158B00D7E619 /* CurrentCalEventDataSource.swift in Sources */,
@@ -745,13 +763,14 @@
 				DE172C04288E158B00D7E619 /* CalendarViewModel.swift in Sources */,
 				DE12A69A2893A3CB000225BC /* CalEventsDataSourceProtocol.swift in Sources */,
 				DE172C23288E158B00D7E619 /* StationInfo.swift in Sources */,
-				DE172C09288E158B00D7E619 /* BikeChartView.swift in Sources */,
+				DE172C09288E158B00D7E619 /* HeatlthChartView.swift in Sources */,
 				DE8A7181288DD9B0001355BC /* GoSwiftApp.swift in Sources */,
 				DE172C28288E158B00D7E619 /* CurrentCalEvent.swift in Sources */,
 				DE172C05288E158B00D7E619 /* DetailedCalendarUIView.swift in Sources */,
 				DE172C13288E158B00D7E619 /* CombineSharedBikesDataSource.swift in Sources */,
 				DE172C33288E158B00D7E619 /* GetCurrentCalEvent.swift in Sources */,
 				DE172C07288E158B00D7E619 /* HealthViewModel.swift in Sources */,
+				DE12A69E2894AFC9000225BC /* ChartPagingView.swift in Sources */,
 				DE12A691289305FF000225BC /* HealthInfoRepositoryProtocol.swift in Sources */,
 				DE172C27288E158B00D7E619 /* StationDataClass.swift in Sources */,
 				DE172C36288E158B00D7E619 /* GetAllBartStations.swift in Sources */,
@@ -767,6 +786,7 @@
 				DE8A718D288DD9B1001355BC /* GoSwift.xcdatamodeld in Sources */,
 				DE172C1A288E158B00D7E619 /* CurrentCalEventDataSourceProtocol.swift in Sources */,
 				DE172C29288E158B00D7E619 /* TransportationStation.swift in Sources */,
+				DE12A6A22894BA29000225BC /* ChartBikeMilesView.swift in Sources */,
 				DE172C1F288E158B00D7E619 /* BartStationsRepository.swift in Sources */,
 				DE172C0E288E158B00D7E619 /* SharedBikesListViewModel.swift in Sources */,
 				DE172C35288E158B00D7E619 /* GetAllSharedBikes.swift in Sources */,

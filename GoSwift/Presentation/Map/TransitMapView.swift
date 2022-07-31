@@ -39,6 +39,36 @@ struct PlaceAnnotationView: View {
     }
 }
 
+struct EventLocationPinView: View {
+    @State var showTitle = true
+    let currentEvent : CurrentCalEvent
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            Text(currentEvent.eventName)
+                .font(.callout)
+                .padding(5)
+                .background(Color(.white))
+                .cornerRadius(10)
+                .opacity(showTitle ? 0 : 1)
+            
+            Image(systemName:"figure.arms.open")
+                .font(.title)
+                .foregroundColor(.red).opacity(0.7)
+            
+            Image(systemName: "arrowtriangle.down.fill")
+                .font(.caption)
+                .foregroundColor(.cyan).opacity(0.7)
+                .offset(x: 0, y: -5)
+        }
+        .onTapGesture {
+            withAnimation(.easeInOut) {
+                showTitle.toggle()
+            }
+        }
+    }
+}
+
 
 
 
@@ -72,7 +102,8 @@ struct TransitMapView: View {
         HStack {
             VStack {
                 NavigationStack(path: $transMapPath) { // new in iOS 16.0+ Beta (SwiftUI 4)
-                    Map(coordinateRegion: .constant(regionVM()), annotationItems: viewModel.mapMarkers) { item in
+                    Map(coordinateRegion: .constant(regionVM()),
+                        annotationItems: viewModel.mapMarkers) { item in
                         MapAnnotation(coordinate: item.coordinate) {
                             ZStack {
                                 PlaceAnnotationView(iconType: selectedTransit, station: item.station)
@@ -89,6 +120,11 @@ struct TransitMapView: View {
                             }.padding(.vertical,30)
                         }
                     }
+                    /*
+                     MapPin(coordinate: viewModel.currentCalEvent.location.coordinate.latitude, viewModel.currentCalEvent.location.coordinate.longitude)
+                     */
+                   
+             
                     
                     Section{
                         Picker("Mode", selection: $selectedTransit) {
@@ -103,7 +139,11 @@ struct TransitMapView: View {
                     }
                     
                 }
-                Text("Current Event \(viewModel.currentCalEvent.eventName)")
+                Divider()
+                Text("\(viewModel.currentCalEvent.eventName)")
+                    .font(.title)
+                    .shadow(radius: 7)
+                Divider()
             }
         }
     }
