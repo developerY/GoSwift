@@ -39,7 +39,7 @@ private func getCoorRegion(event:EKEvent) async throws -> MKCoordinateRegion? {
 
 struct GeoEventMapView: View {
     let event:EKEvent
-    @State var local = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0 ),
+    @State var mapLocal = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0 ),
                latitudinalMeters: 750,
                longitudinalMeters: 750)
     
@@ -47,17 +47,14 @@ struct GeoEventMapView: View {
     
     var body: some View {
         VStack {
-            Map(coordinateRegion: $local)
+            Map(coordinateRegion: .constant(mapLocal))
         }.onAppear {
             Task {
                 if let locString = event.location {
                     let placemarkes = try await geoCoder.geocodeAddressString(locString)
                     if let locPlace = placemarkes[0].location {
-                        local = MKCoordinateRegion(
-                            center: CLLocationCoordinate2D(latitude: locPlace.coordinate.latitude, longitude: locPlace.coordinate.longitude ),
-                            latitudinalMeters: 750,
-                            longitudinalMeters: 750
-                        )
+                        mapLocal.center.latitude = locPlace.coordinate.latitude
+                        mapLocal.center.longitude = locPlace.coordinate.longitude
                     }
                 }
             }

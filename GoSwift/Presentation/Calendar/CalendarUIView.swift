@@ -20,15 +20,7 @@ struct CalendarUIView: View {
     
     @State private var calPath = NavigationPath()// New in iOS 16
     
-    /*
-     region: MKCoordinateRegion(
-     center: CLLocationCoordinate2D(latitude: event.location?.coordinate.latitude, longitude: event.location?.coordinate.longitude),
-     span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
-     */
     
-    var region = MKCoordinateRegion(
-        center:CLLocationCoordinate2D(latitude: 34.011, longitude: -122.177),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     
     var body: some View {
         NavigationStack(path: $calPath) {
@@ -42,8 +34,8 @@ struct CalendarUIView: View {
                 List(calVM.events ?? [], id: \.self) { event in
                     HStack {
                         GeoEventMapView(event: event)
-                        NavigationLink("\(event.title) @ \(event.location ?? "No Location")", value: event)
-                    }
+                        NavigationLink("\(event.title)\n\n\(event.startDate.formatted())", value: event)
+                    }.frame(height:100)
                 }.navigationDestination(for: EKEvent.self){ event in
                     DetailedCalendarUIView(calVM: calVM, path: $calPath, event: event )
                 } // NEW iOS 16

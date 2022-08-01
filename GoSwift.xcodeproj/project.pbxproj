@@ -21,6 +21,8 @@
 		DE12A6A22894BA29000225BC /* ChartBikeMilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A6A12894BA29000225BC /* ChartBikeMilesView.swift */; };
 		DE12A6A42894BAC8000225BC /* ChartHeartHealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A6A32894BAC8000225BC /* ChartHeartHealthView.swift */; };
 		DE12A6A82895D55E000225BC /* GeoEventMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A6A72895D55E000225BC /* GeoEventMapView.swift */; };
+		DE12A6AB289713E7000225BC /* HeptagonToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A6AA289713E7000225BC /* HeptagonToken.swift */; };
+		DE12A6AD2897279E000225BC /* HeptagonTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12A6AC2897279E000225BC /* HeptagonTokenView.swift */; };
 		DE172C00288E158B00D7E619 /* IocShareBikesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB1288E158B00D7E619 /* IocShareBikesContainer.swift */; };
 		DE172C01288E158B00D7E619 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB2288E158B00D7E619 /* Resolver.swift */; };
 		DE172C02288E158B00D7E619 /* CalendarRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB5288E158B00D7E619 /* CalendarRepo.swift */; };
@@ -123,6 +125,8 @@
 		DE12A6A12894BA29000225BC /* ChartBikeMilesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartBikeMilesView.swift; sourceTree = "<group>"; };
 		DE12A6A32894BAC8000225BC /* ChartHeartHealthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartHeartHealthView.swift; sourceTree = "<group>"; };
 		DE12A6A72895D55E000225BC /* GeoEventMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoEventMapView.swift; sourceTree = "<group>"; };
+		DE12A6AA289713E7000225BC /* HeptagonToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeptagonToken.swift; sourceTree = "<group>"; };
+		DE12A6AC2897279E000225BC /* HeptagonTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeptagonTokenView.swift; sourceTree = "<group>"; };
 		DE172BB1288E158B00D7E619 /* IocShareBikesContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IocShareBikesContainer.swift; sourceTree = "<group>"; };
 		DE172BB2288E158B00D7E619 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		DE172BB5288E158B00D7E619 /* CalendarRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarRepo.swift; sourceTree = "<group>"; };
@@ -241,6 +245,15 @@
 			path = CalendarData;
 			sourceTree = "<group>";
 		};
+		DE12A6A928971392000225BC /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				DE12A6AA289713E7000225BC /* HeptagonToken.swift */,
+				DE12A6AC2897279E000225BC /* HeptagonTokenView.swift */,
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
 		DE172BB0288E158B00D7E619 /* DI */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +266,7 @@
 		DE172BB3288E158B00D7E619 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE12A6A928971392000225BC /* Tokens */,
 				DE172BB4288E158B00D7E619 /* Calendar */,
 				DE172BB9288E158B00D7E619 /* Health */,
 				DE172BBD288E158B00D7E619 /* Chart */,
@@ -733,6 +747,7 @@
 				DE8A718A288DD9B1001355BC /* Persistence.swift in Sources */,
 				DE172C12288E158B00D7E619 /* CurrentCalEventDataSource.swift in Sources */,
 				DE172C03288E158B00D7E619 /* CalendarUIView.swift in Sources */,
+				DE12A6AD2897279E000225BC /* HeptagonTokenView.swift in Sources */,
 				DE172C06288E158B00D7E619 /* HealthRepo.swift in Sources */,
 				DE172C16288E158B00D7E619 /* NetworkSharedBikesDataSource.swift in Sources */,
 				DE172C0F288E158B00D7E619 /* BikeListDetailMapView.swift in Sources */,
@@ -761,6 +776,7 @@
 				DE172C2B288E158B00D7E619 /* SystemInfo.swift in Sources */,
 				DE172C2C288E158B00D7E619 /* BartStations.swift in Sources */,
 				DE172C04288E158B00D7E619 /* CalendarViewModel.swift in Sources */,
+				DE12A6AB289713E7000225BC /* HeptagonToken.swift in Sources */,
 				DE12A69A2893A3CB000225BC /* CalEventsDataSourceProtocol.swift in Sources */,
 				DE172C23288E158B00D7E619 /* StationInfo.swift in Sources */,
 				DE172C09288E158B00D7E619 /* HeatlthChartView.swift in Sources */,

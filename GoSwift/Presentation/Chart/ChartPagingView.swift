@@ -20,6 +20,7 @@ struct ChartPagingView: View {
             
             ChartHeartHealthView()
                 .tabItem { Text("Heart") }
+
             VStack {
                 Text("Doing Good! Keep Working Out").font(.largeTitle).padding()
                 Image(systemName: "face.smiling.fill")

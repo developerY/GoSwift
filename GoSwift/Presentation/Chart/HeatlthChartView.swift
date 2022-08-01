@@ -20,6 +20,9 @@ struct ChartValues: Identifiable {
 struct HealthChartView: View {
     @StateObject var healthVM : HealthViewModel
     @State private var showingSheet = false
+    @State private var showToken = false
+    @State private var tokenColor : Color = .blue
+    @State private var tokenShadow = 7.0
     
     // The only copy.  Pass if needed
     @StateObject var vm = HealthChartViewModel()
@@ -38,6 +41,7 @@ struct HealthChartView: View {
         VStack {
             Text("See all your health data")
                 .font(.subheadline)
+           
             Spacer()
             HStack(alignment: .center) {
                 Button("Health Data") {
@@ -49,13 +53,16 @@ struct HealthChartView: View {
                     ChartPagingView(healthVM: healthVM)
                 }
                 .shadow(radius: 7)
-                
-                
-                
-                
-                
+        
                 Button {
-                    print("actin here")
+                    showToken.toggle()
+                    if showToken {
+                        tokenColor = .gray
+                        tokenShadow = 0
+                    } else {
+                        tokenColor = .blue
+                        tokenShadow = 7
+                    }
                 } label: {
                     Image(systemName: "bolt.heart.fill")
                 }.padding()
@@ -63,9 +70,9 @@ struct HealthChartView: View {
                         Circle().stroke(.white, lineWidth: 4)
                     }
                     .foregroundColor(Color.white)
-                    .background(Color.cyan)
+                    .background(tokenColor)
                     .clipShape(Circle())
-                    .shadow(radius: 7)
+                    .shadow(radius: tokenShadow)
             }
             
             Divider()
@@ -89,14 +96,17 @@ struct HealthChartView: View {
                 
                 
                 VStack {
-                    Gauge(value:vm.motion, in: 0...100){
+                    if showToken {
+                        HeptagonTokenView()
+                    }
+                    /*Gauge(value:vm.motion, in: 0...100){
                         Text("   Daily Motion  ")
                     }//.onReceive(timer){_ in withAnimation(amount += amount)}
                     
                     .padding([.top], 40)
                     .scaleEffect(3)
                     .gaugeStyle(.accessoryCircular).tint(.cyan)
-                    .shadow(radius: 5)
+                    .shadow(radius: 5)*/
                     
                     Spacer()
                 }

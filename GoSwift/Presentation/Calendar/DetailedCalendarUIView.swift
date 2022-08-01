@@ -28,11 +28,12 @@ struct DetailedCalendarUIView: View {
                         .padding(.bottom, 2)
                     Text("@")
                     Text("\(event.startDate.formatted())")
+                        .font(.subheadline)
                 }
                     
                 //Text("Current Event \(calVM.currentCalEvent.eventName)")
             }
-            
+            Spacer()
             Button("Set Event") {
                 path.removeLast(1) // NEW: new in iOS 16 programmatic navigation
                 // Navigate back and pass event

@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 
-
+//TODO: Add Favorites with a Switch
 
 struct BikeInfoRow: View {
     var station: Station
