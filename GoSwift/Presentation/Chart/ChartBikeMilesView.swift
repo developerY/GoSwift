@@ -9,9 +9,13 @@ import SwiftUI
 import Charts
 
 struct ChartBikeMilesView: View {
+    @StateObject var healthVM : HealthViewModel
+    
+    
     var body: some View {
         VStack {
-            Text("Current Step Bike Count")
+            
+            Text("Your Bike Miles")
                 .font(.title)
                 .frame(maxWidth:.infinity)
                 .foregroundColor(.white)
@@ -20,34 +24,25 @@ struct ChartBikeMilesView: View {
                 .background(.blue)
                 .border(.cyan,width: 7)
             
-            
-            
-            List {
-                Chart {
+            Chart {
+                ForEach(healthVM.healthBikeMiles){ bike in
                     BarMark(
-                        x: .value("Mount", "jan/22"),
-                        y: .value("Value", 5)
-                    )
-                    BarMark(
-                        x: .value("Mount", "fev/22"),
-                        y: .value("Value", 4)
-                    )
-                    BarMark(
-                        x: .value("Mount", "mar/22"),
-                        y: .value("Value", 7)
+                        x: .value("Date",bike.date),
+                        y: .value("Value", bike.bikeMiles)
                     )
                 }
-                .frame(height: 250)
             }
         }
     }
 }
 
 struct ChartBikeMilesView_Previews: PreviewProvider {
-    
+    static var healthVM = HealthViewModel(
+        getAllHealtInfo: Resolver.shared.resolve(GetHealthInfoUseCaseProtocol.self)
+    )
     
     
     static var previews: some View {
-        ChartBikeMilesView()
+        ChartBikeMilesView(healthVM: healthVM)
     }
 }

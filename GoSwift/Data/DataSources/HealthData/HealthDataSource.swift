@@ -34,7 +34,7 @@ class HealthInfoDataSource: HealthInfoDataSourceProtocol {
         guard isAvailable else {
             logger.debug("HealthKit is not available on this device.")
             // return zero data
-            return [0]
+            return [Date(): 0]
         } // Happy Path
         
         let nums = try await loadNewDataFromHealthKit(activity: activity)
@@ -72,15 +72,16 @@ class HealthInfoDataSource: HealthInfoDataSourceProtocol {
     
     
     @discardableResult
-    private func loadNewDataFromHealthKit(activity: ActivityType) async throws -> [Int] {
+    private func loadNewDataFromHealthKit(activity: ActivityType) async throws -> HealthWorkoutInfo {
         logger.debug("Loading data from HealthKit")
-        var loadActivityData = HealthWorkoutInfo([0])
+        var loadActivityData : [Date:Int] = [:]
+
         
         do {
             let samples = try await queryHealthKit(activityType: activity)
             
             samples?.forEach { sample in
-                loadActivityData.append(Int(sample.description.split(by: " ")[1]) ?? 0)
+                loadActivityData[sample.startDate] = Int(sample.description.split(by: " ")[1]) ?? 0
             }
         }
         

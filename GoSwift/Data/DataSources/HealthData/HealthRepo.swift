@@ -46,7 +46,7 @@ private class HealthInfoRepo {
     }
     
     func getHealthInfo(activity: String) async throws -> HealthWorkoutInfo {
-        return HealthWorkoutInfo([10])
+        return [Date():10]
     }
     
     // read health data

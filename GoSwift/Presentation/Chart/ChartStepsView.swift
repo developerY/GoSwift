@@ -14,7 +14,7 @@ struct ChartStepsView: View {
     var body: some View {
         VStack {
             
-            Text("Current Step Count ss")
+            Text("Your Step Count")
                 .font(.title)
                 .frame(maxWidth:.infinity)
                 .foregroundColor(.white)
@@ -22,34 +22,27 @@ struct ChartStepsView: View {
                 .shadow(radius: 5)
                 .background(.blue)
                 .border(.cyan,width: 7)
-
-            List {
-                Chart {
-                    BarMark(x: .value("Bike Info", "Steps"),
-                            y: .value("Value", healthVM.totalHealthSteps)) // published data
-                    BarMark(
-                        x: .value("Mount", "jan/22"),
-                        y: .value("Value", 5)
-                    )
-                    BarMark(
-                        x: .value("Mount", "fev/22"),
-                        y: .value("Value", 4)
-                    )
-                    BarMark(
-                        x: .value("Mount", "mar/22"),
-                        y: .value("Value", 7)
-                    )
-                }
-                .frame(height: 250)
-            }
             
+                Chart {
+                    ForEach(healthVM.healthSteps){ step in
+                          BarMark(
+                            x: .value("Date",step.date),
+                            y: .value("Value", step.stepCount)
+                        )
+                    }
+                }
+            }
         }
-    }
+    
 }
 
 struct ChartStepsView_Previews: PreviewProvider {
+    static var healthVM = HealthViewModel(
+        getAllHealtInfo: Resolver.shared.resolve(GetHealthInfoUseCaseProtocol.self)
+    )
+    
+    
     static var previews: some View {
-        Text("TODO")
-        //ChartStepsView()
+        ChartStepsView(healthVM: healthVM)
     }
 }

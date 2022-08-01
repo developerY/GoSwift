@@ -15,7 +15,7 @@ struct ChartPagingView: View {
             ChartStepsView(healthVM: healthVM)
                 .tabItem { Text("Steps") }
             
-            ChartBikeMilesView()
+            ChartBikeMilesView(healthVM: healthVM)
                 .tabItem { Text("Bike") }
             
             ChartHeartHealthView()
