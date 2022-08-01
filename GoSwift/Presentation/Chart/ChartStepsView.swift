@@ -23,16 +23,31 @@ struct ChartStepsView: View {
                 .background(.blue)
                 .border(.cyan,width: 7)
             
-                Chart {
-                    ForEach(healthVM.healthSteps){ step in
-                          BarMark(
-                            x: .value("Date",step.date),
-                            y: .value("Value", step.stepCount)
-                        )
-                    }
+            /*GroupBox("Number of Bus Production by Month") {
+             Chart(chartData) { production in
+             BarMark(
+             x: .value("Bus Production", production.count),
+             y: .value("Month", production.date, unit: .month)
+             )
+             .foregroundStyle(by: .value("Bus Production", production.count))
+             }
+             .padding(.horizontal, 16)
+             }
+             .backgroundStyle(Color.white)*/
+            GroupBox("Step Per Day") {
+                Chart(healthVM.healthSteps){ step in
+                    BarMark(
+                        x: .value("Date",step.date),
+                        y: .value("Value", step.stepCount)
+                    )
+                    .foregroundStyle(by: .value("Steps", step.stepCount))
                 }
+                .padding(.horizontal, 16)
             }
+            .backgroundStyle(Color.white)
         }
+    }
+    
     
 }
 
@@ -40,7 +55,6 @@ struct ChartStepsView_Previews: PreviewProvider {
     static var healthVM = HealthViewModel(
         getAllHealtInfo: Resolver.shared.resolve(GetHealthInfoUseCaseProtocol.self)
     )
-    
     
     static var previews: some View {
         ChartStepsView(healthVM: healthVM)

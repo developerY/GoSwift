@@ -41,7 +41,7 @@ struct HealthChartView: View {
         VStack {
             Text("See all your health data")
                 .font(.subheadline)
-           
+            
             Spacer()
             HStack(alignment: .center) {
                 Button("Health Data") {
@@ -53,19 +53,23 @@ struct HealthChartView: View {
                     ChartPagingView(healthVM: healthVM)
                 }
                 .shadow(radius: 7)
-        
+                
                 Button {
-                    showToken.toggle()
-                    if showToken {
-                        tokenColor = .gray
-                        tokenShadow = 0
-                    } else {
-                        tokenColor = .blue
-                        tokenShadow = 7
+                    withAnimation(.easeIn(duration: 1)) {
+                        showToken.toggle()
+                        
+                        if showToken {
+                            tokenColor = .gray
+                            tokenShadow = 0
+                        } else {
+                            tokenColor = .blue
+                            tokenShadow = 7
+                        }
                     }
-                } label: {
-                    Image(systemName: "bolt.heart.fill")
-                }.padding()
+                }
+            label: {
+                Image(systemName: "bolt.heart.fill")
+            }.padding()
                     .overlay {
                         Circle().stroke(.white, lineWidth: 4)
                     }
@@ -73,6 +77,7 @@ struct HealthChartView: View {
                     .background(tokenColor)
                     .clipShape(Circle())
                     .shadow(radius: tokenShadow)
+                
             }
             
             Divider()
@@ -100,13 +105,13 @@ struct HealthChartView: View {
                         HeptagonTokenView()
                     }
                     /*Gauge(value:vm.motion, in: 0...100){
-                        Text("   Daily Motion  ")
-                    }//.onReceive(timer){_ in withAnimation(amount += amount)}
-                    
-                    .padding([.top], 40)
-                    .scaleEffect(3)
-                    .gaugeStyle(.accessoryCircular).tint(.cyan)
-                    .shadow(radius: 5)*/
+                     Text("   Daily Motion  ")
+                     }//.onReceive(timer){_ in withAnimation(amount += amount)}
+                     
+                     .padding([.top], 40)
+                     .scaleEffect(3)
+                     .gaugeStyle(.accessoryCircular).tint(.cyan)
+                     .shadow(radius: 5)*/
                     
                     Spacer()
                 }

@@ -24,17 +24,20 @@ struct ChartBikeMilesView: View {
                 .background(.blue)
                 .border(.cyan,width: 7)
             
-            Chart {
-                ForEach(healthVM.healthBikeMiles){ bike in
+            GroupBox("Bike Miles Per Day") {
+                Chart(healthVM.healthBikeMiles){ bike in
                     BarMark(
                         x: .value("Date",bike.date),
                         y: .value("Value", bike.bikeMiles)
-                    )
+                    ).foregroundStyle(by: .value("Miles", bike.bikeMiles))
                 }
+                .padding(.horizontal, 16)
             }
+            .backgroundStyle(Color.white)
         }
     }
 }
+
 
 struct ChartBikeMilesView_Previews: PreviewProvider {
     static var healthVM = HealthViewModel(

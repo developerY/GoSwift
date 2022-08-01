@@ -27,15 +27,15 @@ struct ChartHeartHealthView: View {
                     
                     List {
                         Chart {
-                            BarMark(
+                            LineMark(
                                 x: .value("Mount", "jan/22"),
                                 y: .value("Value", 5)
                             )
-                            BarMark(
+                            LineMark(
                                 x: .value("Mount", "fev/22"),
                                 y: .value("Value", 4)
                             )
-                            BarMark(
+                            LineMark(
                                 x: .value("Mount", "mar/22"),
                                 y: .value("Value", 7)
                             )
