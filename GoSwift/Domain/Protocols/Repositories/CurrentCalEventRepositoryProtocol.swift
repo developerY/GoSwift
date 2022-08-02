@@ -11,7 +11,7 @@ import CoreLocation
 
 protocol CurrentCalEventRepositoryProtocol {
     func getCurrentCalEvent() async throws -> CurrentCalEvent
-    func setCurrentCalEvent(myEvent: String, loc :CLLocation) async throws
+    func setCurrentCalEvent(myEvent: String, eventDate: Date, loc :CLLocation) async throws
 }
 
 

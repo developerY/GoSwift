@@ -11,7 +11,6 @@ import MapKit
 
 struct CalendarUIView: View {
     @ObservedObject var calVM: CalendarViewModel
-    @State private var date = Date()
     @State private var dates: Set<DateComponents> = []
     
     @State var  myEvent: MKCoordinateRegion = MKCoordinateRegion(

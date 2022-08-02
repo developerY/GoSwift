@@ -111,7 +111,7 @@ struct TransitMapView: View {
                                     //Text("Rent")
                                     HStack {
                                         if item.station is Station {
-                                            NavigationLink(destination: BikeListDetailMapView(station: item.station as! Station)) {
+                                            NavigationLink(destination: BikeListDetailMapView(station: item.station as! Station, bikeDate: viewModel.currentCalEvent.eventDate)) {
                                                 Text("RENT")
                                             }
                                         }

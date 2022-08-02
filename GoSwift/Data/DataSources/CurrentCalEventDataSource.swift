@@ -13,14 +13,14 @@ class CurrentCalEventDataSource : CurrentCalEventDataSourceProtocol, ObservableO
     let myEventLoc :CLLocation = CLLocation.init(latitude: 37.773972, longitude: -122.431297)
     var currEvnt : CurrentCalEvent
     init() {
-        currEvnt  = CurrentCalEvent(eventName: "SF Downtown",location:myEventLoc)
+        currEvnt  = CurrentCalEvent(eventName: "NO EVENT SET", eventDate: Date(),location:myEventLoc)
     }
 
     func getCurrentCalEvent() async throws -> CurrentCalEvent {
         return currEvnt
     }
     
-    func setCurrentCalEvent(myEvent: String, loc :CLLocation) {
-        currEvnt = CurrentCalEvent(eventName: myEvent,location:loc)
+    func setCurrentCalEvent(myEvent: String, eventDate:Date, loc :CLLocation) {
+        currEvnt = CurrentCalEvent(eventName: myEvent, eventDate: eventDate,location:loc)
     }
 }

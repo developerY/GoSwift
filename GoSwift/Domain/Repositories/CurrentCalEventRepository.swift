@@ -22,8 +22,8 @@ class CurrentCalEventRepository : CurrentCalEventRepositoryProtocol {
         try await currentCalEventDataSource.getCurrentCalEvent()
     }
     
-    func setCurrentCalEvent(myEvent: String, loc: CLLocation) async throws {
-        try await currentCalEventDataSource.setCurrentCalEvent(myEvent: myEvent, loc: loc)
+    func setCurrentCalEvent(myEvent: String, eventDate : Date, loc: CLLocation) async throws {
+        try await currentCalEventDataSource.setCurrentCalEvent(myEvent: myEvent, eventDate: eventDate, loc: loc)
     }
 
 }

@@ -49,6 +49,7 @@ struct PlaceAnnotationDetailView: View {
 
 struct BikeListDetailMapView: View {
     var station:Station
+    @State var bikeDate:Date
     @State var lat:Double
     @State var lon:Double
     fileprivate var annotationItems: [StationAnnotationItem]
@@ -56,18 +57,18 @@ struct BikeListDetailMapView: View {
     @State private var showingCredits = false
     @State private var bikeNumPicker = 1
 
-    @State private var date = Date()
-
-    
-    init(station:Station) {
+    init(station:Station, bikeDate:Date) {
         self.station = station
         _lat = State(initialValue: station.lat)
         _lon = State(initialValue: station.lon)
+        
+        _bikeDate = State(initialValue: bikeDate)
         
         // place pin on station
         annotationItems = [
             StationAnnotationItem(stationName: station.name, coordinate : CLLocationCoordinate2D(latitude: station.lat, longitude: station.lon))
         ]
+
     }
     
     
@@ -96,7 +97,7 @@ struct BikeListDetailMapView: View {
             }
             
             if #available(iOS 13, *) { // for fun try iOS 17
-                DatePicker("Date/Time",selection: $date)
+                DatePicker("Date/Time",selection: $bikeDate)
                     .padding()
                     //.datePickerStyle(.graphical)
             } else {
@@ -134,6 +135,7 @@ struct MapView: View {
         _lat = lat
         _lon = lon
         self.mapStationMarker = annotationItems
+        
     }
     
     private var region: Binding<MKCoordinateRegion> {
@@ -173,7 +175,7 @@ struct CreditCardInfo {
 }
 
 struct bikeSchedualPicker: View {
-    @State private var bikeDate = Date.now
+    @State var bikeDate : Date //= Date.now
     
     var body: some View {
         //!!!: access stored value pass Binding (projectedValue) use "$"
@@ -203,13 +205,14 @@ struct getBikeFromStation : View {
 }
 
 struct BikeCreditCardView: View {
+    let bikeDate:Date
     let card: CreditCardInfo
     @State private var animiAmount = 1.0
 
 
     var body: some View {
         Form { //!!! VStack not as good
-            bikeSchedualPicker()
+            bikeSchedualPicker(bikeDate: bikeDate)
             ZStack {
                 RoundedRectangle(cornerRadius: 25, style: .continuous)
                     .fill(.white)
@@ -271,7 +274,7 @@ struct BikeListDetailView_Previews: PreviewProvider {
     
     static var previews: some View {
         VStack {
-            BikeListDetailMapView(station: station)
+            BikeListDetailMapView(station: station, bikeDate: Date())
         }
     }
 }

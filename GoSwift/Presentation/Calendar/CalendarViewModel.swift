@@ -18,7 +18,7 @@ class CalendarViewModel: ObservableObject{
     // @ObservedObject var calRepo = CalendarRepo() // NOTE: calendar should never talk to the repo (Use Case Protocal)
     @Published private(set) var events: [EKEvent]?
     
-    @Published private(set) var currentCalEvent : CurrentCalEvent = CurrentCalEvent(eventName: "NOT SET!", location: CLLocation.init(latitude: 37.0, longitude: -122.0))
+    @Published private(set) var currentCalEvent : CurrentCalEvent = CurrentCalEvent(eventName: "NOT SET!", eventDate: Date(), location: CLLocation.init(latitude: 37.0, longitude: -122.0))
     
     init(getCurrentCalEvent: GetCurrentCalEventUseCaseProtocol,
          getCalEvents : CalEventsUseCaseProtocol) {
@@ -42,9 +42,9 @@ class CalendarViewModel: ObservableObject{
     }
     
     @MainActor
-    func setCurrentEvent(myEvent: String, eventLoc: CLLocation) {
+    func setCurrentEvent(myEvent: String, eventDate: Date, eventLoc: CLLocation) {
         Task {
-            try await getCurrentCalEvent.execute(myEvent:myEvent, loc:eventLoc)
+            try await getCurrentCalEvent.execute(myEvent:myEvent,eventDate:eventDate, loc:eventLoc)
         }
     }
 }

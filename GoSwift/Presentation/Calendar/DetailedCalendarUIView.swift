@@ -38,7 +38,7 @@ struct DetailedCalendarUIView: View {
                 path.removeLast(1) // NEW: new in iOS 16 programmatic navigation
                 // Navigate back and pass event
                 if let map_event = event.structuredLocation?.geoLocation?.coordinate {
-                    calVM.setCurrentEvent(myEvent: event.title, eventLoc:CLLocation(latitude: map_event.latitude, longitude: map_event.longitude))
+                    calVM.setCurrentEvent(myEvent: event.title, eventDate: event.startDate, eventLoc:CLLocation(latitude: map_event.latitude, longitude: map_event.longitude))
                 }
             }.padding()
                 .border(.gray)

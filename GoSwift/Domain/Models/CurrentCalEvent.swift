@@ -11,5 +11,6 @@ import CoreLocation
 struct CurrentCalEvent : Identifiable{
     let id = UUID()
     var eventName:String
+    var eventDate:Date
     var location:CLLocation
 }

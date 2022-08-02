@@ -21,8 +21,8 @@ class GetCurrentCalEvent : GetCurrentCalEventUseCaseProtocol {
         return try await currentCalEventRepo.getCurrentCalEvent()
     }
     
-    func execute(myEvent: String, loc eventLoc: CLLocation) async throws {
-        try await currentCalEventRepo.setCurrentCalEvent(myEvent: myEvent, loc: eventLoc)
+    func execute(myEvent: String, eventDate:Date, loc eventLoc: CLLocation) async throws {
+        try await currentCalEventRepo.setCurrentCalEvent(myEvent: myEvent, eventDate: eventDate, loc: eventLoc)
     }
 
 }

@@ -28,7 +28,7 @@ protocol GetAllWalkingRoutesUseCaseProtocol {
 
 protocol GetCurrentCalEventUseCaseProtocol {
     func execute() async throws -> CurrentCalEvent
-    func execute(myEvent: String, loc :CLLocation) async throws
+    func execute(myEvent: String, eventDate:Date, loc :CLLocation) async throws
 }
 
 

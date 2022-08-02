@@ -49,7 +49,7 @@ struct BikeListView: View {
                 .navigationTitle("Bike Stations")
                 .navigationDestination(for: Station.self) { station in
                     //BikeInfoRow(station: station)
-                    BikeListDetailMapView(station: station)
+                    BikeListDetailMapView(station: station, bikeDate:Date())
                 }
                 .navigationBarTitle("Bike List")
                 .navigationBarItems(trailing: EditButton())
