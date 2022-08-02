@@ -12,6 +12,8 @@ import Swinject
 func buildContainer() -> Container {
     let container = Container()
     
+    
+    //MARK: Data
     container.register(SharedBikesDataSourceProtocol.self) { _ in
         return NetworkSharedBikesDataSource()
     }.inObjectScope(.container)
@@ -38,7 +40,7 @@ func buildContainer() -> Container {
     }.inObjectScope(.container)
     
     
-    // Protocol
+    // MARK: Repo
     container.register(SharedBikesRepositoryProtocol.self) { _ in
         return SharedBikesRepository(sharedBikesDataSource: container.resolve(SharedBikesDataSourceProtocol.self)!)
     }.inObjectScope(.container)
@@ -67,7 +69,7 @@ func buildContainer() -> Container {
     
     
     
-    // UseCase
+    // MARK: UseCase
     container.register(GetAllSharedBikesUseCaseProtocol.self) { _ in
         return GetAllSharedBikes(sharedBikesRepo: container.resolve(SharedBikesRepositoryProtocol.self)!)
     }.inObjectScope(.container)
