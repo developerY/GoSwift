@@ -35,7 +35,7 @@ struct DetailedCalendarUIView: View {
             }
             Spacer()
             Button("Set Event") {
-                path.removeLast(1) // NEW: new in iOS 16 programmatic navigation
+                path.removeLast(1) // NOTE: new in iOS 16 programmatic navigation
                 // Navigate back and pass event
                 if let map_event = event.structuredLocation?.geoLocation?.coordinate {
                     calVM.setCurrentEvent(myEvent: event.title, eventDate: event.startDate, eventLoc:CLLocation(latitude: map_event.latitude, longitude: map_event.longitude))
@@ -58,7 +58,7 @@ struct DetailedCalendarUIView_Previews: PreviewProvider {
         getCalEvents: Resolver.shared.resolve(CalEventsUseCaseProtocol.self)
     )
     
-    
+    // for preview
     static var eventStore : EKEventStore = EKEventStore()
           
     // 'EKEntityTypeReminder' or 'EKEntityTypeEvent'

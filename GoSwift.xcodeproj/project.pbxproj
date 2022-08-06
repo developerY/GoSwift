@@ -29,7 +29,6 @@
 		DE172C03288E158B00D7E619 /* CalendarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB6288E158B00D7E619 /* CalendarUIView.swift */; };
 		DE172C04288E158B00D7E619 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB7288E158B00D7E619 /* CalendarViewModel.swift */; };
 		DE172C05288E158B00D7E619 /* DetailedCalendarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BB8288E158B00D7E619 /* DetailedCalendarUIView.swift */; };
-		DE172C06288E158B00D7E619 /* HealthRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBA288E158B00D7E619 /* HealthRepo.swift */; };
 		DE172C07288E158B00D7E619 /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBB288E158B00D7E619 /* HealthViewModel.swift */; };
 		DE172C08288E158B00D7E619 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBC288E158B00D7E619 /* HealthView.swift */; };
 		DE172C09288E158B00D7E619 /* HeatlthChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE172BBE288E158B00D7E619 /* HeatlthChartView.swift */; };
@@ -133,7 +132,6 @@
 		DE172BB6288E158B00D7E619 /* CalendarUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarUIView.swift; sourceTree = "<group>"; };
 		DE172BB7288E158B00D7E619 /* CalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		DE172BB8288E158B00D7E619 /* DetailedCalendarUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCalendarUIView.swift; sourceTree = "<group>"; };
-		DE172BBA288E158B00D7E619 /* HealthRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthRepo.swift; sourceTree = "<group>"; };
 		DE172BBB288E158B00D7E619 /* HealthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
 		DE172BBC288E158B00D7E619 /* HealthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
 		DE172BBE288E158B00D7E619 /* HeatlthChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatlthChartView.swift; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 		DE12A6892892FA53000225BC /* HealthData */ = {
 			isa = PBXGroup;
 			children = (
-				DE172BBA288E158B00D7E619 /* HealthRepo.swift */,
 				DE12A69B289437BF000225BC /* HealthDataSource.swift */,
 			);
 			path = HealthData;
@@ -748,7 +745,6 @@
 				DE172C12288E158B00D7E619 /* CurrentCalEventDataSource.swift in Sources */,
 				DE172C03288E158B00D7E619 /* CalendarUIView.swift in Sources */,
 				DE12A6AD2897279E000225BC /* HeptagonTokenView.swift in Sources */,
-				DE172C06288E158B00D7E619 /* HealthRepo.swift in Sources */,
 				DE172C16288E158B00D7E619 /* NetworkSharedBikesDataSource.swift in Sources */,
 				DE172C0F288E158B00D7E619 /* BikeListDetailMapView.swift in Sources */,
 				DE172C34288E158B00D7E619 /* GetAllWalkingRoutes.swift in Sources */,

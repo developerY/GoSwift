@@ -20,3 +20,7 @@ Protocols and Generics
 We no longer need Result type:
 https://medium.com/@aainajain/will-async-await-replace-result-type-4a14069cf36a
 
+Icon from 
+<a href="https://www.flaticon.com/free-icons/omega" title="omega icons">Omega icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/wings" title="wings icons">Wings icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/waterfall" title="waterfall icons">Waterfall icons created by Freepik - Flaticon</a>
